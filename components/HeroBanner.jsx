@@ -345,7 +345,7 @@ const HeroBanner = () => {
                                 backgroundPosition: "inherit",
                                 fontSize: 16,
                                 fontFamily: '"Lato", sans-serif',
-                                lineHeight: 40,
+                                lineHeight: '40px',
                                 width: 40,
                                 height: 40,
                                 borderRadius: "100%",
@@ -374,7 +374,7 @@ const HeroBanner = () => {
                                 backgroundPosition: "inherit",
                                 fontSize: 16,
                                 fontFamily: '"Lato", sans-serif',
-                                lineHeight: 40,
+                                lineHeight: '40px',
                                 width: 40,
                                 height: 40,
                                 borderRadius: "100%",
@@ -402,7 +402,7 @@ const HeroBanner = () => {
                                 backgroundPosition: "inherit",
                                 fontSize: 16,
                                 fontFamily: '"Lato", sans-serif',
-                                lineHeight: 40,
+                                lineHeight: '40px',
                                 width: 40,
                                 height: 40,
                                 borderRadius: "100%",
@@ -430,7 +430,7 @@ const HeroBanner = () => {
                                 backgroundPosition: "inherit",
                                 fontSize: 16,
                                 fontFamily: '"Lato", sans-serif',
-                                lineHeight: 40,
+                                lineHeight: '40px',
                                 width: 40,
                                 height: 40,
                                 borderRadius: "100%",
@@ -458,7 +458,7 @@ const HeroBanner = () => {
                                 backgroundPosition: "inherit",
                                 fontSize: 16,
                                 fontFamily: '"Lato", sans-serif',
-                                lineHeight: 40,
+                                lineHeight: '40px',
                                 width: 40,
                                 height: 40,
                                 borderRadius: "100%",
@@ -486,7 +486,7 @@ const HeroBanner = () => {
                                 backgroundPosition: "inherit",
                                 fontSize: 16,
                                 fontFamily: '"Lato", sans-serif',
-                                lineHeight: 40,
+                                lineHeight: '40px',
                                 width: 40,
                                 height: 40,
                                 borderRadius: "100%",
@@ -706,7 +706,7 @@ const HeroBanner = () => {
                             backgroundPosition: "inherit",
                             fontSize: 16,
                             fontFamily: '"Lato", sans-serif',
-                            lineHeight: 40,
+                            lineHeight: '40px',
                             width: 40,
                             height: 40,
                             borderRadius: "100%",
@@ -835,662 +835,662 @@ const HeroBanner = () => {
                     />
                 </div>
                 {/* Slide 3*/}
-                {/* <div
-                        className="ls-slide"
-                        data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;"
+                <div
+                    className="ls-slide"
+                    data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;"
+                >
+                    <img
+                        width={588}
+                        height={306}
+                        src="assets/img/hero/hero-7-1-1.png"
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 119,
+                            left: 373,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit"
+                        }}
+                        data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
+                    />
+                    <h1
+                        style={{
+                            top: 440,
+                            left: 445,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 40,
+                            fontFamily: '"Amatic SC", cursive',
+                            color: "#fcd55c"
+                        }}
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        <img
-                            width={588}
-                            height={306}
-                            src="assets/img/hero/hero-7-1-1.png"
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 119,
-                                left: 373,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit"
-                            }}
-                            data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
-                        />
-                        <h1
-                            style={{
-                                top: 440,
-                                left: 445,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 40,
-                                fontFamily: '"Amatic SC", cursive',
-                                color: "#fcd55c"
-                            }}
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            Intermix words alphabets uniqueness
-                        </h1>
-                        <div
-                            style={{
-                                top: 511,
-                                left: 445,
-                                textAlign: "center",
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                width: 430
-                            }}
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            <a href="shop.html" className="vs-btn style5 ls-btn">
-                                Start Shopping
-                                <i className="far fa-angle-right" />
-                            </a>
-                        </div>
-                        <img
-                            width={496}
-                            height={618}
-                            src="assets/img/hero/hero-7-3-4.png"
-                            className="ls-l ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 13,
-                                left: 1123,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                width: 539,
-                                height: 671
-                            }}
-                            data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
-                        />
-                        <img
-                            width={145}
-                            height={147}
-                            src="assets/img/hero/hero-7-1-2.png"
-                            className="ls-l ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 118,
-                                left: 1047,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit"
-                            }}
-                            data-ls="offsetxin:-200; offsetyin:top; durationin:1500; delayin:1200; easingin:easeOutQuint; rotatein:-45; offsetxout:-200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:-45;"
-                        />
-                        <p
-                            style={{
-                                top: 752,
-                                left: "50%",
-                                textAlign: "center",
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 16,
-                                fontFamily: '"Lato", sans-serif',
-                                lineHeight: 40,
-                                width: 40,
-                                height: 40,
-                                borderRadius: "100%",
-                                color: "#ffffff",
-                                backgroundColor: "#76a713",
-                                zIndex: 1000
-                            }}
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff;"
-                        >
-                            3
-                        </p>
-                        <img
-                            width={588}
-                            height={306}
-                            src="assets/img/hero/hero-7-1-1.png"
-                            className="ls-l ls-hide-desktop ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 119,
-                                left: 80,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit"
-                            }}
-                            data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
-                        />
-                        <h1
-                            style={{
-                                top: 445,
-                                left: 80,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 62,
-                                fontFamily: '"Amatic SC", cursive',
-                                color: "#fcd55c"
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            Intermix words alphabets uniqueness
-                        </h1>
-                        <span
-                            style={{
-                                top: 575,
-                                left: 78,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                paddingRight: 60,
-                                paddingBottom: 30,
-                                paddingLeft: 60,
-                                fontFamily: '"Lato",sans-serif',
-                                fontSize: 30,
-                                color: "#fff",
-                                borderRadius: 9999,
-                                borderTop: "3px solid #fff",
-                                borderRight: "3px solid #fff",
-                                borderBottom: "3px solid #fff",
-                                borderLeft: "3px solid #fff",
-                                paddingTop: 30
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
-                        >
-                            START SHOPPING
-                        </span>
-                        <h1
-                            style={{
-                                top: 72,
-                                left: 58,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 160,
-                                fontFamily: '"Amatic SC", cursive',
-                                color: "#fcd55c",
-                                width: 1000,
-                                whiteSpace: "normal"
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-tablet"
-                            data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            Intermix words alphabets uniqueness
-                        </h1>
-                        <span
-                            style={{
-                                top: 528,
-                                left: 61,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                paddingRight: 100,
-                                paddingBottom: 50,
-                                paddingLeft: 100,
-                                fontFamily: '"Lato",sans-serif',
-                                fontSize: 60,
-                                color: "#fff",
-                                borderRadius: 9999,
-                                borderTop: "3px solid #fff",
-                                borderRight: "3px solid #fff",
-                                borderBottom: "3px solid #fff",
-                                borderLeft: "3px solid #fff",
-                                paddingTop: 50
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-tablet"
-                            data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
-                        >
-                            START SHOPPING
-                        </span>
-                        <img
-                            width={496}
-                            height={618}
-                            src="assets/img/hero/hero-7-3-4.png"
-                            className="ls-l ls-hide-desktop ls-hide-tablet"
-                            alt="image"
-                            style={{
-                                top: "-1px",
-                                left: 1110,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                width: 655,
-                                height: 816,
-                                fontSize: 16
-                            }}
-                            data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
-                        />
-                    </div> */}
+                        Intermix words alphabets uniqueness
+                    </h1>
+                    <div
+                        style={{
+                            top: 511,
+                            left: 445,
+                            textAlign: "center",
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            width: 430
+                        }}
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
+                    >
+                        <a href="shop.html" className="vs-btn style5 ls-btn">
+                            Start Shopping
+                            <i className="far fa-angle-right" />
+                        </a>
+                    </div>
+                    <img
+                        width={496}
+                        height={618}
+                        src="assets/img/hero/hero-7-3-4.png"
+                        className="ls-l ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 13,
+                            left: 1123,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            width: 539,
+                            height: 671
+                        }}
+                        data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
+                    />
+                    <img
+                        width={145}
+                        height={147}
+                        src="assets/img/hero/hero-7-1-2.png"
+                        className="ls-l ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 118,
+                            left: 1047,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit"
+                        }}
+                        data-ls="offsetxin:-200; offsetyin:top; durationin:1500; delayin:1200; easingin:easeOutQuint; rotatein:-45; offsetxout:-200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:-45;"
+                    />
+                    <p
+                        style={{
+                            top: 752,
+                            left: "50%",
+                            textAlign: "center",
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 16,
+                            fontFamily: '"Lato", sans-serif',
+                            lineHeight: '40px',
+                            width: 40,
+                            height: 40,
+                            borderRadius: "100%",
+                            color: "#ffffff",
+                            backgroundColor: "#76a713",
+                            zIndex: 1000
+                        }}
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff;"
+                    >
+                        3
+                    </p>
+                    <img
+                        width={588}
+                        height={306}
+                        src="assets/img/hero/hero-7-1-1.png"
+                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 119,
+                            left: 80,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit"
+                        }}
+                        data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
+                    />
+                    <h1
+                        style={{
+                            top: 445,
+                            left: 80,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 62,
+                            fontFamily: '"Amatic SC", cursive',
+                            color: "#fcd55c"
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
+                    >
+                        Intermix words alphabets uniqueness
+                    </h1>
+                    <span
+                        style={{
+                            top: 575,
+                            left: 78,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            paddingRight: 60,
+                            paddingBottom: 30,
+                            paddingLeft: 60,
+                            fontFamily: '"Lato",sans-serif',
+                            fontSize: 30,
+                            color: "#fff",
+                            borderRadius: 9999,
+                            borderTop: "3px solid #fff",
+                            borderRight: "3px solid #fff",
+                            borderBottom: "3px solid #fff",
+                            borderLeft: "3px solid #fff",
+                            paddingTop: 30
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
+                    >
+                        START SHOPPING
+                    </span>
+                    <h1
+                        style={{
+                            top: 72,
+                            left: 58,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 160,
+                            fontFamily: '"Amatic SC", cursive',
+                            color: "#fcd55c",
+                            width: 1000,
+                            whiteSpace: "normal"
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
+                    >
+                        Intermix words alphabets uniqueness
+                    </h1>
+                    <span
+                        style={{
+                            top: 528,
+                            left: 61,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            paddingRight: 100,
+                            paddingBottom: 50,
+                            paddingLeft: 100,
+                            fontFamily: '"Lato",sans-serif',
+                            fontSize: 60,
+                            color: "#fff",
+                            borderRadius: 9999,
+                            borderTop: "3px solid #fff",
+                            borderRight: "3px solid #fff",
+                            borderBottom: "3px solid #fff",
+                            borderLeft: "3px solid #fff",
+                            paddingTop: 50
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
+                    >
+                        START SHOPPING
+                    </span>
+                    <img
+                        width={496}
+                        height={618}
+                        src="assets/img/hero/hero-7-3-4.png"
+                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        alt="image"
+                        style={{
+                            top: "-1px",
+                            left: 1110,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            width: 655,
+                            height: 816,
+                            fontSize: 16
+                        }}
+                        data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
+                    />
+                </div>
                 {/* Slide 4*/}
-                {/* <div
-                        className="ls-slide"
-                        data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;"
+                <div
+                    className="ls-slide"
+                    data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;"
+                >
+                    <img
+                        width={588}
+                        height={306}
+                        src="assets/img/hero/hero-7-1-1.png"
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 119,
+                            left: 373,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit"
+                        }}
+                        data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
+                    />
+                    <h1
+                        style={{
+                            top: 440,
+                            left: 427,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 40,
+                            fontFamily: '"Amatic SC", cursive',
+                            color: "#fcd55c"
+                        }}
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        <img
-                            width={588}
-                            height={306}
-                            src="assets/img/hero/hero-7-1-1.png"
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 119,
-                                left: 373,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit"
-                            }}
-                            data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
-                        />
-                        <h1
-                            style={{
-                                top: 440,
-                                left: 427,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 40,
-                                fontFamily: '"Amatic SC", cursive',
-                                color: "#fcd55c"
-                            }}
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            Inspire your ideas from movies &amp; dramas
-                        </h1>
-                        <div
-                            style={{
-                                top: 511,
-                                left: 445,
-                                textAlign: "center",
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                width: 430
-                            }}
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            <a href="shop.html" className="vs-btn style5 ls-btn">
-                                Start Shopping
-                                <i className="far fa-angle-right" />
-                            </a>
-                        </div>
-                        <img
-                            width={494}
-                            height={616}
-                            src="assets/img/hero/hero-7-4-4.png"
-                            className="ls-l ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 40,
-                                left: 1151,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit"
-                            }}
-                            data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
-                        />
-                        <img
-                            width={145}
-                            height={147}
-                            src="assets/img/hero/hero-7-1-2.png"
-                            className="ls-l ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 118,
-                                left: 1047,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit"
-                            }}
-                            data-ls="offsetxin:-200; offsetyin:top; durationin:1500; delayin:1200; easingin:easeOutQuint; rotatein:-45; offsetxout:-200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:-45;"
-                        />
-                        <p
-                            style={{
-                                top: 752,
-                                left: 990,
-                                textAlign: "center",
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 16,
-                                fontFamily: '"Lato", sans-serif',
-                                lineHeight: 40,
-                                width: 40,
-                                height: 40,
-                                borderRadius: "100%",
-                                color: "#ffffff",
-                                backgroundColor: "#76a713",
-                                zIndex: 1000
-                            }}
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff;"
-                        >
-                            4
-                        </p>
-                        <img
-                            width={588}
-                            height={306}
-                            src="assets/img/hero/hero-7-1-1.png"
-                            className="ls-l ls-hide-desktop ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 119,
-                                left: 80,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit"
-                            }}
-                            data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
-                        />
-                        <h1
-                            style={{
-                                top: 445,
-                                left: 80,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 62,
-                                fontFamily: '"Amatic SC", cursive',
-                                color: "#fcd55c"
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            Inspire your ideas from movies &amp; dramas
-                        </h1>
-                        <span
-                            style={{
-                                top: 575,
-                                left: 78,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                paddingRight: 60,
-                                paddingBottom: 30,
-                                paddingLeft: 60,
-                                fontFamily: '"Lato",sans-serif',
-                                fontSize: 30,
-                                color: "#fff",
-                                borderRadius: 9999,
-                                borderTop: "3px solid #fff",
-                                borderRight: "3px solid #fff",
-                                borderBottom: "3px solid #fff",
-                                borderLeft: "3px solid #fff",
-                                paddingTop: 30
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
-                        >
-                            START SHOPPING
-                        </span>
-                        <h1
-                            style={{
-                                top: 72,
-                                left: 58,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 160,
-                                fontFamily: '"Amatic SC", cursive',
-                                color: "#fcd55c",
-                                width: 1000,
-                                whiteSpace: "normal"
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-tablet"
-                            data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            Inspire your ideas from movies &amp; dramas
-                        </h1>
-                        <span
-                            style={{
-                                top: 528,
-                                left: 61,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                paddingRight: 100,
-                                paddingBottom: 50,
-                                paddingLeft: 100,
-                                fontFamily: '"Lato",sans-serif',
-                                fontSize: 60,
-                                color: "#fff",
-                                borderRadius: 9999,
-                                borderTop: "3px solid #fff",
-                                borderRight: "3px solid #fff",
-                                borderBottom: "3px solid #fff",
-                                borderLeft: "3px solid #fff",
-                                paddingTop: 50
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-tablet"
-                            data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
-                        >
-                            START SHOPPING
-                        </span>
-                        <img
-                            width={494}
-                            height={616}
-                            src="assets/img/hero/hero-7-4-4.png"
-                            className="ls-l ls-hide-desktop ls-hide-tablet"
-                            alt="image"
-                            style={{
-                                top: 33,
-                                left: 1171,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                width: 623,
-                                height: 776
-                            }}
-                            data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
-                        />
-                    </div> */}
+                        Inspire your ideas from movies &amp; dramas
+                    </h1>
+                    <div
+                        style={{
+                            top: 511,
+                            left: 445,
+                            textAlign: "center",
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            width: 430
+                        }}
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
+                    >
+                        <a href="shop.html" className="vs-btn style5 ls-btn">
+                            Start Shopping
+                            <i className="far fa-angle-right" />
+                        </a>
+                    </div>
+                    <img
+                        width={494}
+                        height={616}
+                        src="assets/img/hero/hero-7-4-4.png"
+                        className="ls-l ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 40,
+                            left: 1151,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit"
+                        }}
+                        data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
+                    />
+                    <img
+                        width={145}
+                        height={147}
+                        src="assets/img/hero/hero-7-1-2.png"
+                        className="ls-l ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 118,
+                            left: 1047,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit"
+                        }}
+                        data-ls="offsetxin:-200; offsetyin:top; durationin:1500; delayin:1200; easingin:easeOutQuint; rotatein:-45; offsetxout:-200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:-45;"
+                    />
+                    <p
+                        style={{
+                            top: 752,
+                            left: 990,
+                            textAlign: "center",
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 16,
+                            fontFamily: '"Lato", sans-serif',
+                            lineHeight: '40px',
+                            width: 40,
+                            height: 40,
+                            borderRadius: "100%",
+                            color: "#ffffff",
+                            backgroundColor: "#76a713",
+                            zIndex: 1000
+                        }}
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff;"
+                    >
+                        4
+                    </p>
+                    <img
+                        width={588}
+                        height={306}
+                        src="assets/img/hero/hero-7-1-1.png"
+                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 119,
+                            left: 80,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit"
+                        }}
+                        data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
+                    />
+                    <h1
+                        style={{
+                            top: 445,
+                            left: 80,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 62,
+                            fontFamily: '"Amatic SC", cursive',
+                            color: "#fcd55c"
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
+                    >
+                        Inspire your ideas from movies &amp; dramas
+                    </h1>
+                    <span
+                        style={{
+                            top: 575,
+                            left: 78,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            paddingRight: 60,
+                            paddingBottom: 30,
+                            paddingLeft: 60,
+                            fontFamily: '"Lato",sans-serif',
+                            fontSize: 30,
+                            color: "#fff",
+                            borderRadius: 9999,
+                            borderTop: "3px solid #fff",
+                            borderRight: "3px solid #fff",
+                            borderBottom: "3px solid #fff",
+                            borderLeft: "3px solid #fff",
+                            paddingTop: 30
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
+                    >
+                        START SHOPPING
+                    </span>
+                    <h1
+                        style={{
+                            top: 72,
+                            left: 58,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 160,
+                            fontFamily: '"Amatic SC", cursive',
+                            color: "#fcd55c",
+                            width: 1000,
+                            whiteSpace: "normal"
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
+                    >
+                        Inspire your ideas from movies &amp; dramas
+                    </h1>
+                    <span
+                        style={{
+                            top: 528,
+                            left: 61,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            paddingRight: 100,
+                            paddingBottom: 50,
+                            paddingLeft: 100,
+                            fontFamily: '"Lato",sans-serif',
+                            fontSize: 60,
+                            color: "#fff",
+                            borderRadius: 9999,
+                            borderTop: "3px solid #fff",
+                            borderRight: "3px solid #fff",
+                            borderBottom: "3px solid #fff",
+                            borderLeft: "3px solid #fff",
+                            paddingTop: 50
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
+                    >
+                        START SHOPPING
+                    </span>
+                    <img
+                        width={494}
+                        height={616}
+                        src="assets/img/hero/hero-7-4-4.png"
+                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        alt="image"
+                        style={{
+                            top: 33,
+                            left: 1171,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            width: 623,
+                            height: 776
+                        }}
+                        data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
+                    />
+                </div>
                 {/* Slide 5*/}
-                {/* <div
-                        className="ls-slide"
-                        data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;"
+                <div
+                    className="ls-slide"
+                    data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;"
+                >
+                    <img
+                        width={588}
+                        height={306}
+                        src="assets/img/hero/hero-7-1-1.png"
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 119,
+                            left: 373,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit"
+                        }}
+                        data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
+                    />
+                    <h1
+                        style={{
+                            top: 440,
+                            left: 445,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 40,
+                            fontFamily: '"Amatic SC", cursive',
+                            color: "#fcd55c"
+                        }}
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        <img
-                            width={588}
-                            height={306}
-                            src="assets/img/hero/hero-7-1-1.png"
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 119,
-                                left: 373,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit"
-                            }}
-                            data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
-                        />
-                        <h1
-                            style={{
-                                top: 440,
-                                left: 445,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 40,
-                                fontFamily: '"Amatic SC", cursive',
-                                color: "#fcd55c"
-                            }}
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            Before come up with an organic food
-                        </h1>
-                        <div
-                            style={{
-                                top: 511,
-                                left: 445,
-                                textAlign: "center",
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                width: 430
-                            }}
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            <a href="shop.html" className="vs-btn style5 ls-btn">
-                                Start Shopping
-                                <i className="far fa-angle-right" />
-                            </a>
-                        </div>
-                        <img
-                            width={491}
-                            height={621}
-                            src="assets/img/hero/hero-7-5-4.png"
-                            className="ls-l ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 34,
-                                left: 1142,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit"
-                            }}
-                            data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
-                        />
-                        <img
-                            width={145}
-                            height={147}
-                            src="assets/img/hero/hero-7-1-2.png"
-                            className="ls-l ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 118,
-                                left: 1047,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit"
-                            }}
-                            data-ls="offsetxin:-200; offsetyin:top; durationin:1500; delayin:1200; easingin:easeOutQuint; rotatein:-45; offsetxout:-200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:-45;"
-                        />
-                        <p
-                            style={{
-                                top: 752,
-                                left: 1049,
-                                textAlign: "center",
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 16,
-                                fontFamily: '"Lato", sans-serif',
-                                lineHeight: 40,
-                                width: 40,
-                                height: 40,
-                                borderRadius: "100%",
-                                color: "#ffffff",
-                                backgroundColor: "#76a713",
-                                zIndex: 1000
-                            }}
-                            className="ls-l ls-hide-tablet ls-hide-phone"
-                            data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff;"
-                        >
-                            5
-                        </p>
-                        <img
-                            width={588}
-                            height={306}
-                            src="assets/img/hero/hero-7-1-1.png"
-                            className="ls-l ls-hide-desktop ls-hide-phone"
-                            alt="image"
-                            style={{
-                                top: 119,
-                                left: 80,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit"
-                            }}
-                            data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
-                        />
-                        <h1
-                            style={{
-                                top: 445,
-                                left: 80,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 62,
-                                fontFamily: '"Amatic SC", cursive',
-                                color: "#fcd55c"
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            Before come up with an organic food
-                        </h1>
-                        <span
-                            style={{
-                                top: 575,
-                                left: 78,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                paddingRight: 60,
-                                paddingBottom: 30,
-                                paddingLeft: 60,
-                                fontFamily: '"Lato",sans-serif',
-                                fontSize: 30,
-                                color: "#fff",
-                                borderRadius: 9999,
-                                borderTop: "3px solid #fff",
-                                borderRight: "3px solid #fff",
-                                borderBottom: "3px solid #fff",
-                                borderLeft: "3px solid #fff",
-                                paddingTop: 30
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-phone"
-                            data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
-                        >
-                            START SHOPPING
-                        </span>
-                        <h1
-                            style={{
-                                top: 72,
-                                left: 58,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                fontSize: 160,
-                                fontFamily: '"Amatic SC", cursive',
-                                color: "#fcd55c",
-                                width: 1000,
-                                whiteSpace: "normal"
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-tablet"
-                            data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
-                        >
-                            Before come up with an organic food
-                        </h1>
-                        <span
-                            style={{
-                                top: 528,
-                                left: 61,
-                                fontWeight: 700,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                paddingRight: 100,
-                                paddingBottom: 50,
-                                paddingLeft: 100,
-                                fontFamily: '"Lato",sans-serif',
-                                fontSize: 60,
-                                color: "#fff",
-                                borderRadius: 9999,
-                                borderTop: "3px solid #fff",
-                                borderRight: "3px solid #fff",
-                                borderBottom: "3px solid #fff",
-                                borderLeft: "3px solid #fff",
-                                paddingTop: 50
-                            }}
-                            className="ls-l ls-hide-desktop ls-hide-tablet"
-                            data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
-                        >
-                            START SHOPPING
-                        </span>
-                        <img
-                            width={491}
-                            height={621}
-                            src="assets/img/hero/hero-7-5-4.png"
-                            className="ls-l ls-hide-desktop ls-hide-tablet"
-                            alt="image"
-                            style={{
-                                top: 15,
-                                left: 1160,
-                                backgroundSize: "inherit",
-                                backgroundPosition: "inherit",
-                                width: 633,
-                                height: 801
-                            }}
-                            data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
-                        />
-                    </div> */}
+                        Before come up with an organic food
+                    </h1>
+                    <div
+                        style={{
+                            top: 511,
+                            left: 445,
+                            textAlign: "center",
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            width: 430
+                        }}
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
+                    >
+                        <a href="shop.html" className="vs-btn style5 ls-btn">
+                            Start Shopping
+                            <i className="far fa-angle-right" />
+                        </a>
+                    </div>
+                    <img
+                        width={491}
+                        height={621}
+                        src="assets/img/hero/hero-7-5-4.png"
+                        className="ls-l ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 34,
+                            left: 1142,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit"
+                        }}
+                        data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
+                    />
+                    <img
+                        width={145}
+                        height={147}
+                        src="assets/img/hero/hero-7-1-2.png"
+                        className="ls-l ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 118,
+                            left: 1047,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit"
+                        }}
+                        data-ls="offsetxin:-200; offsetyin:top; durationin:1500; delayin:1200; easingin:easeOutQuint; rotatein:-45; offsetxout:-200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:-45;"
+                    />
+                    <p
+                        style={{
+                            top: 752,
+                            left: 1049,
+                            textAlign: "center",
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 16,
+                            fontFamily: '"Lato", sans-serif',
+                            lineHeight: '40px',
+                            width: 40,
+                            height: 40,
+                            borderRadius: "100%",
+                            color: "#ffffff",
+                            backgroundColor: "#76a713",
+                            zIndex: 1000
+                        }}
+                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff;"
+                    >
+                        5
+                    </p>
+                    <img
+                        width={588}
+                        height={306}
+                        src="assets/img/hero/hero-7-1-1.png"
+                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        alt="image"
+                        style={{
+                            top: 119,
+                            left: 80,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit"
+                        }}
+                        data-ls="durationin:1300; easingin:easeOutQuint; durationout:1300; easingout:easeOutQuint;"
+                    />
+                    <h1
+                        style={{
+                            top: 445,
+                            left: 80,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 62,
+                            fontFamily: '"Amatic SC", cursive',
+                            color: "#fcd55c"
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
+                    >
+                        Before come up with an organic food
+                    </h1>
+                    <span
+                        style={{
+                            top: 575,
+                            left: 78,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            paddingRight: 60,
+                            paddingBottom: 30,
+                            paddingLeft: 60,
+                            fontFamily: '"Lato",sans-serif',
+                            fontSize: 30,
+                            color: "#fff",
+                            borderRadius: 9999,
+                            borderTop: "3px solid #fff",
+                            borderRight: "3px solid #fff",
+                            borderBottom: "3px solid #fff",
+                            borderLeft: "3px solid #fff",
+                            paddingTop: 30
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
+                    >
+                        START SHOPPING
+                    </span>
+                    <h1
+                        style={{
+                            top: 72,
+                            left: 58,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            fontSize: 160,
+                            fontFamily: '"Amatic SC", cursive',
+                            color: "#fcd55c",
+                            width: 1000,
+                            whiteSpace: "normal"
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
+                    >
+                        Before come up with an organic food
+                    </h1>
+                    <span
+                        style={{
+                            top: 528,
+                            left: 61,
+                            fontWeight: 700,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            paddingRight: 100,
+                            paddingBottom: 50,
+                            paddingLeft: 100,
+                            fontFamily: '"Lato",sans-serif',
+                            fontSize: 60,
+                            color: "#fff",
+                            borderRadius: 9999,
+                            borderTop: "3px solid #fff",
+                            borderRight: "3px solid #fff",
+                            borderBottom: "3px solid #fff",
+                            borderLeft: "3px solid #fff",
+                            paddingTop: 50
+                        }}
+                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
+                    >
+                        START SHOPPING
+                    </span>
+                    <img
+                        width={491}
+                        height={621}
+                        src="assets/img/hero/hero-7-5-4.png"
+                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        alt="image"
+                        style={{
+                            top: 15,
+                            left: 1160,
+                            backgroundSize: "inherit",
+                            backgroundPosition: "inherit",
+                            width: 633,
+                            height: 801
+                        }}
+                        data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
+                    />
+                </div>
             </div>
         </section>
 

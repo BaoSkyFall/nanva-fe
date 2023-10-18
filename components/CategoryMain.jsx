@@ -1,4 +1,7 @@
+'use client'
+
 import React from "react";
+import { useState, useEffect } from 'react'
 
 // const CustomArrowPrev = ({ onClick }) => (
 //     <div
@@ -18,12 +21,17 @@ import React from "react";
 //     </div>
 // );
 const CategoryMain = () => {
+    useEffect(() => {
+
+    }, [])
+
+
     return (
         <section
             className=" space-md-bottom"
             data-bg-src="/assets/img/shape/cat-bg-656.png"
         >
-            {/* <div className="container">
+            <div className="container">
                 <div className="section-title text-center">
                     <div className="sec-icon">
                         <img src="/assets/img/icons/sec-icon-2.png" alt="icon" />
@@ -32,13 +40,8 @@ const CategoryMain = () => {
                     <h2 className="sec-title3">Popular Categories</h2>
                 </div>
                 <div
-                    className="row justify-content-center vs-carousel dots-style2"
-                    data-slide-show={5}
-                    data-lg-slide-show={4}
-                    data-md-slide-show={3}
-                    data-sm-slide-show={1}
-                    data-infinite="false"
-                    data-dots="true"
+                    className="row justify-content-center dots-style2"
+
                 >
                     <div className="col-auto cat-style1">
                         <div className="cat-body">
@@ -101,7 +104,7 @@ const CategoryMain = () => {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
         </section>
 
 
