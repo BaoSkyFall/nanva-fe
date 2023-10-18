@@ -174,109 +174,109 @@
 
 
   /*----------- 10. Hero Slider Active ----------*/
-  $('.vs-hero-carousel').each(function () {
-    debugger
-    var vsHslide = $(this);
+  // $('.vs-hero-carousel').each(function () {
+  //   debugger
+  //   var vsHslide = $(this);
 
-    // return function for dom data
-    function d(data) {
-      return vsHslide.data(data)
-    }
+  //   // return function for dom data
+  //   function d(data) {
+  //     return vsHslide.data(data)
+  //   }
 
-    /* Custom Thumb Navigation */
-    var customNav = '.thumb';
-    var navDom = 'data-slide-go';
+  //   /* Custom Thumb Navigation */
+  //   var customNav = '.thumb';
+  //   var navDom = 'data-slide-go';
 
-    vsHslide.on('sliderDidLoad', function (event, slider) { // On Slide Init
-      var currentSlide = slider.slides.current.index; // current Slide index 
-      var i = 1;
-      // Set Attribute 
-      vsHslide.find(customNav).each(function () {
-        $(this).attr(navDom, i)
-        i++
-        // On Click Thumb, Change slide
-        $(this).on('click', function (e) {
-          e.preventDefault();
-          var target = $(this).attr(navDom);
-          vsHslide.layerSlider(parseInt(target));
-        })
-      });
-      // Add class To current Thumb
-      var currentNav = customNav + '[' + navDom + '="' + currentSlide + '"';
-      $(currentNav).addClass('active');
-    }).on('slideChangeDidComplete', function (event, slider) { // On slide Change Start
-      var currentActive = slider.slides.current.index; // After change Current Index
-      var currentNav = customNav + '[' + navDom + '="' + currentActive + '"';
-      $(currentNav).addClass('active') // Add Class on current Nav
-      $(currentNav).siblings().removeClass('active');
-    });
-
-
-
-
-
-    /* Custom Responsive Option */
-    vsHslide.on('sliderWillLoad', function (event, slider) {
-      // Define Variable
-      var respLayer = jQuery(this).find('.ls-responsive'),
-        lsDesktop = 'ls-desktop',
-        lsLaptop = 'ls-laptop',
-        lsTablet = 'ls-tablet',
-        lsMobile = 'ls-mobile',
-        windowWid = jQuery(window).width(),
-        lgDevice = 1025,
-        mdDevice = 993,
-        smDevice = 768;
-
-      // Set Style on each Layer
-      respLayer.each(function () {
-        var layer = jQuery(this);
-
-        function lsd(data) {
-          return (layer.data(data) === '') ? layer.data(null) : layer.data(data);
-        }
-        // var respStyle = (windowWid < smDevice) ? ((lsd(lsMobile)) ? lsd(lsMobile) : lsd(lsTablet)) : ((windowWid < mdDevice) ? ((lsd(lsTablet)) ? lsd(lsTablet) : lsd(lsDesktop)) : lsd(lsDesktop)),
-        var respStyle = (windowWid < smDevice) ? lsd(lsMobile) : ((windowWid < mdDevice ? lsd(lsTablet) : ((windowWid < lgDevice) ? lsd(lsLaptop) : lsd(lsDesktop)))),
-          mainStyle = (layer.attr('style') !== undefined) ? layer.attr('style') : ' ';
-        layer.attr('style', mainStyle + respStyle);
-      });
-
-    });
+  //   vsHslide.on('sliderDidLoad', function (event, slider) { // On Slide Init
+  //     var currentSlide = slider.slides.current.index; // current Slide index 
+  //     var i = 1;
+  //     // Set Attribute 
+  //     vsHslide.find(customNav).each(function () {
+  //       $(this).attr(navDom, i)
+  //       i++
+  //       // On Click Thumb, Change slide
+  //       $(this).on('click', function (e) {
+  //         e.preventDefault();
+  //         var target = $(this).attr(navDom);
+  //         vsHslide.layerSlider(parseInt(target));
+  //       })
+  //     });
+  //     // Add class To current Thumb
+  //     var currentNav = customNav + '[' + navDom + '="' + currentSlide + '"';
+  //     $(currentNav).addClass('active');
+  //   }).on('slideChangeDidComplete', function (event, slider) { // On slide Change Start
+  //     var currentActive = slider.slides.current.index; // After change Current Index
+  //     var currentNav = customNav + '[' + navDom + '="' + currentActive + '"';
+  //     $(currentNav).addClass('active') // Add Class on current Nav
+  //     $(currentNav).siblings().removeClass('active');
+  //   });
 
 
 
 
 
-    /* Custom Arrow Navigation */
-    vsHslide.find('[data-ls-go]').each(function () {
-      $(this).on('click', function (e) {
-        e.preventDefault();
-        var target = $(this).data('ls-go');
-        vsHslide.layerSlider(target)
-      });
-    });
+  //   /* Custom Responsive Option */
+  //   vsHslide.on('sliderWillLoad', function (event, slider) {
+  //     // Define Variable
+  //     var respLayer = jQuery(this).find('.ls-responsive'),
+  //       lsDesktop = 'ls-desktop',
+  //       lsLaptop = 'ls-laptop',
+  //       lsTablet = 'ls-tablet',
+  //       lsMobile = 'ls-mobile',
+  //       windowWid = jQuery(window).width(),
+  //       lgDevice = 1025,
+  //       mdDevice = 993,
+  //       smDevice = 768;
 
-    vsHslide.layerSlider({
-      allowRestartOnResize: true,
-      globalBGImage: (d('globalbgimage') ? d('globalbgimage') : false),
-      maxRatio: (d('maxratio') ? d('maxratio') : 1),
-      type: (d('slidertype') ? d('slidertype') : 'responsive'),
-      pauseOnHover: (d('pauseonhover') ? true : false),
-      navPrevNext: (d('navprevnext') ? true : false),
-      hoverPrevNext: (d('hoverprevnext') ? true : false),
-      hoverBottomNav: (d('hoverbottomnav') ? true : false),
-      navStartStop: (d('navstartstop') ? true : false),
-      navButtons: (d('navbuttons') ? true : false),
-      loop: ((d('loop') == false) ? false : true),
-      autostart: (d('autostart') ? true : false),
-      height: (($(window).width() < 767) ? (d('sm-height') ? d('sm-height') : d('height')) : (d('height') ? d('height') : 1080)),
-      responsiveUnder: (d('responsiveunder') ? d('responsiveunder') : 1220),
-      layersContainer: (d('container') ? d('container') : 1220),
-      showCircleTimer: (d('showcircletimer') ? true : false),
-      skinsPath: 'layerslider/skins/',
-      thumbnailNavigation: ((d('thumbnailnavigation') == false) ? false : true)
-    });
-  });
+  //     // Set Style on each Layer
+  //     respLayer.each(function () {
+  //       var layer = jQuery(this);
+
+  //       function lsd(data) {
+  //         return (layer.data(data) === '') ? layer.data(null) : layer.data(data);
+  //       }
+  //       // var respStyle = (windowWid < smDevice) ? ((lsd(lsMobile)) ? lsd(lsMobile) : lsd(lsTablet)) : ((windowWid < mdDevice) ? ((lsd(lsTablet)) ? lsd(lsTablet) : lsd(lsDesktop)) : lsd(lsDesktop)),
+  //       var respStyle = (windowWid < smDevice) ? lsd(lsMobile) : ((windowWid < mdDevice ? lsd(lsTablet) : ((windowWid < lgDevice) ? lsd(lsLaptop) : lsd(lsDesktop)))),
+  //         mainStyle = (layer.attr('style') !== undefined) ? layer.attr('style') : ' ';
+  //       layer.attr('style', mainStyle + respStyle);
+  //     });
+
+  //   });
+
+
+
+
+
+  //   /* Custom Arrow Navigation */
+  //   vsHslide.find('[data-ls-go]').each(function () {
+  //     $(this).on('click', function (e) {
+  //       e.preventDefault();
+  //       var target = $(this).data('ls-go');
+  //       vsHslide.layerSlider(target)
+  //     });
+  //   });
+
+  //   vsHslide.layerSlider({
+  //     allowRestartOnResize: true,
+  //     globalBGImage: (d('globalbgimage') ? d('globalbgimage') : false),
+  //     maxRatio: (d('maxratio') ? d('maxratio') : 1),
+  //     type: (d('slidertype') ? d('slidertype') : 'responsive'),
+  //     pauseOnHover: (d('pauseonhover') ? true : false),
+  //     navPrevNext: (d('navprevnext') ? true : false),
+  //     hoverPrevNext: (d('hoverprevnext') ? true : false),
+  //     hoverBottomNav: (d('hoverbottomnav') ? true : false),
+  //     navStartStop: (d('navstartstop') ? true : false),
+  //     navButtons: (d('navbuttons') ? true : false),
+  //     loop: ((d('loop') == false) ? false : true),
+  //     autostart: (d('autostart') ? true : false),
+  //     height: (($(window).width() < 767) ? (d('sm-height') ? d('sm-height') : d('height')) : (d('height') ? d('height') : 1080)),
+  //     responsiveUnder: (d('responsiveunder') ? d('responsiveunder') : 1220),
+  //     layersContainer: (d('container') ? d('container') : 1220),
+  //     showCircleTimer: (d('showcircletimer') ? true : false),
+  //     skinsPath: 'layerslider/skins/',
+  //     thumbnailNavigation: ((d('thumbnailnavigation') == false) ? false : true)
+  //   });
+  // });
 
 
 
