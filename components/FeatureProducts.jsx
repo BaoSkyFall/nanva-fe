@@ -44,6 +44,466 @@ const FeatureProducts = () => {
           className="tranding-slider"
         >
           <SwiperSlide className="tranding-slide">
+            <div className="vs-product-box4">
+  <div className="product-img">
+    <a href="shop-details.html">
+      <img
+        src="assets/img/shop/product-4-1.png"
+        alt="Product Image"
+        className="w-100"
+      />
+    </a>
+    <span className="product-tag1">Hot</span>
+    <div className="product-rating-box">
+      5.0
+      <div className="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+        <span style={{ width: "100%" }}>
+          Rated <strong className="rating">5.00</strong> out of 5
+        </span>
+      </div>
+    </div>
+    <div className="actions-btn">
+      <a
+        href="assets/img/shop/product-4-1.png"
+        className="icon-btn popup-image"
+      >
+        <i className="far fa-search" />
+      </a>
+      <a href="wishlist.html" className="icon-btn">
+        <i className="fal fa-heart" />
+      </a>
+    </div>
+  </div>
+  <div className="product-content">
+    <h4 className="product-title">
+      <a href="shop-details.html">Organic Apple Juice</a>
+    </h4>
+    <div className="product-quantity">
+      Weight: <span className="text">9kg</span>
+    </div>
+    <span className="price">
+      <strong>$89.00</strong>
+      <del>$36.00</del>
+    </span>
+    <span className="product-discount">(78% off)</span>
+  </div>
+  <a href="cart.html" className="product-cart-btn">
+    Add to Basket
+    <i className="fal fa-cart-plus" />
+  </a>
+</div>
+
+          </SwiperSlide>
+          <SwiperSlide className="tranding-slide">
+            <div className="vs-product-box4">
+  <div className="product-img">
+    <a href="shop-details.html">
+      <img
+        src="assets/img/shop/product-4-1.png"
+        alt="Product Image"
+        className="w-100"
+      />
+    </a>
+    <span className="product-tag1">Hot</span>
+    <div className="product-rating-box">
+      5.0
+      <div className="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+        <span style={{ width: "100%" }}>
+          Rated <strong className="rating">5.00</strong> out of 5
+        </span>
+      </div>
+    </div>
+    <div className="actions-btn">
+      <a
+        href="assets/img/shop/product-4-1.png"
+        className="icon-btn popup-image"
+      >
+        <i className="far fa-search" />
+      </a>
+      <a href="wishlist.html" className="icon-btn">
+        <i className="fal fa-heart" />
+      </a>
+    </div>
+  </div>
+  <div className="product-content">
+    <h4 className="product-title">
+      <a href="shop-details.html">Organic Apple Juice</a>
+    </h4>
+    <div className="product-quantity">
+      Weight: <span className="text">9kg</span>
+    </div>
+    <span className="price">
+      <strong>$89.00</strong>
+      <del>$36.00</del>
+    </span>
+    <span className="product-discount">(78% off)</span>
+  </div>
+  <a href="cart.html" className="product-cart-btn">
+    Add to Basket
+    <i className="fal fa-cart-plus" />
+  </a>
+</div>
+
+          </SwiperSlide>
+          <SwiperSlide className="tranding-slide">
+            <div className="vs-product-box4">
+  <div className="product-img">
+    <a href="shop-details.html">
+      <img
+        src="assets/img/shop/product-4-1.png"
+        alt="Product Image"
+        className="w-100"
+      />
+    </a>
+    <span className="product-tag1">Hot</span>
+    <div className="product-rating-box">
+      5.0
+      <div className="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+        <span style={{ width: "100%" }}>
+          Rated <strong className="rating">5.00</strong> out of 5
+        </span>
+      </div>
+    </div>
+    <div className="actions-btn">
+      <a
+        href="assets/img/shop/product-4-1.png"
+        className="icon-btn popup-image"
+      >
+        <i className="far fa-search" />
+      </a>
+      <a href="wishlist.html" className="icon-btn">
+        <i className="fal fa-heart" />
+      </a>
+    </div>
+  </div>
+  <div className="product-content">
+    <h4 className="product-title">
+      <a href="shop-details.html">Organic Apple Juice</a>
+    </h4>
+    <div className="product-quantity">
+      Weight: <span className="text">9kg</span>
+    </div>
+    <span className="price">
+      <strong>$89.00</strong>
+      <del>$36.00</del>
+    </span>
+    <span className="product-discount">(78% off)</span>
+  </div>
+  <a href="cart.html" className="product-cart-btn">
+    Add to Basket
+    <i className="fal fa-cart-plus" />
+  </a>
+</div>
+
+          </SwiperSlide>
+          <SwiperSlide className="tranding-slide">
+            <div className="vs-product-box4">
+  <div className="product-img">
+    <a href="shop-details.html">
+      <img
+        src="assets/img/shop/product-4-1.png"
+        alt="Product Image"
+        className="w-100"
+      />
+    </a>
+    <span className="product-tag1">Hot</span>
+    <div className="product-rating-box">
+      5.0
+      <div className="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+        <span style={{ width: "100%" }}>
+          Rated <strong className="rating">5.00</strong> out of 5
+        </span>
+      </div>
+    </div>
+    <div className="actions-btn">
+      <a
+        href="assets/img/shop/product-4-1.png"
+        className="icon-btn popup-image"
+      >
+        <i className="far fa-search" />
+      </a>
+      <a href="wishlist.html" className="icon-btn">
+        <i className="fal fa-heart" />
+      </a>
+    </div>
+  </div>
+  <div className="product-content">
+    <h4 className="product-title">
+      <a href="shop-details.html">Organic Apple Juice</a>
+    </h4>
+    <div className="product-quantity">
+      Weight: <span className="text">9kg</span>
+    </div>
+    <span className="price">
+      <strong>$89.00</strong>
+      <del>$36.00</del>
+    </span>
+    <span className="product-discount">(78% off)</span>
+  </div>
+  <a href="cart.html" className="product-cart-btn">
+    Add to Basket
+    <i className="fal fa-cart-plus" />
+  </a>
+</div>
+
+          </SwiperSlide>
+          <SwiperSlide className="tranding-slide">
+            <div className="vs-product-box4">
+  <div className="product-img">
+    <a href="shop-details.html">
+      <img
+        src="assets/img/shop/product-4-1.png"
+        alt="Product Image"
+        className="w-100"
+      />
+    </a>
+    <span className="product-tag1">Hot</span>
+    <div className="product-rating-box">
+      5.0
+      <div className="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+        <span style={{ width: "100%" }}>
+          Rated <strong className="rating">5.00</strong> out of 5
+        </span>
+      </div>
+    </div>
+    <div className="actions-btn">
+      <a
+        href="assets/img/shop/product-4-1.png"
+        className="icon-btn popup-image"
+      >
+        <i className="far fa-search" />
+      </a>
+      <a href="wishlist.html" className="icon-btn">
+        <i className="fal fa-heart" />
+      </a>
+    </div>
+  </div>
+  <div className="product-content">
+    <h4 className="product-title">
+      <a href="shop-details.html">Organic Apple Juice</a>
+    </h4>
+    <div className="product-quantity">
+      Weight: <span className="text">9kg</span>
+    </div>
+    <span className="price">
+      <strong>$89.00</strong>
+      <del>$36.00</del>
+    </span>
+    <span className="product-discount">(78% off)</span>
+  </div>
+  <a href="cart.html" className="product-cart-btn">
+    Add to Basket
+    <i className="fal fa-cart-plus" />
+  </a>
+</div>
+
+          </SwiperSlide>
+          <SwiperSlide className="tranding-slide">
+            <div className="vs-product-box4">
+  <div className="product-img">
+    <a href="shop-details.html">
+      <img
+        src="assets/img/shop/product-4-1.png"
+        alt="Product Image"
+        className="w-100"
+      />
+    </a>
+    <span className="product-tag1">Hot</span>
+    <div className="product-rating-box">
+      5.0
+      <div className="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+        <span style={{ width: "100%" }}>
+          Rated <strong className="rating">5.00</strong> out of 5
+        </span>
+      </div>
+    </div>
+    <div className="actions-btn">
+      <a
+        href="assets/img/shop/product-4-1.png"
+        className="icon-btn popup-image"
+      >
+        <i className="far fa-search" />
+      </a>
+      <a href="wishlist.html" className="icon-btn">
+        <i className="fal fa-heart" />
+      </a>
+    </div>
+  </div>
+  <div className="product-content">
+    <h4 className="product-title">
+      <a href="shop-details.html">Organic Apple Juice</a>
+    </h4>
+    <div className="product-quantity">
+      Weight: <span className="text">9kg</span>
+    </div>
+    <span className="price">
+      <strong>$89.00</strong>
+      <del>$36.00</del>
+    </span>
+    <span className="product-discount">(78% off)</span>
+  </div>
+  <a href="cart.html" className="product-cart-btn">
+    Add to Basket
+    <i className="fal fa-cart-plus" />
+  </a>
+</div>
+
+          </SwiperSlide>
+          <SwiperSlide className="tranding-slide">
+            <div className="vs-product-box4">
+  <div className="product-img">
+    <a href="shop-details.html">
+      <img
+        src="assets/img/shop/product-4-1.png"
+        alt="Product Image"
+        className="w-100"
+      />
+    </a>
+    <span className="product-tag1">Hot</span>
+    <div className="product-rating-box">
+      5.0
+      <div className="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+        <span style={{ width: "100%" }}>
+          Rated <strong className="rating">5.00</strong> out of 5
+        </span>
+      </div>
+    </div>
+    <div className="actions-btn">
+      <a
+        href="assets/img/shop/product-4-1.png"
+        className="icon-btn popup-image"
+      >
+        <i className="far fa-search" />
+      </a>
+      <a href="wishlist.html" className="icon-btn">
+        <i className="fal fa-heart" />
+      </a>
+    </div>
+  </div>
+  <div className="product-content">
+    <h4 className="product-title">
+      <a href="shop-details.html">Organic Apple Juice</a>
+    </h4>
+    <div className="product-quantity">
+      Weight: <span className="text">9kg</span>
+    </div>
+    <span className="price">
+      <strong>$89.00</strong>
+      <del>$36.00</del>
+    </span>
+    <span className="product-discount">(78% off)</span>
+  </div>
+  <a href="cart.html" className="product-cart-btn">
+    Add to Basket
+    <i className="fal fa-cart-plus" />
+  </a>
+</div>
+
+          </SwiperSlide>
+          <SwiperSlide className="tranding-slide">
+            <div className="vs-product-box4">
+  <div className="product-img">
+    <a href="shop-details.html">
+      <img
+        src="assets/img/shop/product-4-1.png"
+        alt="Product Image"
+        className="w-100"
+      />
+    </a>
+    <span className="product-tag1">Hot</span>
+    <div className="product-rating-box">
+      5.0
+      <div className="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+        <span style={{ width: "100%" }}>
+          Rated <strong className="rating">5.00</strong> out of 5
+        </span>
+      </div>
+    </div>
+    <div className="actions-btn">
+      <a
+        href="assets/img/shop/product-4-1.png"
+        className="icon-btn popup-image"
+      >
+        <i className="far fa-search" />
+      </a>
+      <a href="wishlist.html" className="icon-btn">
+        <i className="fal fa-heart" />
+      </a>
+    </div>
+  </div>
+  <div className="product-content">
+    <h4 className="product-title">
+      <a href="shop-details.html">Organic Apple Juice</a>
+    </h4>
+    <div className="product-quantity">
+      Weight: <span className="text">9kg</span>
+    </div>
+    <span className="price">
+      <strong>$89.00</strong>
+      <del>$36.00</del>
+    </span>
+    <span className="product-discount">(78% off)</span>
+  </div>
+  <a href="cart.html" className="product-cart-btn">
+    Add to Basket
+    <i className="fal fa-cart-plus" />
+  </a>
+</div>
+
+          </SwiperSlide>
+          <SwiperSlide className="tranding-slide">
+            <div className="vs-product-box4">
+  <div className="product-img">
+    <a href="shop-details.html">
+      <img
+        src="assets/img/shop/product-4-1.png"
+        alt="Product Image"
+        className="w-100"
+      />
+    </a>
+    <span className="product-tag1">Hot</span>
+    <div className="product-rating-box">
+      5.0
+      <div className="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+        <span style={{ width: "100%" }}>
+          Rated <strong className="rating">5.00</strong> out of 5
+        </span>
+      </div>
+    </div>
+    <div className="actions-btn">
+      <a
+        href="assets/img/shop/product-4-1.png"
+        className="icon-btn popup-image"
+      >
+        <i className="far fa-search" />
+      </a>
+      <a href="wishlist.html" className="icon-btn">
+        <i className="fal fa-heart" />
+      </a>
+    </div>
+  </div>
+  <div className="product-content">
+    <h4 className="product-title">
+      <a href="shop-details.html">Organic Apple Juice</a>
+    </h4>
+    <div className="product-quantity">
+      Weight: <span className="text">9kg</span>
+    </div>
+    <span className="price">
+      <strong>$89.00</strong>
+      <del>$36.00</del>
+    </span>
+    <span className="product-discount">(78% off)</span>
+  </div>
+  <a href="cart.html" className="product-cart-btn">
+    Add to Basket
+    <i className="fal fa-cart-plus" />
+  </a>
+</div>
+
+          </SwiperSlide>
+          
+          {/* <SwiperSlide className="tranding-slide">
             <div className="tranding-slide-img">
               <img src="assets/img/shop/product-4-1.png" alt="Tranding" />
             </div>
@@ -161,7 +621,8 @@ const FeatureProducts = () => {
                 </h3>
               </div>
             </div>
-          </SwiperSlide>
+            
+          </SwiperSlide> */}
 
         </Swiper>
 

@@ -145,7 +145,7 @@
   }
   
   #tranding .tranding-slider {
-    height: 52rem;
+    height: 72rem;
     padding: 2rem 0;
     position: relative;
   }
@@ -158,24 +158,24 @@
   
   .tranding-slide {
     width: 37rem!important;
-    height: 42rem!important;
+    height: 60rem!important;
     position: relative!important;
   }
   
   @media (max-width:500px) {
     .tranding-slide {
       width: 28rem !important;
-      height: 36rem !important;
+      height: 46rem !important;
     }
     .tranding-slide .tranding-slide-img img {
       width: 28rem !important;
-      height: 36rem !important;
+      height: 46rem !important;
     }
   }
   
   .tranding-slide .tranding-slide-img img {
     width: 37rem;
-    height: 42rem;
+    height: 60rem;
     border-radius: 2rem;
     object-fit: cover;
   }
