@@ -1,9 +1,11 @@
 import HeroBanner from "@/components/HeroBanner";
 import AboutUsMain from "@/components/AboutUsMain";
-import CategoryMain from "@/components/CategoryMain";
+import CTAWrapper from "@/components/CTAWrapper";
 import FeatureProducts from "@/components/FeatureProducts";
 
-import ProductCard from "@/components/ProductCard";
+import HowItWorks from "@/components/HowItWorks";
+import MenuWrapper from "@/components/MenuWrapper";
+
 import Wrapper from "@/components/Wrapper";
 import { fetchDataFromApi } from "@/utils/api";
 import dynamic from 'next/dynamic'
@@ -16,6 +18,9 @@ export default function Home({ products }) {
             <AboutUsMain />
             {/* <CategoryMain /> */}
             <FeatureProducts />
+            <HowItWorks />
+            <CTAWrapper />
+            <MenuWrapper />
             <Wrapper className="">
                 {/* heading and paragaph start */}
                 {/* <div className="text-center max-w-[800px] mx-auto my-[50px] md:my-[80px]">
