@@ -155,7 +155,7 @@ const HeroBanner = () => {
     return (
         <section
             className="hero-layout7  "
-            data-bg-src="assets/img/hero/hero-shape-7-1.png"
+            data-bg-src="/assets/img/hero/hero-shape-7-1.png"
         >
             <div
                 className="vs-hero-carousel"
@@ -171,7 +171,7 @@ const HeroBanner = () => {
                     <img
                         width={1767}
                         height={690}
-                        src="assets/img/hero/hero-bg-7-1.jpg"
+                        src="/assets/img/hero/hero-bg-7-1.jpg"
                         className="ls-l ls-hide-tablet ls-hide-phone"
                         alt="hero bg"
                         style={{
@@ -199,7 +199,7 @@ const HeroBanner = () => {
                     <img
                         width={588}
                         height={306}
-                        src="assets/img/hero/hero-7-1-1.png"
+                        src="/assets/img/hero/hero-7-1-1.png"
                         className="ls-l ls-hide-tablet ls-hide-phone"
                         alt="image"
                         style={{
@@ -246,7 +246,7 @@ const HeroBanner = () => {
                     <img
                         width={633}
                         height={542}
-                        src="assets/img/hero/hero-7-1-4.png"
+                        src="/assets/img/hero/hero-7-1-4.png"
                         className="ls-l ls-hide-phone"
                         alt="image"
                         style={{
@@ -260,7 +260,7 @@ const HeroBanner = () => {
                     <img
                         width={145}
                         height={147}
-                        src="assets/img/hero/hero-7-1-2.png"
+                        src="/assets/img/hero/hero-7-1-2.png"
                         className="ls-l ls-hide-phone"
                         alt="image"
                         style={{
@@ -274,7 +274,7 @@ const HeroBanner = () => {
                     <img
                         width={234}
                         height={258}
-                        src="assets/img/hero/hero-7-1-3.png"
+                        src="/assets/img/hero/hero-7-1-3.png"
                         className="ls-l ls-hide-phone"
                         alt="image"
                         style={{
@@ -501,7 +501,7 @@ const HeroBanner = () => {
                     <img
                         width={588}
                         height={306}
-                        src="assets/img/hero/hero-7-1-1.png"
+                        src="/assets/img/hero/hero-7-1-1.png"
                         className="ls-l ls-hide-desktop ls-hide-phone"
                         alt="image"
                         style={{
@@ -599,7 +599,7 @@ const HeroBanner = () => {
                     <img
                         width={633}
                         height={542}
-                        src="assets/img/hero/hero-7-1-4.png"
+                        src="/assets/img/hero/hero-7-1-4.png"
                         className="ls-l ls-hide-desktop ls-hide-tablet"
                         alt="image"
                         style={{
@@ -622,7 +622,7 @@ const HeroBanner = () => {
                     <img
                         width={588}
                         height={306}
-                        src="assets/img/hero/hero-7-1-1.png"
+                        src="/assets/img/hero/hero-7-1-1.png"
                         className="ls-l ls-hide-tablet ls-hide-phone"
                         alt="image"
                         style={{
@@ -669,7 +669,7 @@ const HeroBanner = () => {
                     <img
                         width={500}
                         height={636}
-                        src="assets/img/hero/hero-7-2-4.png"
+                        src="/assets/img/hero/hero-7-2-4.png"
                         className="ls-l ls-hide-phone"
                         alt="image"
                         style={{
@@ -685,7 +685,7 @@ const HeroBanner = () => {
                     <img
                         width={145}
                         height={147}
-                        src="assets/img/hero/hero-7-1-2.png"
+                        src="/assets/img/hero/hero-7-1-2.png"
                         className="ls-l ls-hide-phone"
                         alt="image"
                         style={{
@@ -722,7 +722,7 @@ const HeroBanner = () => {
                     <img
                         width={588}
                         height={306}
-                        src="assets/img/hero/hero-7-1-1.png"
+                        src="/assets/img/hero/hero-7-1-1.png"
                         className="ls-l ls-hide-desktop ls-hide-phone"
                         alt="image"
                         style={{
@@ -820,7 +820,7 @@ const HeroBanner = () => {
                     <img
                         width={500}
                         height={636}
-                        src="assets/img/hero/hero-7-2-4.png"
+                        src="/assets/img/hero/hero-7-2-4.png"
                         className="ls-l ls-hide-desktop ls-hide-tablet"
                         alt="image"
                         style={{
@@ -842,7 +842,7 @@ const HeroBanner = () => {
                     <img
                         width={588}
                         height={306}
-                        src="assets/img/hero/hero-7-1-1.png"
+                        src="/assets/img/hero/hero-7-1-1.png"
                         className="ls-l ls-hide-tablet ls-hide-phone"
                         alt="image"
                         style={{
@@ -889,7 +889,7 @@ const HeroBanner = () => {
                     <img
                         width={496}
                         height={618}
-                        src="assets/img/hero/hero-7-3-4.png"
+                        src="/assets/img/hero/hero-7-3-4.png"
                         className="ls-l ls-hide-phone"
                         alt="image"
                         style={{
@@ -905,7 +905,7 @@ const HeroBanner = () => {
                     <img
                         width={145}
                         height={147}
-                        src="assets/img/hero/hero-7-1-2.png"
+                        src="/assets/img/hero/hero-7-1-2.png"
                         className="ls-l ls-hide-phone"
                         alt="image"
                         style={{
@@ -942,7 +942,7 @@ const HeroBanner = () => {
                     <img
                         width={588}
                         height={306}
-                        src="assets/img/hero/hero-7-1-1.png"
+                        src="/assets/img/hero/hero-7-1-1.png"
                         className="ls-l ls-hide-desktop ls-hide-phone"
                         alt="image"
                         style={{
@@ -1040,7 +1040,7 @@ const HeroBanner = () => {
                     <img
                         width={496}
                         height={618}
-                        src="assets/img/hero/hero-7-3-4.png"
+                        src="/assets/img/hero/hero-7-3-4.png"
                         className="ls-l ls-hide-desktop ls-hide-tablet"
                         alt="image"
                         style={{
@@ -1063,7 +1063,7 @@ const HeroBanner = () => {
                     <img
                         width={588}
                         height={306}
-                        src="assets/img/hero/hero-7-1-1.png"
+                        src="/assets/img/hero/hero-7-1-1.png"
                         className="ls-l ls-hide-tablet ls-hide-phone"
                         alt="image"
                         style={{
@@ -1110,7 +1110,7 @@ const HeroBanner = () => {
                     <img
                         width={494}
                         height={616}
-                        src="assets/img/hero/hero-7-4-4.png"
+                        src="/assets/img/hero/hero-7-4-4.png"
                         className="ls-l ls-hide-phone"
                         alt="image"
                         style={{
@@ -1124,7 +1124,7 @@ const HeroBanner = () => {
                     <img
                         width={145}
                         height={147}
-                        src="assets/img/hero/hero-7-1-2.png"
+                        src="/assets/img/hero/hero-7-1-2.png"
                         className="ls-l ls-hide-phone"
                         alt="image"
                         style={{
@@ -1161,7 +1161,7 @@ const HeroBanner = () => {
                     <img
                         width={588}
                         height={306}
-                        src="assets/img/hero/hero-7-1-1.png"
+                        src="/assets/img/hero/hero-7-1-1.png"
                         className="ls-l ls-hide-desktop ls-hide-phone"
                         alt="image"
                         style={{
@@ -1259,7 +1259,7 @@ const HeroBanner = () => {
                     <img
                         width={494}
                         height={616}
-                        src="assets/img/hero/hero-7-4-4.png"
+                        src="/assets/img/hero/hero-7-4-4.png"
                         className="ls-l ls-hide-desktop ls-hide-tablet"
                         alt="image"
                         style={{
@@ -1281,7 +1281,7 @@ const HeroBanner = () => {
                     <img
                         width={588}
                         height={306}
-                        src="assets/img/hero/hero-7-1-1.png"
+                        src="/assets/img/hero/hero-7-1-1.png"
                         className="ls-l ls-hide-tablet ls-hide-phone"
                         alt="image"
                         style={{
@@ -1328,7 +1328,7 @@ const HeroBanner = () => {
                     <img
                         width={491}
                         height={621}
-                        src="assets/img/hero/hero-7-5-4.png"
+                        src="/assets/img/hero/hero-7-5-4.png"
                         className="ls-l ls-hide-phone"
                         alt="image"
                         style={{
@@ -1342,7 +1342,7 @@ const HeroBanner = () => {
                     <img
                         width={145}
                         height={147}
-                        src="assets/img/hero/hero-7-1-2.png"
+                        src="/assets/img/hero/hero-7-1-2.png"
                         className="ls-l ls-hide-phone"
                         alt="image"
                         style={{
@@ -1379,7 +1379,7 @@ const HeroBanner = () => {
                     <img
                         width={588}
                         height={306}
-                        src="assets/img/hero/hero-7-1-1.png"
+                        src="/assets/img/hero/hero-7-1-1.png"
                         className="ls-l ls-hide-desktop ls-hide-phone"
                         alt="image"
                         style={{
@@ -1477,7 +1477,7 @@ const HeroBanner = () => {
                     <img
                         width={491}
                         height={621}
-                        src="assets/img/hero/hero-7-5-4.png"
+                        src="/assets/img/hero/hero-7-5-4.png"
                         className="ls-l ls-hide-desktop ls-hide-tablet"
                         alt="image"
                         style={{

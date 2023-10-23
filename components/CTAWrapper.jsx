@@ -4,7 +4,7 @@ const CTAWrapper = () => {
     return (
 <section
   className=" space-top sec-bg7"
-  data-bg-src="assets/img/bg/cat-bg-4584.jpg"
+  data-bg-src="/assets/img/bg/cat-bg-4584.jpg"
 >
   <div className="container text-center">
     <span className="sub-title4 text-white">Provide 100% Organic?</span>

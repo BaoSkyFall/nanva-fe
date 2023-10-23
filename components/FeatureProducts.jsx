@@ -48,7 +48,7 @@ const FeatureProducts = () => {
   <div className="product-img">
     <a href="shop-details.html">
       <img
-        src="assets/img/shop/product-4-1.png"
+        src="/assets/img/shop/product-4-1.png"
         alt="Product Image"
         className="w-100"
       />
@@ -99,7 +99,7 @@ const FeatureProducts = () => {
   <div className="product-img">
     <a href="shop-details.html">
       <img
-        src="assets/img/shop/product-4-1.png"
+        src="/assets/img/shop/product-4-1.png"
         alt="Product Image"
         className="w-100"
       />
@@ -150,7 +150,7 @@ const FeatureProducts = () => {
   <div className="product-img">
     <a href="shop-details.html">
       <img
-        src="assets/img/shop/product-4-1.png"
+        src="/assets/img/shop/product-4-1.png"
         alt="Product Image"
         className="w-100"
       />
@@ -201,7 +201,7 @@ const FeatureProducts = () => {
   <div className="product-img">
     <a href="shop-details.html">
       <img
-        src="assets/img/shop/product-4-1.png"
+        src="/assets/img/shop/product-4-1.png"
         alt="Product Image"
         className="w-100"
       />
@@ -252,7 +252,7 @@ const FeatureProducts = () => {
   <div className="product-img">
     <a href="shop-details.html">
       <img
-        src="assets/img/shop/product-4-1.png"
+        src="/assets/img/shop/product-4-1.png"
         alt="Product Image"
         className="w-100"
       />
@@ -303,7 +303,7 @@ const FeatureProducts = () => {
   <div className="product-img">
     <a href="shop-details.html">
       <img
-        src="assets/img/shop/product-4-1.png"
+        src="/assets/img/shop/product-4-1.png"
         alt="Product Image"
         className="w-100"
       />
@@ -354,7 +354,7 @@ const FeatureProducts = () => {
   <div className="product-img">
     <a href="shop-details.html">
       <img
-        src="assets/img/shop/product-4-1.png"
+        src="/assets/img/shop/product-4-1.png"
         alt="Product Image"
         className="w-100"
       />
@@ -405,7 +405,7 @@ const FeatureProducts = () => {
   <div className="product-img">
     <a href="shop-details.html">
       <img
-        src="assets/img/shop/product-4-1.png"
+        src="/assets/img/shop/product-4-1.png"
         alt="Product Image"
         className="w-100"
       />
@@ -456,7 +456,7 @@ const FeatureProducts = () => {
   <div className="product-img">
     <a href="shop-details.html">
       <img
-        src="assets/img/shop/product-4-1.png"
+        src="/assets/img/shop/product-4-1.png"
         alt="Product Image"
         className="w-100"
       />
@@ -505,7 +505,7 @@ const FeatureProducts = () => {
           
           {/* <SwiperSlide className="tranding-slide">
             <div className="tranding-slide-img">
-              <img src="assets/img/shop/product-4-1.png" alt="Tranding" />
+              <img src="/assets/img/shop/product-4-1.png" alt="Tranding" />
             </div>
             <div className="tranding-slide-content">
               <h1 className="food-price">$20</h1>
@@ -522,7 +522,7 @@ const FeatureProducts = () => {
           </SwiperSlide>
           <SwiperSlide className="tranding-slide">
             <div className="tranding-slide-img">
-              <img src="assets/img/shop/product-4-2.png" alt="Tranding" />
+              <img src="/assets/img/shop/product-4-2.png" alt="Tranding" />
             </div>
             <div className="tranding-slide-content">
               <h1 className="food-price">$20</h1>
@@ -539,7 +539,7 @@ const FeatureProducts = () => {
           </SwiperSlide>
           <SwiperSlide className="tranding-slide">
             <div className="tranding-slide-img">
-              <img src="assets/img/shop/product-4-3.png" alt="Tranding" />
+              <img src="/assets/img/shop/product-4-3.png" alt="Tranding" />
             </div>
             <div className="tranding-slide-content">
               <h1 className="food-price">$20</h1>
@@ -556,7 +556,7 @@ const FeatureProducts = () => {
           </SwiperSlide>
           <SwiperSlide className="tranding-slide">
             <div className="tranding-slide-img">
-              <img src="assets/img/shop/product-4-4.png" alt="Tranding" />
+              <img src="/assets/img/shop/product-4-4.png" alt="Tranding" />
             </div>
             <div className="tranding-slide-content">
               <h1 className="food-price">$20</h1>
@@ -573,7 +573,7 @@ const FeatureProducts = () => {
           </SwiperSlide>
           <SwiperSlide className="tranding-slide">
             <div className="tranding-slide-img">
-              <img src="assets/img/shop/product-4-5.png" alt="Tranding" />
+              <img src="/assets/img/shop/product-4-5.png" alt="Tranding" />
             </div>
             <div className="tranding-slide-content">
               <h1 className="food-price">$20</h1>
@@ -590,7 +590,7 @@ const FeatureProducts = () => {
           </SwiperSlide>
           <SwiperSlide className="tranding-slide">
             <div className="tranding-slide-img">
-              <img src="assets/img/shop/product-4-6.png" alt="Tranding" />
+              <img src="/assets/img/shop/product-4-6.png" alt="Tranding" />
             </div>
             <div className="tranding-slide-content">
               <h1 className="food-price">$20</h1>
@@ -607,7 +607,7 @@ const FeatureProducts = () => {
           </SwiperSlide>
           <SwiperSlide className="tranding-slide">
             <div className="tranding-slide-img">
-              <img src="assets/img/shop/product-4-7.png" alt="Tranding" />
+              <img src="/assets/img/shop/product-4-7.png" alt="Tranding" />
             </div>
             <div className="tranding-slide-content">
               <h1 className="food-price">$20</h1>

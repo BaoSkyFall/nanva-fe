@@ -21,14 +21,14 @@ const AboutUsMain = () => {
     return (
         <div
             className="sec-bg10  space-top space-md-bottom"
-            data-bg-src="assets/img/bg/ab-bg-5465.png"
+            data-bg-src="/assets/img/bg/ab-bg-5465.png"
         >
             <div className="container">
                 <div className="row align-items-center flex-row-reverse">
                     <div className="col-lg-6">
                         <div className="img-box5">
                             <div className="img-1">
-                                <img src="assets/img/about/ab-9-1.png" alt="image" />
+                                <img src="/assets/img/about/ab-9-1.png" alt="image" />
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@ const AboutUsMain = () => {
                             </div>
                         </div>
                         <div className="block-schedule">
-                            <img src="assets/img/icons/ab-icon-0088.png" alt="Icon image" />
+                            <img src="/assets/img/icons/ab-icon-0088.png" alt="Icon image" />
                             <p className="text">Monday - Saturday: 9:00 - 24:00 Sunday: Closed</p>
                         </div>
                     </div>

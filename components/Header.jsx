@@ -125,7 +125,7 @@ const Header = () => {
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-infos">
-                            <p class="info"><img src="assets/img/icons/info-icon-2.png" alt="icon">Free exress international delevery + Easy returens</p>
+                            <p class="info"><img src="/assets/img/icons/info-icon-2.png" alt="icon">Free exress international delevery + Easy returens</p>
                         </div>
                     </div>
                     <div class="col-lg-auto text-center text-lg-end">
@@ -143,45 +143,24 @@ const Header = () => {
                         <div className="col col-lg-auto">
                             <div className="header-logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo.svg" alt="Foodano" />
+                                    <img src="/assets/img/logo.svg" alt="Foodano" />
                                 </a>
                             </div>
                         </div>
                         <div className="col-auto">
                             <nav className="main-menu mobile-menu-active menu-style2">
                                 <ul>
-                                    <li className="menu-item-has-children">
-                                        <a href="index.html">Home</a>
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <a href="index.html">Home Style 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-2.html">Home Style 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-3.html">Home Style 3</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-4.html">Home Style 4</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-5.html">Home Style 5</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-6.html">Home Style 6</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-7.html">Home Style 7</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-8.html">Home Style 8</a>
-                                            </li>
-                                        </ul>
+                                    <li>
+                                        <Link href="/">
+                                        Home
+                                        </Link>
+                                   
                                     </li>
-                                    <li className="menu-item-has-children">
-                                        <a href="shop.html">Shop</a>
-                                        <ul className="sub-menu">
+                                    <li>
+                                    <Link href="/shop">
+                                        Shop
+                                        </Link>
+                                        {/* <ul className="sub-menu">
                                             <li>
                                                 <a href="shop.html">Shop</a>
                                             </li>
@@ -203,7 +182,7 @@ const Header = () => {
                                             <li>
                                                 <a href="login-register.html">Login &amp; Register</a>
                                             </li>
-                                        </ul>
+                                        </ul> */}
                                     </li>
                                     <li className="menu-item-has-children">
                                         <a href="blog.html">Blog</a>

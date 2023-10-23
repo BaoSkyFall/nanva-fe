@@ -138,7 +138,7 @@ const Footer = () => {
         // </footer>
         <footer
             className="footer-wrapper footer-layout2"
-            data-bg-src="assets/img/shape/footer-5-1.jpg"
+            data-bg-src="/assets/img/shape/footer-5-1.jpg"
         >
             <div className="container">
                 <div className="widget-area">
@@ -147,7 +147,7 @@ const Footer = () => {
                             <div className="widget  footer-widget">
                                 <div className="footer-info-widget">
                                     <div className="footer-info-logo">
-                                        <img src="assets/img/logo-white.svg" alt="Foodano" />
+                                        <img src="/assets/img/logo-white.svg" alt="Foodano" />
                                     </div>
                                     <div className="footer-info">
                                         <i className="fas fa-phone-alt" />
@@ -209,7 +209,7 @@ const Footer = () => {
                                             href="assets/img/gallery/gal-2-1.jpg"
                                         >
                                             <img
-                                                src="assets/img/gallery/gal-2-1.jpg"
+                                                src="/assets/img/gallery/gal-2-1.jpg"
                                                 alt="Gallery Image"
                                                 className="w-100"
                                             />
@@ -221,7 +221,7 @@ const Footer = () => {
                                             href="assets/img/gallery/gal-2-2.jpg"
                                         >
                                             <img
-                                                src="assets/img/gallery/gal-2-2.jpg"
+                                                src="/assets/img/gallery/gal-2-2.jpg"
                                                 alt="Gallery Image"
                                                 className="w-100"
                                             />
@@ -233,7 +233,7 @@ const Footer = () => {
                                             href="assets/img/gallery/gal-2-3.jpg"
                                         >
                                             <img
-                                                src="assets/img/gallery/gal-2-3.jpg"
+                                                src="/assets/img/gallery/gal-2-3.jpg"
                                                 alt="Gallery Image"
                                                 className="w-100"
                                             />
@@ -245,7 +245,7 @@ const Footer = () => {
                                             href="assets/img/gallery/gal-2-4.jpg"
                                         >
                                             <img
-                                                src="assets/img/gallery/gal-2-4.jpg"
+                                                src="/assets/img/gallery/gal-2-4.jpg"
                                                 alt="Gallery Image"
                                                 className="w-100"
                                             />
@@ -257,7 +257,7 @@ const Footer = () => {
                                             href="assets/img/gallery/gal-2-5.jpg"
                                         >
                                             <img
-                                                src="assets/img/gallery/gal-2-5.jpg"
+                                                src="/assets/img/gallery/gal-2-5.jpg"
                                                 alt="Gallery Image"
                                                 className="w-100"
                                             />
@@ -269,7 +269,7 @@ const Footer = () => {
                                             href="assets/img/gallery/gal-2-6.jpg"
                                         >
                                             <img
-                                                src="assets/img/gallery/gal-2-6.jpg"
+                                                src="/assets/img/gallery/gal-2-6.jpg"
                                                 alt="Gallery Image"
                                                 className="w-100"
                                             />
@@ -281,7 +281,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="copyright-area" data-bg-src="assets/img/shape/footer-5-2.png">
+            <div className="copyright-area" data-bg-src="/assets/img/shape/footer-5-2.png">
                 <div className="container">
                     <div className="row justify-content-between align-items-center">
                         <div className="col-lg-auto text-center text-lg-start">

@@ -8,21 +8,21 @@ const HowItWorks = () => {
           data-right="5%"
           data-bottom="14%"
         >
-          <img src="assets/img/shape/shape-8879.png" alt="shape" />
+          <img src="/assets/img/shape/shape-8879.png" alt="shape" />
         </div>
         <div
           className="shape-mockup jump d-none d-xl-block"
           data-right="11.5%"
           data-top="18%"
         >
-          <img src="assets/img/shape/shape-7636.png" alt="shape" />
+          <img src="/assets/img/shape/shape-7636.png" alt="shape" />
         </div>
         <div className="container">
           <div className="row gx-80">
             <div className="col-lg-6 col-xl-6 mb-30">
               <div className="img-box6">
                 <div className="img-1">
-                  <img src="assets/img/about/ab-10-1.png" alt="image" />
+                  <img src="/assets/img/about/ab-10-1.png" alt="image" />
                 </div>
               </div>
             </div>

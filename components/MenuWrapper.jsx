@@ -16,10 +16,10 @@ const MenuWrapper = ({ children, className }) => {
               Shop Organic Products
             </a>
             <div className="cat-shape">
-              <img src="assets/img/icons/cat-shape-1-1.png" alt="Shape" />
+              <img src="/assets/img/icons/cat-shape-1-1.png" alt="Shape" />
             </div>
             <div className="cat-img">
-              <img src="assets/img/category/cat-749-1.jpg" alt="icon" />
+              <img src="/assets/img/category/cat-749-1.jpg" alt="icon" />
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@ const MenuWrapper = ({ children, className }) => {
       <div className="col-lg-4">
         <div
           className="cat-style2"
-          data-bg-src="assets/img/shape/cat-bg-794.jpg"
+          data-bg-src="/assets/img/shape/cat-bg-794.jpg"
         >
           <div className="cat-body">
             <h3 className="cat-title text-white">
@@ -39,10 +39,10 @@ const MenuWrapper = ({ children, className }) => {
               Shop Wellness Products
             </a>
             <div className="cat-shape">
-              <img src="assets/img/icons/cat-shape-1-2.png" alt="Shape" />
+              <img src="/assets/img/icons/cat-shape-1-2.png" alt="Shape" />
             </div>
             <div className="cat-img">
-              <img src="assets/img/category/cat-749-2.jpg" alt="icon" />
+              <img src="/assets/img/category/cat-749-2.jpg" alt="icon" />
             </div>
           </div>
         </div>
@@ -59,10 +59,10 @@ const MenuWrapper = ({ children, className }) => {
               Shop Liquid Products
             </a>
             <div className="cat-shape">
-              <img src="assets/img/icons/cat-shape-1-3.png" alt="Shape" />
+              <img src="/assets/img/icons/cat-shape-1-3.png" alt="Shape" />
             </div>
             <div className="cat-img">
-              <img src="assets/img/category/cat-749-3.jpg" alt="icon" />
+              <img src="/assets/img/category/cat-749-3.jpg" alt="icon" />
             </div>
           </div>
         </div>

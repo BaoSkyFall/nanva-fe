@@ -9,12 +9,12 @@ import MenuWrapper from "@/components/MenuWrapper";
 import Wrapper from "@/components/Wrapper";
 import { fetchDataFromApi } from "@/utils/api";
 import dynamic from 'next/dynamic'
-const ServerComponent = dynamic(() => import('@/components/HeroBanner'), { ssr: true })
+const HeroComponent = dynamic(() => import('@/components/HeroBanner'), { ssr: true })
 
 export default function Home({ products }) {
     return (
         <main className="">
-            <ServerComponent />
+            <HeroComponent />
             <AboutUsMain />
             {/* <CategoryMain /> */}
             <FeatureProducts />
@@ -44,11 +44,11 @@ export default function Home({ products }) {
                 {/* products grid end */}
                 {/* <section
                     className=" vs-shop-wrapper  space-bottom sec-bg5"
-                    data-bg-src="assets/img/shape/bg-9754.png"
+                    data-bg-src="/assets/img/shape/bg-9754.png"
                 >
                     <div className="section-title text-center">
                         <div className="sec-icon">
-                            <img src="assets/img/icons/sec-icon-2.png" alt="icon" />
+                            <img src="/assets/img/icons/sec-icon-2.png" alt="icon" />
                         </div>
                         <span className="sub-title4">100% Organic Food</span>
                         <h2 className="sec-title3">Featured Products</h2>
@@ -105,7 +105,7 @@ export default function Home({ products }) {
                                             <div className="product-img">
                                                 <a href="shop-details.html">
                                                     <img
-                                                        src="assets/img/shop/product-4-1.png"
+                                                        src="/assets/img/shop/product-4-1.png"
                                                         alt="Product Image"
                                                         className="w-100"
                                                     />
@@ -159,7 +159,7 @@ export default function Home({ products }) {
                                             <div className="product-img">
                                                 <a href="shop-details.html">
                                                     <img
-                                                        src="assets/img/shop/product-4-2.png"
+                                                        src="/assets/img/shop/product-4-2.png"
                                                         alt="Product Image"
                                                         className="w-100"
                                                     />
@@ -211,7 +211,7 @@ export default function Home({ products }) {
                                             <div className="product-img">
                                                 <a href="shop-details.html">
                                                     <img
-                                                        src="assets/img/shop/product-4-3.png"
+                                                        src="/assets/img/shop/product-4-3.png"
                                                         alt="Product Image"
                                                         className="w-100"
                                                     />
@@ -265,7 +265,7 @@ export default function Home({ products }) {
                                             <div className="product-img">
                                                 <a href="shop-details.html">
                                                     <img
-                                                        src="assets/img/shop/product-4-4.png"
+                                                        src="/assets/img/shop/product-4-4.png"
                                                         alt="Product Image"
                                                         className="w-100"
                                                     />
@@ -319,7 +319,7 @@ export default function Home({ products }) {
                                             <div className="product-img">
                                                 <a href="shop-details.html">
                                                     <img
-                                                        src="assets/img/shop/product-4-5.png"
+                                                        src="/assets/img/shop/product-4-5.png"
                                                         alt="Product Image"
                                                         className="w-100"
                                                     />
@@ -389,7 +389,7 @@ export default function Home({ products }) {
                                             <div className="product-img">
                                                 <a href="shop-details.html">
                                                     <img
-                                                        src="assets/img/shop/product-4-6.png"
+                                                        src="/assets/img/shop/product-4-6.png"
                                                         alt="Product Image"
                                                         className="w-100"
                                                     />
@@ -443,7 +443,7 @@ export default function Home({ products }) {
                                             <div className="product-img">
                                                 <a href="shop-details.html">
                                                     <img
-                                                        src="assets/img/shop/product-4-7.png"
+                                                        src="/assets/img/shop/product-4-7.png"
                                                         alt="Product Image"
                                                         className="w-100"
                                                     />
@@ -497,7 +497,7 @@ export default function Home({ products }) {
                                             <div className="product-img">
                                                 <a href="shop-details.html">
                                                     <img
-                                                        src="assets/img/shop/product-4-8.png"
+                                                        src="/assets/img/shop/product-4-8.png"
                                                         alt="Product Image"
                                                         className="w-100"
                                                     />
@@ -549,7 +549,7 @@ export default function Home({ products }) {
                                             <div className="product-img">
                                                 <a href="shop-details.html">
                                                     <img
-                                                        src="assets/img/shop/product-4-9.png"
+                                                        src="/assets/img/shop/product-4-9.png"
                                                         alt="Product Image"
                                                         className="w-100"
                                                     />
@@ -602,7 +602,7 @@ export default function Home({ products }) {
                                             <div className="product-img">
                                                 <a href="shop-details.html">
                                                     <img
-                                                        src="assets/img/shop/product-4-10.png"
+                                                        src="/assets/img/shop/product-4-10.png"
                                                         alt="Product Image"
                                                         className="w-100"
                                                     />
