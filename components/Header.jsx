@@ -142,9 +142,9 @@ const Header = () => {
                     <div className="row align-items-center justify-content-between">
                         <div className="col col-lg-auto">
                             <div className="header-logo">
-                                <a href="index.html">
+                                <Link href="/">
                                     <img src="/assets/img/logo.svg" alt="Foodano" />
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-auto">
@@ -184,7 +184,7 @@ const Header = () => {
                                             </li>
                                         </ul> */}
                                     </li>
-                                    <li className="menu-item-has-children">
+                                    {/* <li className="menu-item-has-children">
                                         <a href="blog.html">Blog</a>
                                         <ul className="sub-menu">
                                             <li>
@@ -206,8 +206,8 @@ const Header = () => {
                                                 <a href="blog-details.html">Blog Details</a>
                                             </li>
                                         </ul>
-                                    </li>
-                                    <li className="mega-menu-wrap menu-item-has-children">
+                                    </li> */}
+                                    {/* <li className="mega-menu-wrap menu-item-has-children">
                                         <a href="#">Pages</a>
                                         <ul className="mega-menu">
                                             <li>
@@ -312,9 +312,9 @@ const Header = () => {
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </li>
+                                    </li> */}
                                     <li>
-                                        <a href="contact.html">Contact Us</a>
+                                        <Link href="/contact">Contact Us</Link>
                                     </li>
                                 </ul>
                             </nav>
