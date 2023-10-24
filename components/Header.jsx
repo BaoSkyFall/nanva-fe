@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import Wrapper from "./Wrapper";
 
 import Link from "next/link";
-import Menu from "./Menu";
-import MenuMobile from "./MenuMobile";
+
 
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BsCart } from "react-icons/bs";
@@ -152,13 +151,13 @@ const Header = () => {
                                 <ul>
                                     <li>
                                         <Link href="/">
-                                        Home
+                                            Home
                                         </Link>
-                                   
+
                                     </li>
                                     <li>
-                                    <Link href="/shop">
-                                        Shop
+                                        <Link href="/shop">
+                                            Shop
                                         </Link>
                                         {/* <ul className="sub-menu">
                                             <li>
