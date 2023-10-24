@@ -176,7 +176,7 @@ const Shop = () => {
                           <div className="product-content d-xl-flex align-items-center">
                             <div>
                               <h4 className="product-title h5 mb-1">
-                                <a href="shop-details.html">{product.attributes.name}</a>
+                                <a href={`product/${product.attributes.slug}`}>{product.attributes.name}</a>
                               </h4>
                               <span className="price font-theme">
                                 <strong>{product.attributes.price.toLocaleString()} đ</strong>
