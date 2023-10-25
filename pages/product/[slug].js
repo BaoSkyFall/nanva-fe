@@ -179,9 +179,9 @@ const ProductDetails = ({ product, products }) => {
                         </div>
                         <div className="media-body pl-30">
                           <h4 className="recent-post-title h5 mb-0">
-                            <Link href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
+                            <Link href={`/product/${product.attributes.slug}`}>{product.attributes.name}</Link>
                           </h4>
-                          <Link href={`product/${product.attributes.slug}`} className="text-theme fs-12">
+                          <Link href={`/product/${product.attributes.slug}`} className="text-theme fs-12">
                             <strong>{product.attributes.price.toLocaleString()} đ</strong>
 
                           </Link>
