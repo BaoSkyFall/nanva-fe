@@ -142,7 +142,7 @@ const Header = () => {
                         <div className="col col-lg-auto">
                             <div className="header-logo">
                                 <Link href="/">
-                                    <img src="/assets/img/logo.svg" alt="Foodano" />
+                                    <img src="/assets/img/logo.png" alt="Foodano" />
                                 </Link>
                             </div>
                         </div>
