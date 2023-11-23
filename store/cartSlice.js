@@ -12,21 +12,22 @@ export const cartSlice = createSlice({
                 (p) => p.id === action.payload.id
             );
             if (item) {
-                item.quantity++;
-                item.attributes.price = item.oneQuantityPrice * item.quantity;
+                item.quantity += action.payload.quantity;
+                item.price = item.oneQuantityPrice * item.quantity;
             } else {
-                state.cartItems.push({ ...action.payload, quantity: 1 });
+                state.cartItems.push({ ...action.payload });
             }
-            state.totalItems++
+            state.totalItems += action.payload.quantity
 
         },
         updateCart: (state, action) => {
             state.cartItems = state.cartItems.map((p) => {
+                debugger;
                 if (p.id === action.payload.id) {
                     if (action.payload.key === "quantity") {
                         const qtyOld = p.quantity;
                         state.totalItems = state.totalItems + (action.payload.val - qtyOld)
-                        p.attributes.price =
+                        p.price =
                             p.oneQuantityPrice * action.payload.val;
                     }
                     return { ...p, [action.payload.key]: action.payload.val };

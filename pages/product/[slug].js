@@ -20,11 +20,14 @@ import 'swiper/css/thumbs';
 const ProductDetails = ({ product, products }) => {
   const [selectedSize, setSelectedSize] = useState();
   const [showError, setShowError] = useState(false);
+  const [productData, setProductData] = useState(null);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const dispatch = useDispatch();
-  const p = product?.data?.[0]?.attributes;
-  p.descriptionLines = p.description?.split('\n');
-  console.log('products:', products)
+  const p = { id: product?.data?.[0].id, ...product?.data?.[0]?.attributes };
+  p.descriptionLines = p?.description?.split('\n');
+  useEffect(() => {
+    setProductData({ id: product?.data?.[0].id, ...product?.data?.[0]?.attributes, quantity: 1 });
+  }, [product]);
   const notify = () => {
     toast.success("Success. Check your cart!", {
       position: "bottom-right",
@@ -37,7 +40,6 @@ const ProductDetails = ({ product, products }) => {
       theme: "dark",
     });
   };
-  console.log('p:', p)
   useEffect(() => {
 
   }, [])
@@ -61,7 +63,7 @@ const ProductDetails = ({ product, products }) => {
                   modules={[FreeMode, Navigation, Thumbs]}
                   className="product-big-img"
                 >
-                  {p?.image.data.map(image => (<SwiperSlide>
+                  {productData?.image?.data.map(image => (<SwiperSlide>
                     <div className="product-img">
                       <img
                         src={image.attributes.url}
@@ -81,7 +83,7 @@ const ProductDetails = ({ product, products }) => {
                   modules={[FreeMode, Navigation, Thumbs]}
                   className="product-big-img"
                 >
-                  {p?.image.data.map(image => (<SwiperSlide>
+                  {productData?.image?.data.map(image => (<SwiperSlide>
 
                     <div className="thumb">
                       <img
@@ -134,17 +136,35 @@ const ProductDetails = ({ product, products }) => {
                         type="number"
                         className="qty-input"
                         defaultValue={1}
+                        onChange={($event) => {
+                          setProductData({ ...productData, quantity: +$event.target.value })
+                        }}
+                        value={productData?.quantity}
                         min={1}
                         max={99}
                       />
-                      <button className="quantity-minus qut-btn">
+                      <button className="quantity-minus qut-btn" onClick={() => {
+                        setProductData({ ...productData, quantity: --productData.quantity })
+                      }}>
                         <i className="far fa-chevron-down" />
                       </button>
-                      <button className="quantity-plus qut-btn">
+                      <button className="quantity-plus qut-btn" onClick={() => {
+                        setProductData({ ...productData, quantity: ++productData.quantity })
+                      }}>
                         <i className="far fa-chevron-up" />
                       </button>
                     </div>
-                    <a href="cart.html" className="vs-btn shadow-none">
+                    <a className="vs-btn shadow-none" onClick={() => {
+                      console.log('productData:', productData)
+                      dispatch(
+                        addToCart({
+                          ...productData,
+                          oneQuantityPrice: productData.price,
+                        })
+                      );
+                      setProductData({ ...productData, quantity: 1 })
+                      notify();
+                    }}>
                       Add To Cart
                     </a>
                   </div>

@@ -326,10 +326,13 @@ const Header = () => {
                                 <a href="wishlist.html">
                                     <i className="fal fa-heart" />
                                 </a>
-                                <button className="sideMenuToggler has-badge" type="button">
-                                    <i className="fal fa-shopping-cart" />
-                                    <span className="badge">0</span>
-                                </button>
+                                <Link href="/cart" rel="tag">
+                                    <button className="sideMenuToggler has-badge" type="button">
+                                        <i className="fal fa-shopping-cart" />
+                                        <span className="badge">{totalItems}</span>
+                                    </button>
+                                </Link>
+
                             </div>
                         </div>
                         <div className="col-auto d-block d-lg-none">
