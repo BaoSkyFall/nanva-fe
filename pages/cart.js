@@ -3,9 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Wrapper from "@/components/Wrapper";
 import CartItem from "@/components/CartItem";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from 'next/navigation'
-
 import { makePaymentRequest } from "@/utils/api";
 import { loadStripe } from "@stripe/stripe-js";
 import { updateCart } from "@/store/cartSlice";
@@ -17,9 +16,9 @@ const Cart = () => {
   const router = useRouter()
   const [loading, setLoading] = useState(false);
   const { cartItems } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   const subTotal = useMemo(() => {
-    console.log('cartItems:', cartItems)
     return cartItems.reduce(
       (total, val) => total + val.price,
       0
@@ -126,83 +125,86 @@ const Cart = () => {
             <div className="woocommerce-notices-wrapper">
               <div className="woocommerce-message">Shipping costs updated.</div>
             </div>
-            <form action="#" className="woocommerce-cart-form">
-              <table className="cart_table">
-                <thead>
-                  <tr>
-                    <th className="cart-col-image">Image</th>
-                    <th className="cart-col-productname">Product Name</th>
-                    <th className="cart-col-price">Price</th>
-                    <th className="cart-col-quantity">Quantity</th>
-                    <th className="cart-col-total">Total</th>
-                    <th className="cart-col-remove">Remove</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {cartItems.map((cartItem, index) => (<tr key={index} className="cart_item">
-                    <td data-title="Product">
-                      <a className="cart-productimage" >
-                        <img
-                          width={91}
-                          height={91}
-                          src={cartItem.thumbnail.data.attributes.url}
-                          alt="Image"
-                        />
-                      </a>
-                    </td>
-                    <td data-title="Name">
-                      <a className="cart-productname" >
-                        {cartItem.name}
-                      </a>
-                    </td>
-                    <td data-title="Price">
-                      <span className="amount">
-                        <bdi>
-                          <span>{cartItem.price.toLocaleString()}</span>đ
-                        </bdi>
-                      </span>
-                    </td>
-                    <td data-title="Quantity">
-                      <div className="quantity">
-                        <button className="quantity-minus qut-btn" onClick={() => {
-                          updateCart({ ...cartItem, quantity: cartItem.quantity - 1 })
-                        }}>
-                          <i className="far fa-minus" />
-                        </button>
-                        <input
-                          type="number"
-                          className="qty-input"
-                          defaultValue={1}
-                          value={cartItem.quantity}
-                          min={1}
-                          max={99}
-                        />
-                        <button className="quantity-plus qut-btn" onClick={() => {
-                          updateCart({ ...cartItem, quantity: cartItem.quantity + 1 })
-                        }}>
-                          <i className="far fa-plus" />
-                        </button>
-                      </div>
-                    </td>
-                    <td data-title="Total">
-                      <span className="amount">
-                        <bdi>
-                          <span>{(cartItem.price * cartItem.quantity)?.toLocaleString()}</span>đ
-                        </bdi>
-                      </span>
-                    </td>
-                    <td data-title="Remove">
-                      <a className="remove">
-                        <i className="fal fa-trash-alt" />
-                      </a>
-                    </td>
-                  </tr>))}
+            <table className="cart_table">
+              <thead>
+                <tr>
+                  <th className="cart-col-image">Image</th>
+                  <th className="cart-col-productname">Product Name</th>
+                  <th className="cart-col-price">Price</th>
+                  <th className="cart-col-quantity">Quantity</th>
+                  <th className="cart-col-total">Total</th>
+                  <th className="cart-col-remove">Remove</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cartItems.map((cartItem, index) => (<tr key={index} className="cart_item">
+                  <td data-title="Product">
+                    <a className="cart-productimage" >
+                      <img
+                        width={91}
+                        height={91}
+                        src={cartItem.thumbnail.data.attributes.url}
+                        alt="Image"
+                      />
+                    </a>
+                  </td>
+                  <td data-title="Name">
+                    <a className="cart-productname" >
+                      {cartItem.name}
+                    </a>
+                  </td>
+                  <td data-title="Price">
+                    <span className="amount">
+                      <bdi>
+                        <span>{cartItem.oneQuantityPrice.toLocaleString()}</span>đ
+                      </bdi>
+                    </span>
+                  </td>
+                  <td data-title="Quantity">
+                    <div className="quantity">
+                      <button className="quantity-minus qut-btn" onClick={() => {
+                        dispatch(
+                          updateCart({ ...cartItem, quantity: cartItem.quantity - 1, key: 'quantity' }))
+                      }}>
+                        <i className="far fa-minus" />
+                      </button>
+                      <input
+                        type="number"
+                        className="qty-input"
+                        onChange={($event) => {
+                          dispatch(
+                            updateCart({ ...cartItem, quantity: +$event.target.value, key: 'quantity' }))
+                        }}
+                        value={cartItem.quantity}
+                        min={1}
+                        max={99}
+                      />
+                      <button className="quantity-plus qut-btn" onClick={() => {
+                        dispatch(
+                          updateCart({ ...cartItem, quantity: cartItem.quantity + 1, key: 'quantity' }))
+                      }}>
+                        <i className="far fa-plus" />
+                      </button>
+                    </div>
+                  </td>
+                  <td data-title="Total">
+                    <span className="amount">
+                      <bdi>
+                        <span>{(cartItem.price)?.toLocaleString()}</span>đ
+                      </bdi>
+                    </span>
+                  </td>
+                  <td data-title="Remove">
+                    <a className="remove">
+                      <i className="fal fa-trash-alt" />
+                    </a>
+                  </td>
+                </tr>))}
 
 
 
-                </tbody>
-              </table>
-            </form>
+              </tbody>
+            </table>
             <div className="row justify-content-end">
               <div className="col-md-8 col-lg-7 col-xl-6">
                 <h2 className="h4 summary-title">Cart Totals</h2>
@@ -213,7 +215,7 @@ const Cart = () => {
                       <td data-title="Cart Subtotal">
                         <span className="amount">
                           <bdi>
-                            <span>$</span>47
+                            <span>{subTotal.toLocaleString()}</span> đ
                           </bdi>
                         </span>
                       </td>
@@ -225,73 +227,14 @@ const Cart = () => {
                           <li>
                             <input
                               type="radio"
+                              checked
                               id="free_shipping"
                               name="shipping_method"
                               className="shipping_method"
                             />
                             <label htmlFor="free_shipping">Free shipping</label>
                           </li>
-                          <li>
-                            <input
-                              type="radio"
-                              id="flat_rate"
-                              name="shipping_method"
-                              className="shipping_method"
-                              defaultChecked="checked"
-                            />
-                            <label htmlFor="flat_rate">Flat rate</label>
-                          </li>
                         </ul>
-                        <p className="woocommerce-shipping-destination">
-                          Shipping options will be updated during checkout.
-                        </p>
-                        <form action="#" method="post">
-                          <a
-
-                            className="shipping-calculator-button"
-                          >
-                            Change address
-                          </a>
-                          <div className="shipping-calculator-form">
-                            <p className="form-row">
-                              <select className="form-select">
-                                <option value="AR">Argentina</option>
-                                <option value="AM">Armenia</option>
-                                <option value="BD" selected="selected">
-                                  Bangladesh
-                                </option>
-                              </select>
-                            </p>
-                            <p>
-                              <select className="form-select">
-                                <option value="">Select an option…</option>
-                                <option value="BD-05">Bagerhat</option>
-                                <option value="BD-01">Bandarban</option>
-                                <option value="BD-02">Barguna</option>
-                                <option value="BD-06">Barishal</option>
-                              </select>
-                            </p>
-                            <p className="form-row">
-                              <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Town / City"
-                              />
-                            </p>
-                            <p className="form-row">
-                              <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Postcode / ZIP"
-                              />
-                            </p>
-                            <p>
-                              <button className="vs-btn shadow-none rounded-1">
-                                Update
-                              </button>
-                            </p>
-                          </div>
-                        </form>
                       </td>
                     </tr>
                   </tbody>
@@ -302,7 +245,7 @@ const Cart = () => {
                         <strong>
                           <span className="amount">
                             <bdi>
-                              <span>$</span>47
+                              <span>{subTotal.toLocaleString()}</span> đ
                             </bdi>
                           </span>
                         </strong>
@@ -311,9 +254,9 @@ const Cart = () => {
                   </tfoot>
                 </table>
                 <div className="wc-proceed-to-checkout mb-30">
-                  <a className="vs-btn rounded-1 shadow-none">
+                  <Link href="/checkout" className="vs-btn rounded-1 shadow-none">
                     Proceed to checkout
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

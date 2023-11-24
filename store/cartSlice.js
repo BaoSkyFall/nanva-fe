@@ -22,15 +22,14 @@ export const cartSlice = createSlice({
         },
         updateCart: (state, action) => {
             state.cartItems = state.cartItems.map((p) => {
-                debugger;
                 if (p.id === action.payload.id) {
                     if (action.payload.key === "quantity") {
                         const qtyOld = p.quantity;
-                        state.totalItems = state.totalItems + (action.payload.val - qtyOld)
+                        state.totalItems = state.totalItems + (action.payload.quantity - qtyOld)
                         p.price =
-                            p.oneQuantityPrice * action.payload.val;
+                            p.oneQuantityPrice * action.payload.quantity;
                     }
-                    return { ...p, [action.payload.key]: action.payload.val };
+                    return { ...p, [action.payload.key]: action.payload.quantity };
                 }
                 return p;
             });
