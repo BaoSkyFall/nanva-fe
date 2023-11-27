@@ -166,7 +166,7 @@ const ProductDetails = ({ product, products }) => {
                         setProductData({ ...productData, quantity: 1 })
                         notify();
                       }}>
-                        Add To Cart
+                        Thêm Vào Giỏ Hàng
                       </a>
                     </div>
                     <div className="product_meta">
@@ -226,28 +226,15 @@ const ProductDetails = ({ product, products }) => {
                     href="#description"
                     role="tab"
                     aria-controls="description"
-                    aria-selected="false"
-                  >
-                    description
-                  </a>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <a
-                    className="nav-link active"
-                    id="reviews-tab"
-                    data-bs-toggle="tab"
-                    href="#reviews"
-                    role="tab"
-                    aria-controls="reviews"
                     aria-selected="true"
                   >
-                    reviews
+                    Mô Tả
                   </a>
                 </li>
               </ul>
               <div className="tab-content mb-30" id="productTabContent">
                 <div
-                  className="tab-pane fade"
+                  className="tab-pane fade show active"
                   id="description"
                   role="tabpanel"
                   aria-labelledby="description-tab"
@@ -293,7 +280,7 @@ const ProductDetails = ({ product, products }) => {
                 </div> */}
                 </div>
                 <div
-                  className="tab-pane fade show active"
+                  className="tab-pane fade "
                   id="reviews"
                   role="tabpanel"
                   aria-labelledby="reviews-tab"

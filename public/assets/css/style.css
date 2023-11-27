@@ -101,9 +101,9 @@ Version: 1.0.0
   --success-color: #28a745;
   --error-color: #dc3545;
   --border-color: rgba(0, 0, 0, 0.10);
-  --theme-font: "Advent Pro", sans-serif;
-  --theme-font2: "Lato", sans-serif;
-  --theme-font3: "Amatic SC", cursive;
+  --theme-font: "Roboto", sans-serif;
+  --theme-font2: "Roboto", sans-serif;
+  --theme-font3: "Roboto", cursive;
   --icon-font: "Font Awesome 5 Pro";
   --moving-ani-duration: 10s;
   --ripple-ani-duration: 5s;

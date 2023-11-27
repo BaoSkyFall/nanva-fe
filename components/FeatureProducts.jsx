@@ -78,27 +78,26 @@ const FeatureProducts = ({ products }) => {
                     </a> */}
                   </div>
                 </div>
-                <div className="product-content">
-                  <h4 className="product-title">
+                <div className="product-content cursor-pointer">
+                  <h4 className="product-title cursor-pointer">
                     <Link href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
                   </h4>
-                  <div className="product-quantity">
-                    Size: <span className="text">{product.attributes.size.map((size, index) => (
+                  <div className="product-quantity cursor-pointer">
+                    Size: <span className="text cursor-pointer">{product.attributes.size.map((size, index) => (
                       <span key={size}>
                         {size}
                         {index < product.attributes.size.length - 1 ? " / " : ""}
                       </span>
                     ))}</span>
                   </div>
-                  <span className="price">
-                    <strong>{product.attributes.price.toLocaleString()} đ</strong>
+                  <span className="price cursor-pointer" >
+                    <strong className="cursor-pointer">{product.attributes.price.toLocaleString()} đ</strong>
                     {/* <del>$36.00</del> */}
                   </span>
                   {/* <span className="product-discount">(78% off)</span> */}
                 </div>
-                <Link href="/" className="product-cart-btn">
-                  Add to Cart
-                  <i className="fal fa-cart-plus" />
+                <Link href={`product/${product.attributes.slug}`} className="product-cart-btn cursor-pointer">
+                  Xem Chi Tiết
                 </Link>
               </div>
 
