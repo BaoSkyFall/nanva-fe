@@ -320,12 +320,20 @@ const Header = () => {
                         </div>
                         <div className="col-auto d-none d-sm-block">
                             <div className="header-buttons">
-                                <button type="button" className="searchBoxTggler">
+                                {/* <button type="button" className="searchBoxTggler">
                                     <i className="far fa-search" />
                                 </button>
                                 <a href="wishlist.html">
                                     <i className="fal fa-heart" />
-                                </a>
+                                </a> */}
+                                <Link className=" d-lg-none" href="/">
+                                    Home
+                                </Link>
+                                <Link className=" d-lg-none" href="/shop">
+                                    Shop
+                                </Link>
+                                <Link className=" d-lg-none" href="/contact">Contact Us</Link>
+
                                 <Link href="/cart" rel="tag">
                                     <button className="sideMenuToggler has-badge" type="button">
                                         <i className="fal fa-shopping-cart" />
@@ -335,11 +343,11 @@ const Header = () => {
 
                             </div>
                         </div>
-                        <div className="col-auto d-block d-lg-none">
+                        {/* <div className="col-auto d-block d-lg-none">
                             <button type="button" className="vs-menu-toggle ">
                                 <i className="far fa-bars" />
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

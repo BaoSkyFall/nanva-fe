@@ -65,6 +65,7 @@ const getItems = (panelStyle) => [
 ];
 const Cart = () => {
   const [loading, setLoading] = useState(false);
+  const [shippingType, setShippingType] = useState("1");
   const { cartItems } = useSelector((state) => state.cart);
   const { token } = theme.useToken();
   const panelStyle = {
@@ -92,20 +93,18 @@ const Cart = () => {
           <div className="container">
             <form action="#" className="woocommerce-checkout mt-40">
               <div className="row">
-                <div className="col-lg-6">
+                <div className="col-lg-12">
                   <h2 className="h4">Billing Details</h2>
                   <div className="row gx-2">
                     <Form
                       {...formItemLayout}
                       form={form}
-                      name="register"
+                      name="billingDetails"
                       onFinish={onFinish}
                       initialValues={{
-                        residence: ['zhejiang', 'hangzhou', 'xihu'],
-                        prefix: '86',
+
                       }}
                       layout="vertical"
-                      style={{ maxWidth: 600 }}
                       scrollToFirstError
                     >
                       <Form.Item
@@ -119,7 +118,7 @@ const Cart = () => {
                           },
                         ]}
                       >
-                        <Input placeholder="Nhập Họ Tên" />
+                        <Input size="large" placeholder="Nhập Họ Tên" />
                       </Form.Item>
 
 
@@ -129,7 +128,7 @@ const Cart = () => {
                         label="Số Điện Thoại"
                         rules={[{ required: true, message: 'Vui lòng nhập Số điện thoại!' }]}
                       >
-                        <Input addonBefore="+84" placeholder="Nhập SĐT" style={{ width: '100%' }} />
+                        <Input size="large" addonBefore="+84" placeholder="Nhập SĐT" style={{ width: '100%' }} />
                       </Form.Item>
                       <Form.Item
                         name="email"
@@ -145,7 +144,7 @@ const Cart = () => {
                           },
                         ]}
                       >
-                        <Input placeholder="Nhập Email" />
+                        <Input size="large" placeholder="Nhập Email" />
                       </Form.Item>
                       <Form.Item
                         name="address"
@@ -165,6 +164,7 @@ const Cart = () => {
                     </Form>
                   </div>
                 </div>
+
               </div>
             </form>
             <h4 className="mt-4 pt-lg-2">Your Order</h4>
@@ -272,7 +272,11 @@ const Cart = () => {
                 <h4 className="mt-4 pt-lg-2">Hình Thức Thanh Toán</h4>
                 <Collapse
                   bordered={false}
+                  accordion
                   defaultActiveKey={['1']}
+                  onChange={(evt) => {
+                    setShippingType(evt);
+                  }}
                   expandIcon={({ isActive }) => <Radio checked={isActive} />}
                   style={{
                     background: token.colorBgContainer,

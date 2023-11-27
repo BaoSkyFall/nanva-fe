@@ -138,6 +138,7 @@ const Footer = () => {
         // </footer>
         <footer
             className="footer-wrapper footer-layout2"
+            style={{ backgroundImage: `url("/assets/img/shape/footer-5-1.jpg")` }}
             data-bg-src="/assets/img/shape/footer-5-1.jpg"
         >
             <div className="container">

@@ -50,13 +50,13 @@ const FeatureProducts = ({ products }) => {
             <SwiperSlide key={product.id} className="tranding-slide">
               <div className="vs-product-box4">
                 <div className="product-img">
-                  <a href="shop-details.html">
+                  <Link href={`product/${product.attributes.slug}`}>
                     <img
                       src={product.attributes.thumbnail.data.attributes.url}
                       alt="Product Image"
                       className="w-100"
                     />
-                  </a>
+                  </Link>
                   {/* <span className="product-tag1">Hot</span> */}
                   {/* <div className="product-rating-box">
                     5.0
@@ -67,20 +67,20 @@ const FeatureProducts = ({ products }) => {
                     </div>
                   </div> */}
                   <div className="actions-btn">
-                    <a
+                    {/* <a
                       href="assets/img/shop/product-4-1.png"
                       className="icon-btn popup-image"
                     >
                       <i className="far fa-search" />
-                    </a>
-                    <a href="wishlist.html" className="icon-btn">
+                    </a> */}
+                    {/* <a href="wishlist.html" className="icon-btn">
                       <i className="fal fa-heart" />
-                    </a>
+                    </a> */}
                   </div>
                 </div>
                 <div className="product-content">
                   <h4 className="product-title">
-                    <a href="shop-details.html">{product.attributes.name}</a>
+                    <Link href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
                   </h4>
                   <div className="product-quantity">
                     Size: <span className="text">{product.attributes.size.map((size, index) => (
