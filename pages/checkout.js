@@ -97,18 +97,27 @@ const Cart = () => {
     try {
       setLoading(true);
       await form.validateFields();
-      const formValues = form.getFieldsValue();
-      console.log('formValues:', formValues)
-      // const res = await makePaymentRequest("/api/orders", {
-      //   products: cartItems,
-      //   totalPrice: 0,
-      //   paymentMethod: '',
-      //   customerName: '',
-      //   email: '',
-      //   address: '',
-      //   notes: '',
-      //   phoneNumber: ''
-      // });
+      const {
+        address,
+        email,
+        name,
+        note,
+        phone
+      } = form.getFieldsValue();
+
+      const res = await makePaymentRequest("/api/orders", {
+        data: {
+          products: cartItems,
+          totalPrice: subTotal,
+          paymentMethod: shippingType == '1' ? 'COD' : 'Banking',
+          customerName: name,
+          email,
+          address,
+          notes: note,
+          phoneNumber: phone
+        }
+
+      });
       // await stripe.redirectToCheckout({
       //     sessionId: res.stripeSession.id,
       // });
