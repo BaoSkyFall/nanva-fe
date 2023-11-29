@@ -5,6 +5,7 @@ import Wrapper from "@/components/Wrapper";
 import CartItem from "@/components/CartItem";
 import { useSelector } from "react-redux";
 import { CaretRightOutlined } from '@ant-design/icons';
+import { LoadingOutlined } from '@ant-design/icons';
 
 import { makePaymentRequest } from "@/utils/api";
 import { loadStripe } from "@stripe/stripe-js";
@@ -17,7 +18,7 @@ import {
   Form,
   Input,
   InputNumber,
-  Row,
+  Spin,
   Select,
   Collapse,
   Radio,
@@ -94,11 +95,20 @@ const Cart = () => {
 
   const handlePayment = async () => {
     try {
-      await form.validateFields()
       setLoading(true);
-      const res = await makePaymentRequest("/api/orders", {
-        products: cartItems,
-      });
+      await form.validateFields();
+      const formValues = form.getFieldsValue();
+      console.log('formValues:', formValues)
+      // const res = await makePaymentRequest("/api/orders", {
+      //   products: cartItems,
+      //   totalPrice: 0,
+      //   paymentMethod: '',
+      //   customerName: '',
+      //   email: '',
+      //   address: '',
+      //   notes: '',
+      //   phoneNumber: ''
+      // });
       // await stripe.redirectToCheckout({
       //     sessionId: res.stripeSession.id,
       // });
@@ -108,221 +118,234 @@ const Cart = () => {
         top: 0,
         behavior: "smooth"
       }); console.log(error);
+
     }
   };
   return (
-    <div className="w-full md:py-20">
-      <Wrapper>
+    <>
+
+      <div className="w-full md:py-20">
+        <Wrapper>
 
 
-        <div className="vs-checkout-wrapper space-top space-md-bottom">
-          <div className="container">
-            <form action="#" className="woocommerce-checkout mt-40">
-              <div className="row">
-                <div className="col-lg-12">
-                  <h2 className="h4">Chi Tiết Đơn Hàng</h2>
-                  <div className="row gx-2">
-                    <Form
-                      {...formItemLayout}
-                      form={form}
-                      name="billingDetails"
-                      onFinish={onFinish}
-                      initialValues={{
+          <div className="vs-checkout-wrapper space-top space-md-bottom">
+            <div className="container">
+              <form action="#" className="woocommerce-checkout mt-40">
+                <div className="row">
+                  <div className="col-lg-12">
+                    <h2 className="h4">Chi Tiết Đơn Hàng</h2>
+                    <div className="row gx-2">
+                      <Form
+                        {...formItemLayout}
+                        form={form}
+                        name="billingDetails"
+                        onFinish={onFinish}
+                        initialValues={{
 
-                      }}
-                      layout="vertical"
-                      scrollToFirstError
-                    >
-                      <Form.Item
-                        name="name"
-                        label="Họ Tên"
-                        // tooltip="What do you want others to call you?"
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Vui lòng nhập Họ Tên!'
-                          },
-                        ]}
+                        }}
+                        layout="vertical"
+                        scrollToFirstError
                       >
-                        <Input size="large" placeholder="Nhập Họ Tên" />
-                      </Form.Item>
+                        <Form.Item
+                          name="name"
+                          label="Họ Tên"
+                          // tooltip="What do you want others to call you?"
+                          rules={[
+                            {
+                              required: true,
+                              message: 'Vui lòng nhập Họ Tên!'
+                            },
+                          ]}
+                        >
+                          <Input size="large" placeholder="Nhập Họ Tên" />
+                        </Form.Item>
 
 
 
-                      <Form.Item
-                        name="phone"
-                        label="Số Điện Thoại"
-                        rules={[{ required: true, message: 'Vui lòng nhập Số điện thoại!' }]}
-                      >
-                        <Input size="large" addonBefore="+84" placeholder="Nhập SĐT" style={{ width: '100%' }} />
-                      </Form.Item>
-                      <Form.Item
-                        name="email"
-                        label="E-mail"
-                        rules={[
-                          {
-                            type: 'email',
-                            message: 'Định dạng email không hợp lệ',
-                          },
-                          {
-                            required: true,
-                            message: 'Vui lòng nhập Email!',
-                          },
-                        ]}
-                      >
-                        <Input size="large" placeholder="Nhập Email" />
-                      </Form.Item>
-                      <Form.Item
-                        name="address"
-                        label="Địa Chỉ"
-                        rules={[{ required: true, message: 'Nhập địa chỉ' }]}
-                      >
-                        <Input.TextArea placeholder="Nhập địa chỉ của bạn cho đơn hàng" maxLength={300} />
-                      </Form.Item>
-                      <Form.Item
-                        name="note"
-                        label="Ghi Chú"
+                        <Form.Item
+                          name="phone"
+                          label="Số Điện Thoại"
+                          rules={[{ required: true, message: 'Vui lòng nhập Số điện thoại!' }]}
+                        >
+                          <Input size="large" addonBefore="+84" placeholder="Nhập SĐT" style={{ width: '100%' }} />
+                        </Form.Item>
+                        <Form.Item
+                          name="email"
+                          label="E-mail"
+                          rules={[
+                            {
+                              type: 'email',
+                              message: 'Định dạng email không hợp lệ',
+                            },
+                            {
+                              required: true,
+                              message: 'Vui lòng nhập Email!',
+                            },
+                          ]}
+                        >
+                          <Input size="large" placeholder="Nhập Email" />
+                        </Form.Item>
+                        <Form.Item
+                          name="address"
+                          label="Địa Chỉ"
+                          rules={[{ required: true, message: 'Nhập địa chỉ' }]}
+                        >
+                          <Input.TextArea placeholder="Nhập địa chỉ của bạn cho đơn hàng" maxLength={300} />
+                        </Form.Item>
+                        <Form.Item
+                          name="note"
+                          label="Ghi Chú"
 
-                        rules={[{ required: false, message: 'Nhập ghi chú của bạn cho đơn hàng' }]}
-                      >
-                        <Input.TextArea placeholder="Nhập ghi chú của bạn cho đơn hàng" maxLength={300} />
-                      </Form.Item>
-                    </Form>
+                          rules={[{ required: false, message: 'Nhập ghi chú của bạn cho đơn hàng' }]}
+                        >
+                          <Input.TextArea placeholder="Nhập ghi chú của bạn cho đơn hàng" maxLength={300} />
+                        </Form.Item>
+                      </Form>
+                    </div>
                   </div>
+
                 </div>
+              </form>
+              <h4 className="mt-4 pt-lg-2">Đơn Hàng</h4>
+              <form action="#" className="woocommerce-cart-form">
+                <table className="cart_table mb-20">
+                  <thead>
+                    <tr>
+                      <th className="cart-col-image">Hình Ảnh</th>
+                      <th className="cart-col-productname">Sản Phẩm</th>
+                      <th className="cart-col-price">Giá</th>
+                      <th className="cart-col-quantity">Số Lượng</th>
+                      <th className="cart-col-total">Tổng</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cartItems.map((cartItem, index) => (<tr key={index} className="cart_item">
+                      <td data-title="Product">
+                        <a className="cart-productimage" href="#">
+                          <img
+                            width={91}
+                            height={91}
+                            src={cartItem.thumbnail.data.attributes.url}
+                            alt="Image"
+                          />
+                        </a>
+                      </td>
+                      <td data-title="Name">
+                        <a className="cart-productname" href="#">
+                          {cartItem.name}
+                        </a>
+                      </td>
+                      <td data-title="Price">
+                        <span className="amount">
+                          <bdi>
+                            <span>{cartItem.oneQuantityPrice.toLocaleString()}</span>đ
+                          </bdi>
+                        </span>
+                      </td>
+                      <td data-title="Quantity">
+                        <strong className="product-quantity">{cartItem.quantity}</strong>
+                      </td>
+                      <td data-title="Total">
+                        <span className="amount">
+                          <bdi>
+                            <span>{(cartItem.price)?.toLocaleString()}</span>đ
+                          </bdi>
+                        </span>
+                      </td>
+                    </tr>))}
 
-              </div>
-            </form>
-            <h4 className="mt-4 pt-lg-2">Đơn Hàng</h4>
-            <form action="#" className="woocommerce-cart-form">
-              <table className="cart_table mb-20">
-                <thead>
-                  <tr>
-                    <th className="cart-col-image">Hình Ảnh</th>
-                    <th className="cart-col-productname">Sản Phẩm</th>
-                    <th className="cart-col-price">Giá</th>
-                    <th className="cart-col-quantity">Số Lượng</th>
-                    <th className="cart-col-total">Tổng</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {cartItems.map((cartItem, index) => (<tr key={index} className="cart_item">
-                    <td data-title="Product">
-                      <a className="cart-productimage" href="#">
-                        <img
-                          width={91}
-                          height={91}
-                          src={cartItem.thumbnail.data.attributes.url}
-                          alt="Image"
-                        />
-                      </a>
-                    </td>
-                    <td data-title="Name">
-                      <a className="cart-productname" href="#">
-                        {cartItem.name}
-                      </a>
-                    </td>
-                    <td data-title="Price">
-                      <span className="amount">
-                        <bdi>
-                          <span>{cartItem.oneQuantityPrice.toLocaleString()}</span>đ
-                        </bdi>
-                      </span>
-                    </td>
-                    <td data-title="Quantity">
-                      <strong className="product-quantity">{cartItem.quantity}</strong>
-                    </td>
-                    <td data-title="Total">
-                      <span className="amount">
-                        <bdi>
-                          <span>{(cartItem.price)?.toLocaleString()}</span>đ
-                        </bdi>
-                      </span>
-                    </td>
-                  </tr>))}
-
-                </tbody>
-              </table>
-            </form>
-            <div className="border ps-2 py-2 border-light">
-              <div className="row  justify-content-lg-end">
-                <div className="col-md-8 col-lg-6 col-xl-4">
-                  <table className="checkout-ordertable mb-0">
-                    <tbody>
-                      <tr className="cart-subtotal">
-                        <th>Tạm Tính</th>
-                        <td>
-                          <span className="amount">
-                            <bdi>
-                              <span>{subTotal.toLocaleString()}</span> đ
-                            </bdi>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr className="woocommerce-shipping-totals shipping">
-                        <th>Phí Vận Chuyển</th>
-                        <td data-title="Shipping">
-                          <ul className="woocommerce-shipping-methods list-unstyled">
-                            <li>
-                              <input
-                                type="radio"
-                                checked
-                                id="free_shipping"
-                                name="shipping_method"
-                                className="shipping_method"
-                              />
-                              <label htmlFor="free_shipping">Miễn Phí</label>
-                            </li>
-                          </ul>
-                        </td>
-                      </tr>
-                      <tr className="order-total">
-                        <th>Tổng</th>
-                        <td>
-                          <strong>
+                  </tbody>
+                </table>
+              </form>
+              <div className="border ps-2 py-2 border-light">
+                <div className="row  justify-content-lg-end">
+                  <div className="col-md-8 col-lg-6 col-xl-4">
+                    <table className="checkout-ordertable mb-0">
+                      <tbody>
+                        <tr className="cart-subtotal">
+                          <th>Tạm Tính</th>
+                          <td>
                             <span className="amount">
                               <bdi>
                                 <span>{subTotal.toLocaleString()}</span> đ
                               </bdi>
                             </span>
-                          </strong>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                          </td>
+                        </tr>
+                        <tr className="woocommerce-shipping-totals shipping">
+                          <th>Phí Vận Chuyển</th>
+                          <td data-title="Shipping">
+                            <ul className="woocommerce-shipping-methods list-unstyled">
+                              <li>
+                                <input
+                                  type="radio"
+                                  checked
+                                  id="free_shipping"
+                                  name="shipping_method"
+                                  className="shipping_method"
+                                />
+                                <label htmlFor="free_shipping">Miễn Phí</label>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                        <tr className="order-total">
+                          <th>Tổng</th>
+                          <td>
+                            <strong>
+                              <span className="amount">
+                                <bdi>
+                                  <span>{subTotal.toLocaleString()}</span> đ
+                                </bdi>
+                              </span>
+                            </strong>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="pt-10 pt-lg-5 mb-30">
-              <div className="woocommerce-checkout-payment">
-                <h4 className="mt-4 pt-lg-2">Hình Thức Thanh Toán</h4>
-                <Collapse
-                  bordered={false}
-                  accordion
-                  defaultActiveKey={['1']}
-                  onChange={(evt) => {
-                    setShippingType(evt);
-                  }}
-                  expandIcon={({ isActive }) => <Radio checked={isActive} />}
-                  style={{
-                    background: token.colorBgContainer,
-                  }}
-                  items={getItems(panelStyle)}
-                />
-                <div className="form-row place-order">
-                  <button type="submit" className="vs-btn" onClick={() => {
-                    handlePayment()
-                  }}>
-                    Thanh Toán
-                  </button>
+              <div className="pt-10 pt-lg-5 mb-30">
+                <div className="woocommerce-checkout-payment">
+                  <h4 className="mt-4 pt-lg-2">Hình Thức Thanh Toán</h4>
+                  <Collapse
+                    bordered={false}
+                    accordion
+                    defaultActiveKey={['1']}
+                    onChange={(evt) => {
+                      setShippingType(evt);
+                    }}
+                    expandIcon={({ isActive }) => <Radio checked={isActive} />}
+                    style={{
+                      background: token.colorBgContainer,
+                    }}
+                    items={getItems(panelStyle)}
+                  />
+                  <div className="form-row place-order">
+                    <button type="submit" className="vs-btn" onClick={() => {
+                      handlePayment()
+                    }}>
+                      Thanh Toán
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-      </Wrapper>
-    </div>
+        </Wrapper>
+      </div>
+      <Spin spinning={loading} fullscreen indicator={
+        <LoadingOutlined
+          style={{
+            fontSize: 24,
+          }}
+          spin
+        />
+      } tip="Đang Tải...">
+      </Spin>
+    </>
   );
 };
 

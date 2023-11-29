@@ -11,6 +11,7 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import { fetchDataFromApi } from "@/utils/api";
 import { useSelector } from "react-redux";
+import { useRouter } from 'next/router';
 
 const Header = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
@@ -20,7 +21,12 @@ const Header = () => {
     const [categories, setCategories] = useState(null);
 
     const { cartItems, totalItems } = useSelector((state) => state.cart);
+    const router = useRouter();
 
+    const isActive = (pathnameList) => {
+        // Check if the current route matches the provided pathname
+        return pathnameList.includes(router.pathname);
+    };
     const controlNavbar = () => {
         if (window.scrollY > 200) {
             if (window.scrollY > lastScrollY && !mobileMenu) {
@@ -150,13 +156,13 @@ const Header = () => {
                             <nav className="main-menu mobile-menu-active menu-style2">
                                 <ul>
                                     <li>
-                                        <Link href="/">
+                                        <Link href="/" className={isActive(['/']) ? 'active' : ''}>
                                             Trang Chủ
                                         </Link>
 
                                     </li>
                                     <li>
-                                        <Link href="/shop">
+                                        <Link href="/shop" className={isActive(['/shop', '/product/[slug]', '/cart', '/checkout']) ? 'active' : ''}>
                                             Cửa Hàng
                                         </Link>
                                         {/* <ul className="sub-menu">

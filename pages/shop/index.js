@@ -2,201 +2,227 @@ import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import React, { useState, useEffect } from "react";
 import { fetchDataFromApi } from "@/utils/api";
 import Link from "next/link";
+import { LoadingOutlined } from '@ant-design/icons';
+import {
+  Spin,
 
+} from 'antd';
+
+const minHeightStyle = {
+  minHeight: '50vh', // Set the desired min-height value
+};
 const Shop = () => {
   const [products, setProducts] = useState(null);
-
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchProducts();
   }, []);
   const fetchProducts = async () => {
-    const products = await fetchDataFromApi("/api/products?populate=*");
-    setProducts(products)
+    try {
+      const products = await fetchDataFromApi("/api/products?populate=*");
+      setProducts(products)
+    }
+    catch (error) {
+      // Handle validation errors
+      console.error('Form validation failed:', error);
+    } finally {
+      setLoading(false);
+    }
+
   };
   return (
-    <section className="vs-shop-wrapper position-relative space-top space-md-bottom">
-      <div className="container">
-        <div className="row flex-row-reverse ">
-          <div className="col-lg-12 col-xl-12 ">
-            <div className="sticky-top overflow-hidden">
-              <div className="vs-sort-bar row justify-content-center justify-content-sm-between align-items-center pb-3 pb-lg-5 mb-1 ">
-                <div className="col-auto mb-3 mb-sm-0">
-                  <div className="nav" role="tablist">
-                    <a
-                      href="shop.html"
-                      className="icon-btn style3  me-2"
-                      id="tab-shop-grid"
-                      data-bs-toggle="tab"
-                      data-bs-target="#tab-grid"
-                      role="tab"
-                      aria-controls="tab-grid"
-                      aria-selected="false"
-                    >
-                      <i className="fas fa-th" />
-                    </a>
-                    <a
-                      href="shop-list.html"
-                      className="icon-btn active style3  "
-                      id="tab-shop-list"
-                      data-bs-toggle="tab"
-                      data-bs-target="#tab-list"
-                      role="tab"
-                      aria-controls="tab-grid"
-                      aria-selected="true"
-                    >
-                      <i className="far fa-bars" />
-                    </a>
-                  </div>
-                </div>
-                <div className="col d-none d-md-block">
-                  <div className="border-top" />
-                </div>
-                <div className="col-sm-9 col-md-7 col-lg-8 col-xl-6">
-                  <div className="row justify-content-center justify-content-sm-between">
-                    <div className="col-auto d-flex align-items-center mb-3 mb-sm-0">
-                      <label className="text-body2" htmlFor="sortBy">
-                        Sort by
-                      </label>
-                      <select name="sortBy" id="sortBy" className="form-select">
-                        <option value="productName">Sorted Product Name</option>
-                        <option value="productName">Sorted Product New</option>
-                        <option value="productName">Sorted Product Popular</option>
-                      </select>
+    <>
+      <Spin spinning={loading} indicator={
+        <LoadingOutlined
+          style={{
+            fontSize: 24,
+          }}
+          spin
+        />
+      } tip="Đang Tải...">
+        <section style={minHeightStyle} className="vs-shop-wrapper position-relative space-top space-md-bottom">
+          <div className="container">
+            <div className="row flex-row-reverse ">
+              <div className="col-lg-12 col-xl-12 ">
+                <div className="sticky-top overflow-hidden">
+                  <div className="vs-sort-bar row justify-content-center justify-content-sm-between align-items-center pb-3 pb-lg-5 mb-1 ">
+                    <div className="col-auto mb-3 mb-sm-0">
+                      <div className="nav" role="tablist">
+                        <a
+                          href="shop.html"
+                          className="icon-btn style3  me-2"
+                          id="tab-shop-grid"
+                          data-bs-toggle="tab"
+                          data-bs-target="#tab-grid"
+                          role="tab"
+                          aria-controls="tab-grid"
+                          aria-selected="false"
+                        >
+                          <i className="fas fa-th" />
+                        </a>
+                        <a
+                          href="shop-list.html"
+                          className="icon-btn active style3  "
+                          id="tab-shop-list"
+                          data-bs-toggle="tab"
+                          data-bs-target="#tab-list"
+                          role="tab"
+                          aria-controls="tab-grid"
+                          aria-selected="true"
+                        >
+                          <i className="far fa-bars" />
+                        </a>
+                      </div>
                     </div>
-                    <div className="col-auto d-flex align-items-center">
-                      <label className="text-body2" htmlFor="showTotal">
-                        Show
-                      </label>
-                      <select
-                        name="showTotal"
-                        id="showTotal"
-                        className="form-select"
-                      >
-                        <option value="productName">01</option>
-                        <option value="productName">02</option>
-                        <option value="productName">03</option>
-                        <option value="productName">04</option>
-                        <option value="productName">05</option>
-                      </select>
+                    <div className="col d-none d-md-block">
+                      <div className="border-top" />
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div className="tab-content" id="nav-tabContent">
-                <div
-                  className="tab-pane fade "
-                  id="tab-grid"
-                  role="tabpanel"
-                  aria-labelledby="tab-shop-grid"
-                >
-                  <div className="row">
-                    {products?.data?.map(product => (
-                      <div className="col-sm-6 col-xl-4">
-                        <div className="vs-product-box1 thumb_swap">
-                          <div className="product-tag1">sale</div>
-                          <div className="product-img">
-                            <Link href={`product/${product.attributes.slug}`}>
-                              <img
-                                src={product.attributes.thumbnail.data.attributes.url}
-                                alt="Product Image"
-                                className="w-100"
-                              />
-                            </Link>
-                            <Link href={`product/${product.attributes.slug}`}>
-                              <img
-                                src={product.attributes.thumbnail.data.attributes.url}
-                                alt="Product Image"
-                                className="w-100 img_swap"
-                              />
-                            </Link>
-                          </div>
-                          <div className="product-content">
-                            <div className="actions-btn">
-                              <a href="cart.html">
-                                <i className="fal fa-cart-plus" />
-                              </a>
-                              <a
-                                href="assets/img/shop/product-1-1.png"
-                                className="popup-image"
-                              >
-                                <i className="far fa-search" />
-                              </a>
-                              <a href="wishlist.html">
-                                <i className="fal fa-heart" />
-                              </a>
-                            </div>
-                            <h4 className="product-title h5 mb-0">
-                              <Link href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
-                            </h4>
-                            <span className="price font-theme">
-                              <strong>{product.attributes.price.toLocaleString()} đ</strong>
-                            </span>
-                            <p className="m-0 rating fs-xs text-theme lh-base">
-                              <i className="fas fa-star" />
-                              <i className="fas fa-star" />
-                              <i className="fas fa-star" />
-                              <i className="fas fa-star" />
-                              <i className="fas fa-star" />
-                            </p>
-                          </div>
+                    <div className="col-sm-9 col-md-7 col-lg-8 col-xl-6">
+                      <div className="row justify-content-center justify-content-sm-between">
+                        <div className="col-auto d-flex align-items-center mb-3 mb-sm-0">
+                          <label className="text-body2" htmlFor="sortBy">
+                            Sort by
+                          </label>
+                          <select name="sortBy" id="sortBy" className="form-select">
+                            <option value="productName">Sorted Product Name</option>
+                            <option value="productName">Sorted Product New</option>
+                            <option value="productName">Sorted Product Popular</option>
+                          </select>
+                        </div>
+                        <div className="col-auto d-flex align-items-center">
+                          <label className="text-body2" htmlFor="showTotal">
+                            Show
+                          </label>
+                          <select
+                            name="showTotal"
+                            id="showTotal"
+                            className="form-select"
+                          >
+                            <option value="productName">01</option>
+                            <option value="productName">02</option>
+                            <option value="productName">03</option>
+                            <option value="productName">04</option>
+                            <option value="productName">05</option>
+                          </select>
                         </div>
                       </div>
-                    ))}
-
-
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="tab-pane fade show active"
-                  id="tab-list"
-                  role="tabpanel"
-                  aria-labelledby="tab-shop-list"
-                >
-                  <div className="row ">
-                    {products?.data?.map(product => (
-                      <div className="col-sm-6 col-lg-6 col-xl-6">
-                        <div className="vs-product-box2 d-xl-flex has-border thumb_swap">
-                          <div className="product-img">
-                            <Link href={`product/${product.attributes.slug}`}>
-                              <img
-                                src={product.attributes.thumbnail.data.attributes.url}
-                                alt="Product Image"
-                                className="w-100"
-                              />
-                            </Link>
-                            <Link href={`product/${product.attributes.slug}`}>
-                              <img
-                                src={product.attributes.thumbnail.data.attributes.url}
-                                alt="Product Image"
-                                className="w-100 img_swap"
-                              />
-                            </Link>
-                          </div>
-                          <div className="product-content d-xl-flex align-items-center">
-                            <div>
-                              <h4 className="product-title h5 mb-1">
-                                <a href={`product/${product.attributes.slug}`}>{product.attributes.name}</a>
-                              </h4>
-                              <span className="price font-theme">
-                                <strong>{product.attributes.price.toLocaleString()} đ</strong>
-                              </span>
-                              <p className="m-0 rating fs-xs text-theme lh-base">
-                                <i className="fas fa-star" />
-                                <i className="fas fa-star" />
-                                <i className="fas fa-star" />
-                                <i className="fas fa-star" />
-                                <i className="fas fa-star" />
-                              </p>
+                  <div className="tab-content" id="nav-tabContent">
+                    <div
+                      className="tab-pane fade "
+                      id="tab-grid"
+                      role="tabpanel"
+                      aria-labelledby="tab-shop-grid"
+                    >
+                      <div className="row">
+                        {products?.data?.map(product => (
+                          <div className="col-sm-6 col-xl-4">
+                            <div className="vs-product-box1 thumb_swap">
+                              <div className="product-tag1">sale</div>
+                              <div className="product-img">
+                                <Link href={`product/${product.attributes.slug}`}>
+                                  <img
+                                    src={product.attributes.thumbnail.data.attributes.url}
+                                    alt="Product Image"
+                                    className="w-100"
+                                  />
+                                </Link>
+                                <Link href={`product/${product.attributes.slug}`}>
+                                  <img
+                                    src={product.attributes.thumbnail.data.attributes.url}
+                                    alt="Product Image"
+                                    className="w-100 img_swap"
+                                  />
+                                </Link>
+                              </div>
+                              <div className="product-content">
+                                <div className="actions-btn">
+                                  <a href="cart.html">
+                                    <i className="fal fa-cart-plus" />
+                                  </a>
+                                  <a
+                                    href="assets/img/shop/product-1-1.png"
+                                    className="popup-image"
+                                  >
+                                    <i className="far fa-search" />
+                                  </a>
+                                  <a href="wishlist.html">
+                                    <i className="fal fa-heart" />
+                                  </a>
+                                </div>
+                                <h4 className="product-title h5 mb-0">
+                                  <Link href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
+                                </h4>
+                                <span className="price font-theme">
+                                  <strong>{product.attributes.price.toLocaleString()} đ</strong>
+                                </span>
+                                <p className="m-0 rating fs-xs text-theme lh-base">
+                                  <i className="fas fa-star" />
+                                  <i className="fas fa-star" />
+                                  <i className="fas fa-star" />
+                                  <i className="fas fa-star" />
+                                  <i className="fas fa-star" />
+                                </p>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ))}
+
+
                       </div>
-                    ))}
+                    </div>
+                    <div
+                      className="tab-pane fade show active"
+                      id="tab-list"
+                      role="tabpanel"
+                      aria-labelledby="tab-shop-list"
+                    >
+                      <div className="row ">
+                        {products?.data?.map(product => (
+                          <div className="col-sm-6 col-lg-6 col-xl-6">
+                            <div className="vs-product-box2 d-xl-flex has-border thumb_swap">
+                              <div className="product-img">
+                                <Link href={`product/${product.attributes.slug}`}>
+                                  <img
+                                    src={product.attributes.thumbnail.data.attributes.url}
+                                    alt="Product Image"
+                                    className="w-100"
+                                  />
+                                </Link>
+                                <Link href={`product/${product.attributes.slug}`}>
+                                  <img
+                                    src={product.attributes.thumbnail.data.attributes.url}
+                                    alt="Product Image"
+                                    className="w-100 img_swap"
+                                  />
+                                </Link>
+                              </div>
+                              <div className="product-content d-xl-flex align-items-center">
+                                <div>
+                                  <h4 className="product-title h5 mb-1">
+                                    <a href={`product/${product.attributes.slug}`}>{product.attributes.name}</a>
+                                  </h4>
+                                  <span className="price font-theme">
+                                    <strong>{product.attributes.price.toLocaleString()} đ</strong>
+                                  </span>
+                                  <p className="m-0 rating fs-xs text-theme lh-base">
+                                    <i className="fas fa-star" />
+                                    <i className="fas fa-star" />
+                                    <i className="fas fa-star" />
+                                    <i className="fas fa-star" />
+                                    <i className="fas fa-star" />
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              {/* <div className="pagination-layout1 list-style-none text-center text-lg-end mt-0 mt-lg-4 mb-30">
+                  {/* <div className="pagination-layout1 list-style-none text-center text-lg-end mt-0 mt-lg-4 mb-30">
                 <ul>
                   <li>
                     <a href="#">Prev</a>
@@ -217,9 +243,9 @@ const Shop = () => {
                   </li>
                 </ul>
               </div> */}
-            </div>
-          </div>
-          {/* <div className="col-lg-4 col-xl-3">
+                </div>
+              </div>
+              {/* <div className="col-lg-4 col-xl-3">
             <aside className="sidebar-area">
               <div className="widget  ">
                 <h3 className="widget_title">Filter By</h3>
@@ -349,9 +375,12 @@ const Shop = () => {
               </div>
             </aside>
           </div> */}
-        </div>
-      </div>
-    </section>
+            </div>
+          </div>
+        </section>
+
+      </Spin>
+    </>
 
   );
 }

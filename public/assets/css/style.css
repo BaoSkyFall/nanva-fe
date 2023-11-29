@@ -3578,6 +3578,11 @@ ul.product_list_widget .amount {
   line-height: 1;
 }
 
+.menu-style2>ul>li>a.active {
+  color: var(--theme-color) !important;
+
+}
+
 .menu-style3>ul>li {
   margin: 0 15px;
 }
@@ -3591,6 +3596,10 @@ ul.product_list_widget .amount {
 }
 
 .menu-style3>ul>li>a:hover {
+  color: var(--title-color) !important;
+}
+
+.menu-style3>ul>li>a.active {
   color: var(--title-color) !important;
 }
 
