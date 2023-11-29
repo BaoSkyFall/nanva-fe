@@ -290,3 +290,7 @@
   .tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
     background: var(--primary);
   }
+
+  .cursor-pointer {
+    cursor: pointer!important;
+  }

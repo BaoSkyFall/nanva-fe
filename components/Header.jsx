@@ -151,13 +151,13 @@ const Header = () => {
                                 <ul>
                                     <li>
                                         <Link href="/">
-                                            Home
+                                            Trang Chủ
                                         </Link>
 
                                     </li>
                                     <li>
                                         <Link href="/shop">
-                                            Shop
+                                            Cửa Hàng
                                         </Link>
                                         {/* <ul className="sub-menu">
                                             <li>
@@ -313,7 +313,7 @@ const Header = () => {
                                         </ul>
                                     </li> */}
                                     <li>
-                                        <Link href="/contact">Contact Us</Link>
+                                        <Link href="/contact">Liên Hệ Với Chúng Tôi</Link>
                                     </li>
                                 </ul>
                             </nav>

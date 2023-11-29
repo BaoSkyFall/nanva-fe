@@ -33,23 +33,20 @@ const AboutUsMain = () => {
                         </div>
                     </div>
                     <div className="col-lg-6 mb-30">
-                        <span className="sub-title4">What is organic farming?</span>
+                        <span className="sub-title4">Hạt điều organic là gì?</span>
                         <h2 className="sec-title4">
-                            Organic Food is Farmed in Harmony with Nature
+                            Hạt điều organic hay còn gọi là hạt điều hữu cơ.
                         </h2>
                         <div className="row">
                             <div className="col-xl-10">
                                 <p className="sec-text mb-lg-5 pe-lg-3">
-                                    Alienum phaedrum torquatos nec eu, vis detraxit periculis ex,
-                                    nihil is in mei. Mei an periculaeuripidis, hincartem ei est.
-                                    Alienum phaed is in mei. Mei an periculaeuripidis, hincarte
-                                    periculaeuripidm ei est.
+                                    Hạt điều hữu cơ được phát triển với mục tiêu “hài hòa lợi ích giữa các thành tố như con người, cây điều, đất trồng và môi trường xung quanh. Hài hòa lợi ích chính là chìa khóa của phát triển bền vững”. Vì vậy điều kiện tiên quyết là cần hạn chế đến mức tối đa sử dụng thuốc trừ sâu, phân bón và các chất tăng trưởng.
                                 </p>
                             </div>
                         </div>
                         <div className="block-schedule">
-                            <img src="/assets/img/icons/ab-icon-0088.png" alt="Icon image" />
-                            <p className="text">Monday - Saturday: 9:00 - 24:00 Sunday: Closed</p>
+                            <img src="/assets/img/icons/feature-icon-1-1.png" alt="Icon image" />
+                            <p className="text">Free Ship Khu Vực Bình Phước - Nội Thành TP.HCM</p>
                         </div>
                     </div>
                 </div>

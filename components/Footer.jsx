@@ -148,7 +148,7 @@ const Footer = () => {
                             <div className="widget  footer-widget">
                                 <div className="footer-info-widget">
                                     <div className="footer-info-logo">
-                                        <img src="/assets/img/logo-white.svg" alt="Foodano" />
+                                        <img src="/assets/img/logo-white.png" alt="Foodano" />
                                     </div>
                                     <div className="footer-info">
                                         <i className="fas fa-phone-alt" />

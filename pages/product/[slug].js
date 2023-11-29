@@ -156,7 +156,7 @@ const ProductDetails = ({ product, products }) => {
                           <i className="far fa-chevron-up" />
                         </button>
                       </div>
-                      <a className="vs-btn shadow-none" onClick={() => {
+                      <a className="vs-btn shadow-none cursor-pointer" onClick={() => {
                         dispatch(
                           addToCart({
                             ...productData,

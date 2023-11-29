@@ -10,11 +10,17 @@ import Link from "next/link";
 const FeatureProducts = ({ products }) => {
 
   return (
-    <section id="tranding">
-      <div className="container">
-        <h3 className="text-center section-subheading">- Popular Products -</h3>
-        {/* <h1 className="text-center section-heading">Tranding food</h1> */}
+    <section id="tranding" style={{ backgroundImage: `url("assets/img/shape/bg-9754.png")` }}
+    >
+      <div className="section-title text-center">
+        <div className="sec-icon">
+          <img src="assets/img/icons/sec-icon-2.png" alt="icon" />
+        </div>
+        <span className="sub-title4">100% Organic Food</span>
+        <h2 className="sec-title3 mt-2">Sản Phẩm Của Chúng Tôi</h2>
       </div>
+
+
       <div className="container">
         <Swiper
           activeIndex={0}
@@ -47,9 +53,9 @@ const FeatureProducts = ({ products }) => {
           className="tranding-slider"
         >
           {products?.data?.map((product) =>
-            <SwiperSlide key={product.id} className="tranding-slide">
-              <div className="vs-product-box4">
-                <div className="product-img">
+            <SwiperSlide key={product.id} className="tranding-slide" >
+              <div className="vs-product-box4" style={{ backgroundImage: `url("assets/img/shape/bg-9754.png")` }}>
+                <div className="product-img" >
                   <Link href={`product/${product.attributes.slug}`}>
                     <img
                       src={product.attributes.thumbnail.data.attributes.url}

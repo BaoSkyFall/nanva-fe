@@ -59,7 +59,14 @@ const getItems = (panelStyle) => [
   {
     key: '2',
     label: 'Chuyển Khoản',
-    children: <p>Chuyển Khoản Trực Tiếp Ngân Hàng</p>,
+    children: <div>
+      <p>Chuyển Khoản Trực Tiếp Ngân Hàng</p>
+      <div className="flex items-center justify-center">
+        <img style={{ maxWidth: "100%" }} src="/assets/img/banking.jpg" alt="Foodano" />
+
+      </div>
+    </div>
+    ,
     style: panelStyle,
   }
 ];
@@ -84,6 +91,25 @@ const Cart = () => {
       0
     );
   }, [cartItems]);
+
+  const handlePayment = async () => {
+    try {
+      await form.validateFields()
+      setLoading(true);
+      const res = await makePaymentRequest("/api/orders", {
+        products: cartItems,
+      });
+      // await stripe.redirectToCheckout({
+      //     sessionId: res.stripeSession.id,
+      // });
+    } catch (error) {
+      setLoading(false);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      }); console.log(error);
+    }
+  };
   return (
     <div className="w-full md:py-20">
       <Wrapper>
@@ -94,7 +120,7 @@ const Cart = () => {
             <form action="#" className="woocommerce-checkout mt-40">
               <div className="row">
                 <div className="col-lg-12">
-                  <h2 className="h4">Billing Details</h2>
+                  <h2 className="h4">Chi Tiết Đơn Hàng</h2>
                   <div className="row gx-2">
                     <Form
                       {...formItemLayout}
@@ -167,16 +193,16 @@ const Cart = () => {
 
               </div>
             </form>
-            <h4 className="mt-4 pt-lg-2">Your Order</h4>
+            <h4 className="mt-4 pt-lg-2">Đơn Hàng</h4>
             <form action="#" className="woocommerce-cart-form">
               <table className="cart_table mb-20">
                 <thead>
                   <tr>
-                    <th className="cart-col-image">Image</th>
-                    <th className="cart-col-productname">Product Name</th>
-                    <th className="cart-col-price">Price</th>
-                    <th className="cart-col-quantity">Quantity</th>
-                    <th className="cart-col-total">Total</th>
+                    <th className="cart-col-image">Hình Ảnh</th>
+                    <th className="cart-col-productname">Sản Phẩm</th>
+                    <th className="cart-col-price">Giá</th>
+                    <th className="cart-col-quantity">Số Lượng</th>
+                    <th className="cart-col-total">Tổng</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -224,7 +250,7 @@ const Cart = () => {
                   <table className="checkout-ordertable mb-0">
                     <tbody>
                       <tr className="cart-subtotal">
-                        <th>Cart Subtotal</th>
+                        <th>Tạm Tính</th>
                         <td>
                           <span className="amount">
                             <bdi>
@@ -234,7 +260,7 @@ const Cart = () => {
                         </td>
                       </tr>
                       <tr className="woocommerce-shipping-totals shipping">
-                        <th>Shipping and Handling</th>
+                        <th>Phí Vận Chuyển</th>
                         <td data-title="Shipping">
                           <ul className="woocommerce-shipping-methods list-unstyled">
                             <li>
@@ -245,13 +271,13 @@ const Cart = () => {
                                 name="shipping_method"
                                 className="shipping_method"
                               />
-                              <label htmlFor="free_shipping">Free shipping</label>
+                              <label htmlFor="free_shipping">Miễn Phí</label>
                             </li>
                           </ul>
                         </td>
                       </tr>
                       <tr className="order-total">
-                        <th>Order Total</th>
+                        <th>Tổng</th>
                         <td>
                           <strong>
                             <span className="amount">
@@ -284,7 +310,9 @@ const Cart = () => {
                   items={getItems(panelStyle)}
                 />
                 <div className="form-row place-order">
-                  <button type="submit" className="vs-btn">
+                  <button type="submit" className="vs-btn" onClick={() => {
+                    handlePayment()
+                  }}>
                     Thanh Toán
                   </button>
                 </div>

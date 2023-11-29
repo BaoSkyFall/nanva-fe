@@ -122,18 +122,18 @@ const Cart = () => {
                 )} */}
         <div className="vs-cart-wrapper  space-top space-md-bottom">
           <div className="container">
-            <div className="woocommerce-notices-wrapper">
+            {/* <div className="woocommerce-notices-wrapper">
               <div className="woocommerce-message">Shipping costs updated.</div>
-            </div>
+            </div> */}
             <table className="cart_table">
               <thead>
                 <tr>
-                  <th className="cart-col-image">Image</th>
-                  <th className="cart-col-productname">Product Name</th>
-                  <th className="cart-col-price">Price</th>
-                  <th className="cart-col-quantity">Quantity</th>
-                  <th className="cart-col-total">Total</th>
-                  <th className="cart-col-remove">Remove</th>
+                  <th className="cart-col-image">Hình Ảnh</th>
+                  <th className="cart-col-productname">Sản Phẩm</th>
+                  <th className="cart-col-price">Giá</th>
+                  <th className="cart-col-quantity">Số Lượng</th>
+                  <th className="cart-col-total">Tổng</th>
+                  <th className="cart-col-remove">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -207,11 +207,11 @@ const Cart = () => {
             </table>
             <div className="row justify-content-end">
               <div className="col-md-8 col-lg-7 col-xl-6">
-                <h2 className="h4 summary-title">Cart Totals</h2>
+                <h2 className="h4 summary-title">Giỏ Hàng</h2>
                 <table className="cart_totals">
                   <tbody>
                     <tr>
-                      <td>Cart Subtotal</td>
+                      <td>Tạm Tính</td>
                       <td data-title="Cart Subtotal">
                         <span className="amount">
                           <bdi>
@@ -221,7 +221,7 @@ const Cart = () => {
                       </td>
                     </tr>
                     <tr className="shipping">
-                      <th>Shipping and Handling</th>
+                      <th>Phí Giao Hàng</th>
                       <td data-title="Shipping and Handling">
                         <ul className="woocommerce-shipping-methods list-unstyled">
                           <li>
@@ -232,7 +232,7 @@ const Cart = () => {
                               name="shipping_method"
                               className="shipping_method"
                             />
-                            <label htmlFor="free_shipping">Free shipping</label>
+                            <label htmlFor="free_shipping">Miễn Phí</label>
                           </li>
                         </ul>
                       </td>
@@ -240,7 +240,7 @@ const Cart = () => {
                   </tbody>
                   <tfoot>
                     <tr className="order-total">
-                      <td>Order Total</td>
+                      <td>Tổng</td>
                       <td data-title="Total">
                         <strong>
                           <span className="amount">
@@ -255,7 +255,7 @@ const Cart = () => {
                 </table>
                 <div className="wc-proceed-to-checkout mb-30">
                   <Link href="/checkout" className="vs-btn rounded-1 shadow-none">
-                    Proceed to checkout
+                    Tiến Hành Thanh Toán
                   </Link>
                 </div>
               </div>
