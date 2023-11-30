@@ -63,10 +63,10 @@ export default function App({ Component, pageProps }) {
             </Head>
             <Provider store={store}>
                 <Header />
-                <ConfigProvider theme={theme}>
+                {/* <ConfigProvider theme={theme}> */}
 
-                    <Component {...pageProps} />
-                </ConfigProvider>
+                <Component {...pageProps} />
+                {/* </ConfigProvider> */}
                 <Footer />
                 <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
 
