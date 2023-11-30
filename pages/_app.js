@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import store from "@/store/store";
 import NextNProgress from 'nextjs-progressbar';
 import { ConfigProvider } from 'antd';
-import theme from './theme/themeConfig';
+import theme from '../theme/themeConfig';
 
 export default function App({ Component, pageProps }) {
     return (
@@ -63,10 +63,10 @@ export default function App({ Component, pageProps }) {
             </Head>
             <Provider store={store}>
                 <Header />
-                {/* <ConfigProvider theme={theme}> */}
+                <ConfigProvider theme={theme}>
 
-                <Component {...pageProps} />
-                {/* </ConfigProvider> */}
+                    <Component {...pageProps} />
+                </ConfigProvider>
                 <Footer />
                 <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
 
