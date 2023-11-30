@@ -340,12 +340,14 @@ const Header = () => {
                                 </Link>
                                 <Link className=" d-lg-none" href="/contact">Contact Us</Link>
 
-                                <Link href="/cart" rel="tag">
-                                    <button className="sideMenuToggler has-badge" type="button">
+                                <button className="sideMenuToggler has-badge" type="button">
+                                    <Link href="/cart" >
+
                                         <i className="fal fa-shopping-cart" />
                                         <span className="badge">{totalItems}</span>
-                                    </button>
-                                </Link>
+                                    </Link>
+
+                                </button>
 
                             </div>
                         </div>
