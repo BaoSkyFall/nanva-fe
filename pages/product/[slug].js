@@ -29,7 +29,7 @@ const ProductDetails = ({ product, products }) => {
     setProductData({ id: product?.data?.[0].id, ...product?.data?.[0]?.attributes, quantity: 1 });
   }, [product]);
   const notify = () => {
-    toast.success("Success. Check your cart!", {
+    toast.success("Thêm vào giỏ hàng Thành Công! ", {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -37,7 +37,7 @@ const ProductDetails = ({ product, products }) => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "dark",
+      theme: "light",
     });
   };
   useEffect(() => {

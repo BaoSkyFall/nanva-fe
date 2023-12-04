@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }) {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-                <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
+                <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
                 <meta name="msapplication-TileImage" content="/assets/img/favicons/ms-icon-144x144.png" />
                 <meta name="theme-color" content="#ffffff" />
                 <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-icon-57x57.png" />

@@ -207,7 +207,7 @@ const Cart = () => {
             </table>
             <div className="row justify-content-end">
               <div className="col-md-8 col-lg-7 col-xl-6">
-                <h2 className="h4 summary-title">Giỏ Hàng</h2>
+                <h2 className="h4 summary-title">Đơn Hàng</h2>
                 <table className="cart_totals">
                   <tbody>
                     <tr>
