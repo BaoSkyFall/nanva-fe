@@ -20,7 +20,7 @@ import React from "react";
 const AboutUsMain = () => {
     return (
         <div
-            className="sec-bg10  space-top space-md-bottom"
+            className="sec-bg10  space-md-bottom"
             data-bg-src="/assets/img/bg/ab-bg-5465.png"
         >
             <div className="container">

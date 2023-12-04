@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 
 import Slider from 'react-slick';
 import { BiArrowBack } from 'react-icons/bi'; // Assuming you have the react-icons package installed
+import Link from "next/link";
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -172,7 +173,7 @@ const HeroBanner = () => {
                         width={1767}
                         height={690}
                         src="/assets/img/hero/hero-bg-7-1.jpg"
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         alt="hero bg"
                         style={{
                             top: 0,
@@ -193,14 +194,14 @@ const HeroBanner = () => {
                             height: "100%",
                             backgroundImage: 'url("assets/img/hero/hero-bg-7-1.jpg")'
                         }}
-                        className="ls-l ls-hide-desktop"
+                        className="ls-l text-center ls-hide-desktop"
                         data-ls="static:forever;"
                     />
                     <img
                         width={588}
                         height={306}
                         src="/assets/img/hero/hero-7-1-1.png"
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         alt="image"
                         style={{
                             top: 119,
@@ -218,13 +219,13 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 40,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c"
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        Organic Plants and 100% Fresh Fruits
+                        100% Từ Organic
                     </h1>
                     <div
                         style={{
@@ -235,19 +236,19 @@ const HeroBanner = () => {
                             backgroundPosition: "inherit",
                             width: 430
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        <a href="shop.html" className="vs-btn style5 ls-btn">
-                            Start Shopping
+                        <Link href="/shop" className="vs-btn style5 ls-btn">
+                            Mua Ngay
                             <i className="far fa-angle-right" />
-                        </a>
+                        </Link>
                     </div>
                     <img
-                        width={633}
-                        height={542}
+                        width={550}
+                        height={550}
                         src="/assets/img/hero/hero-7-1-4.png"
-                        className="ls-l ls-hide-phone"
+                        className="ls-l text-center ls-hide-phone"
                         alt="image"
                         style={{
                             top: 108,
@@ -261,7 +262,7 @@ const HeroBanner = () => {
                         width={145}
                         height={147}
                         src="/assets/img/hero/hero-7-1-2.png"
-                        className="ls-l ls-hide-phone"
+                        className="ls-l text-center ls-hide-phone"
                         alt="image"
                         style={{
                             top: 118,
@@ -275,7 +276,7 @@ const HeroBanner = () => {
                         width={234}
                         height={258}
                         src="/assets/img/hero/hero-7-1-3.png"
-                        className="ls-l ls-hide-phone"
+                        className="ls-l text-center ls-hide-phone"
                         alt="image"
                         style={{
                             top: 376,
@@ -286,7 +287,7 @@ const HeroBanner = () => {
                         data-ls="offsetxin:200; durationin:1500; delayin:1400; easingin:easeOutQuint; rotatein:45; offsetxout:200; durationout:1500; easingout:easeOutQuint; rotateout:45;"
                     />
                     <a
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet ls-hide-phone"
                         href="#prev"
                         target="_self"
                         data-ls="static:forever;"
@@ -308,7 +309,7 @@ const HeroBanner = () => {
                         </span>
                     </a>
                     <a
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet ls-hide-phone"
                         href="#next"
                         target="_self"
                         data-ls="static:forever;"
@@ -330,7 +331,7 @@ const HeroBanner = () => {
                         </div>
                     </a>
                     <a
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet ls-hide-phone"
                         href="#1"
                         target="_self"
                         data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff;"
@@ -359,7 +360,7 @@ const HeroBanner = () => {
                         </p>
                     </a>
                     <a
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet ls-hide-phone"
                         href="#1"
                         target="_self"
                         data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff; static:forever;"
@@ -387,7 +388,7 @@ const HeroBanner = () => {
                         </p>
                     </a>
                     <a
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet ls-hide-phone"
                         href="#2"
                         target="_self"
                         data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff; static:forever;"
@@ -415,7 +416,7 @@ const HeroBanner = () => {
                         </p>
                     </a>
                     <a
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet ls-hide-phone"
                         href="#3"
                         target="_self"
                         data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff; static:forever;"
@@ -443,7 +444,7 @@ const HeroBanner = () => {
                         </p>
                     </a>
                     <a
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet ls-hide-phone"
                         href="#4"
                         target="_self"
                         data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff; static:forever;"
@@ -471,7 +472,7 @@ const HeroBanner = () => {
                         </p>
                     </a>
                     <a
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet ls-hide-phone"
                         href="#5"
                         target="_self"
                         data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff; static:forever;"
@@ -502,7 +503,7 @@ const HeroBanner = () => {
                         width={588}
                         height={306}
                         src="/assets/img/hero/hero-7-1-1.png"
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         alt="image"
                         style={{
                             top: 119,
@@ -520,13 +521,13 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 62,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c"
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        Organic Plants and 100% Fresh Fruits
+                        100% T Organic
                     </h1>
                     <span
                         style={{
@@ -548,10 +549,10 @@ const HeroBanner = () => {
                             borderLeft: "3px solid #fff",
                             paddingTop: 30
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
                     >
-                        START SHOPPING
+                        Mua Ngay
                     </span>
                     <h1
                         style={{
@@ -561,15 +562,15 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 160,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c",
                             width: 1000,
                             whiteSpace: "normal"
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        Organic Plants and 100% Fresh Fruits
+                        100% T Organic
                     </h1>
                     <span
                         style={{
@@ -591,16 +592,16 @@ const HeroBanner = () => {
                             borderLeft: "3px solid #fff",
                             paddingTop: 50
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
                     >
-                        START SHOPPING
+                        Mua Ngay
                     </span>
                     <img
-                        width={633}
-                        height={542}
+                        width={550}
+                        height={550}
                         src="/assets/img/hero/hero-7-1-4.png"
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         alt="image"
                         style={{
                             top: 97,
@@ -615,7 +616,7 @@ const HeroBanner = () => {
                 </div>
 
                 {/* Slide 2*/}
-                <div
+                {/* <div
                     className="ls-slide"
                     data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;"
                 >
@@ -623,7 +624,7 @@ const HeroBanner = () => {
                         width={588}
                         height={306}
                         src="/assets/img/hero/hero-7-1-1.png"
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         alt="image"
                         style={{
                             top: 119,
@@ -641,10 +642,10 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 40,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c"
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Pick words related to Organic food brand
@@ -658,19 +659,19 @@ const HeroBanner = () => {
                             backgroundPosition: "inherit",
                             width: 430
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        <a href="shop.html" className="vs-btn style5 ls-btn">
-                            Start Shopping
+                        <Link href="/shop" className="vs-btn style5 ls-btn">
+                            Mua Ngay
                             <i className="far fa-angle-right" />
-                        </a>
+                        </Link>
                     </div>
                     <img
                         width={500}
                         height={636}
                         src="/assets/img/hero/hero-7-2-4.png"
-                        className="ls-l ls-hide-phone"
+                        className="ls-l text-center ls-hide-phone"
                         alt="image"
                         style={{
                             top: 5,
@@ -686,7 +687,7 @@ const HeroBanner = () => {
                         width={145}
                         height={147}
                         src="/assets/img/hero/hero-7-1-2.png"
-                        className="ls-l ls-hide-phone"
+                        className="ls-l text-center ls-hide-phone"
                         alt="image"
                         style={{
                             top: 118,
@@ -714,7 +715,7 @@ const HeroBanner = () => {
                             backgroundColor: "#76a713",
                             zIndex: 1000
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff;"
                     >
                         2
@@ -723,7 +724,7 @@ const HeroBanner = () => {
                         width={588}
                         height={306}
                         src="/assets/img/hero/hero-7-1-1.png"
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         alt="image"
                         style={{
                             top: 119,
@@ -741,10 +742,10 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 62,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c"
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Pick words related to Organic food brand
@@ -769,10 +770,10 @@ const HeroBanner = () => {
                             borderLeft: "3px solid #fff",
                             paddingTop: 30
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
                     >
-                        START SHOPPING
+                        Mua Ngay
                     </span>
                     <h1
                         style={{
@@ -782,12 +783,12 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 160,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c",
                             width: 1000,
                             whiteSpace: "normal"
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Pick words related to Organic food brand
@@ -812,16 +813,16 @@ const HeroBanner = () => {
                             borderLeft: "3px solid #fff",
                             paddingTop: 50
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
                     >
-                        START SHOPPING
+                        Mua Ngay
                     </span>
                     <img
                         width={500}
                         height={636}
                         src="/assets/img/hero/hero-7-2-4.png"
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         alt="image"
                         style={{
                             top: 13,
@@ -833,9 +834,9 @@ const HeroBanner = () => {
                         }}
                         data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
                     />
-                </div>
+                </div> */}
                 {/* Slide 3*/}
-                <div
+                {/* <div
                     className="ls-slide"
                     data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;"
                 >
@@ -843,7 +844,7 @@ const HeroBanner = () => {
                         width={588}
                         height={306}
                         src="/assets/img/hero/hero-7-1-1.png"
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         alt="image"
                         style={{
                             top: 119,
@@ -861,10 +862,10 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 40,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c"
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Intermix words alphabets uniqueness
@@ -878,19 +879,19 @@ const HeroBanner = () => {
                             backgroundPosition: "inherit",
                             width: 430
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        <a href="shop.html" className="vs-btn style5 ls-btn">
-                            Start Shopping
+                        <Link href="/shop" className="vs-btn style5 ls-btn">
+                            Mua Ngay
                             <i className="far fa-angle-right" />
-                        </a>
+                        </Link>
                     </div>
                     <img
                         width={496}
                         height={618}
                         src="/assets/img/hero/hero-7-3-4.png"
-                        className="ls-l ls-hide-phone"
+                        className="ls-l text-center ls-hide-phone"
                         alt="image"
                         style={{
                             top: 13,
@@ -906,7 +907,7 @@ const HeroBanner = () => {
                         width={145}
                         height={147}
                         src="/assets/img/hero/hero-7-1-2.png"
-                        className="ls-l ls-hide-phone"
+                        className="ls-l text-center ls-hide-phone"
                         alt="image"
                         style={{
                             top: 118,
@@ -934,7 +935,7 @@ const HeroBanner = () => {
                             backgroundColor: "#76a713",
                             zIndex: 1000
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff;"
                     >
                         3
@@ -943,7 +944,7 @@ const HeroBanner = () => {
                         width={588}
                         height={306}
                         src="/assets/img/hero/hero-7-1-1.png"
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         alt="image"
                         style={{
                             top: 119,
@@ -961,10 +962,10 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 62,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c"
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Intermix words alphabets uniqueness
@@ -989,10 +990,10 @@ const HeroBanner = () => {
                             borderLeft: "3px solid #fff",
                             paddingTop: 30
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
                     >
-                        START SHOPPING
+                        Mua Ngay
                     </span>
                     <h1
                         style={{
@@ -1002,12 +1003,12 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 160,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c",
                             width: 1000,
                             whiteSpace: "normal"
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Intermix words alphabets uniqueness
@@ -1032,16 +1033,16 @@ const HeroBanner = () => {
                             borderLeft: "3px solid #fff",
                             paddingTop: 50
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
                     >
-                        START SHOPPING
+                        Mua Ngay
                     </span>
                     <img
                         width={496}
                         height={618}
                         src="/assets/img/hero/hero-7-3-4.png"
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         alt="image"
                         style={{
                             top: "-1px",
@@ -1054,9 +1055,9 @@ const HeroBanner = () => {
                         }}
                         data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
                     />
-                </div>
+                </div> */}
                 {/* Slide 4*/}
-                <div
+                {/* <div
                     className="ls-slide"
                     data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;"
                 >
@@ -1064,7 +1065,7 @@ const HeroBanner = () => {
                         width={588}
                         height={306}
                         src="/assets/img/hero/hero-7-1-1.png"
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         alt="image"
                         style={{
                             top: 119,
@@ -1082,10 +1083,10 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 40,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c"
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Inspire your ideas from movies &amp; dramas
@@ -1099,19 +1100,19 @@ const HeroBanner = () => {
                             backgroundPosition: "inherit",
                             width: 430
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        <a href="shop.html" className="vs-btn style5 ls-btn">
-                            Start Shopping
+                        <Link href="/shop" className="vs-btn style5 ls-btn">
+                            Mua Ngay
                             <i className="far fa-angle-right" />
-                        </a>
+                        </Link>
                     </div>
                     <img
                         width={494}
                         height={616}
                         src="/assets/img/hero/hero-7-4-4.png"
-                        className="ls-l ls-hide-phone"
+                        className="ls-l text-center ls-hide-phone"
                         alt="image"
                         style={{
                             top: 40,
@@ -1125,7 +1126,7 @@ const HeroBanner = () => {
                         width={145}
                         height={147}
                         src="/assets/img/hero/hero-7-1-2.png"
-                        className="ls-l ls-hide-phone"
+                        className="ls-l text-center ls-hide-phone"
                         alt="image"
                         style={{
                             top: 118,
@@ -1153,7 +1154,7 @@ const HeroBanner = () => {
                             backgroundColor: "#76a713",
                             zIndex: 1000
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff;"
                     >
                         4
@@ -1162,7 +1163,7 @@ const HeroBanner = () => {
                         width={588}
                         height={306}
                         src="/assets/img/hero/hero-7-1-1.png"
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         alt="image"
                         style={{
                             top: 119,
@@ -1180,10 +1181,10 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 62,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c"
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Inspire your ideas from movies &amp; dramas
@@ -1208,10 +1209,10 @@ const HeroBanner = () => {
                             borderLeft: "3px solid #fff",
                             paddingTop: 30
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
                     >
-                        START SHOPPING
+                        Mua Ngay
                     </span>
                     <h1
                         style={{
@@ -1221,12 +1222,12 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 160,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c",
                             width: 1000,
                             whiteSpace: "normal"
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Inspire your ideas from movies &amp; dramas
@@ -1251,16 +1252,16 @@ const HeroBanner = () => {
                             borderLeft: "3px solid #fff",
                             paddingTop: 50
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
                     >
-                        START SHOPPING
+                        Mua Ngay
                     </span>
                     <img
                         width={494}
                         height={616}
                         src="/assets/img/hero/hero-7-4-4.png"
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         alt="image"
                         style={{
                             top: 33,
@@ -1272,9 +1273,9 @@ const HeroBanner = () => {
                         }}
                         data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
                     />
-                </div>
+                </div> */}
                 {/* Slide 5*/}
-                <div
+                {/* <div
                     className="ls-slide"
                     data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;"
                 >
@@ -1282,7 +1283,7 @@ const HeroBanner = () => {
                         width={588}
                         height={306}
                         src="/assets/img/hero/hero-7-1-1.png"
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         alt="image"
                         style={{
                             top: 119,
@@ -1300,10 +1301,10 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 40,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c"
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Before come up with an organic food
@@ -1317,19 +1318,19 @@ const HeroBanner = () => {
                             backgroundPosition: "inherit",
                             width: 430
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        <a href="shop.html" className="vs-btn style5 ls-btn">
-                            Start Shopping
+                        <Link href="/shop" className="vs-btn style5 ls-btn">
+                            Mua Ngay
                             <i className="far fa-angle-right" />
-                        </a>
+                        </Link>
                     </div>
                     <img
                         width={491}
                         height={621}
                         src="/assets/img/hero/hero-7-5-4.png"
-                        className="ls-l ls-hide-phone"
+                        className="ls-l text-center ls-hide-phone"
                         alt="image"
                         style={{
                             top: 34,
@@ -1343,7 +1344,7 @@ const HeroBanner = () => {
                         width={145}
                         height={147}
                         src="/assets/img/hero/hero-7-1-2.png"
-                        className="ls-l ls-hide-phone"
+                        className="ls-l text-center ls-hide-phone"
                         alt="image"
                         style={{
                             top: 118,
@@ -1371,7 +1372,7 @@ const HeroBanner = () => {
                             backgroundColor: "#76a713",
                             zIndex: 1000
                         }}
-                        className="ls-l ls-hide-tablet ls-hide-phone"
+                        className="ls-l text-center ls-hide-tablet ls-hide-phone"
                         data-ls="hover:true; hoverbgcolor:#76a713; hovercolor:#ffffff;"
                     >
                         5
@@ -1380,7 +1381,7 @@ const HeroBanner = () => {
                         width={588}
                         height={306}
                         src="/assets/img/hero/hero-7-1-1.png"
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         alt="image"
                         style={{
                             top: 119,
@@ -1398,10 +1399,10 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 62,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c"
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Before come up with an organic food
@@ -1426,10 +1427,10 @@ const HeroBanner = () => {
                             borderLeft: "3px solid #fff",
                             paddingTop: 30
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-phone"
+                        className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
                     >
-                        START SHOPPING
+                        Mua Ngay
                     </span>
                     <h1
                         style={{
@@ -1439,12 +1440,12 @@ const HeroBanner = () => {
                             backgroundSize: "inherit",
                             backgroundPosition: "inherit",
                             fontSize: 160,
-                            fontFamily: '"Amatic SC", cursive',
+                            fontFamily: '"Roboto", cursive',
                             color: "#fcd55c",
                             width: 1000,
                             whiteSpace: "normal"
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
                         Before come up with an organic food
@@ -1469,16 +1470,16 @@ const HeroBanner = () => {
                             borderLeft: "3px solid #fff",
                             paddingTop: 50
                         }}
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         data-ls="offsetyin:200; durationin:1500; delayin:400; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint; hover:true; hovereasingin:easeOutQuint; hoverbgcolor:#ffffff; hovercolor:#76a713;"
                     >
-                        START SHOPPING
+                        Mua Ngay
                     </span>
                     <img
                         width={491}
                         height={621}
                         src="/assets/img/hero/hero-7-5-4.png"
-                        className="ls-l ls-hide-desktop ls-hide-tablet"
+                        className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         alt="image"
                         style={{
                             top: 15,
@@ -1490,7 +1491,7 @@ const HeroBanner = () => {
                         }}
                         data-ls="offsetxin:200; offsetyin:top; durationin:1500; delayin:400; easingin:easeOutQuint; rotatein:45; offsetxout:200; offsetyout:top; durationout:1500; easingout:easeOutQuint; rotateout:45;"
                     />
-                </div>
+                </div> */}
             </div>
         </section>
 

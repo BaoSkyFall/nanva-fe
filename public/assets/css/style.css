@@ -86,7 +86,7 @@ Version: 1.0.0
     01. Variable
 ==================================*/
 :root {
-  --theme-color: #bdd239;
+  --theme-color: #E8C587;
   --title-color: #000000;
   --body-color: #858585;
   --body-color2: #959595;
@@ -15299,7 +15299,7 @@ table.woocommerce-grouped-product-list.group_table td {
 [dir=rtl] blockquote {
   padding-right: 30px;
   padding-left: 20px;
-  border-right: 3px solid #bdd239;
+  border-right: 3px solid #E8C587;
   border-left: none;
 }
 
@@ -15345,7 +15345,7 @@ table.woocommerce-grouped-product-list.group_table td {
 }
 
 [dir=rtl] .blog-single .blog-author {
-  border-right: 5px solid #bdd239;
+  border-right: 5px solid #E8C587;
   border-left: none;
 }
 

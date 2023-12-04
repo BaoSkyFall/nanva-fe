@@ -145,7 +145,7 @@
           display: inline-block;
           text-align: center;
           background-color: $white-color;
-          // box-shadow: 0 0 20px -8px rgba(#bdd239, 0.8);
+          // box-shadow: 0 0 20px -8px rgba(#E8C587, 0.8);
           box-shadow: 0 0 31px -7px rgba(0, 0, 0, 0.8);
           border-radius: 50%;
         }
@@ -156,6 +156,7 @@
           &:before {
             transform: rotate(90deg);
           }
+
           &:after {
             content: '\f068';
           }

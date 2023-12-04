@@ -13,7 +13,7 @@ import theme from '../theme/themeConfig';
 export default function App({ Component, pageProps }) {
     return (
         <>
-            <NextNProgress color='linear-gradient(90deg, #c2c2c2, #bdd239)' height={6} />
+            <NextNProgress color='linear-gradient(90deg, #c2c2c2, #E8C587)' height={6} />
             <Head>
                 <title>Nava Farm Shop</title>
                 <meta

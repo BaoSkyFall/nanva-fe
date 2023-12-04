@@ -2,7 +2,7 @@ import React from "react";
 
 const HowItWorks = () => {
   return (
-    <section className="  space-top">
+    <section className="">
       <div
         className="shape-mockup jump-reverse d-none d-xl-block"
         data-right="5%"
