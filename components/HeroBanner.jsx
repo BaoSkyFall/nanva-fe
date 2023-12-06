@@ -527,7 +527,7 @@ const HeroBanner = () => {
                         className="ls-l text-center ls-hide-desktop ls-hide-phone"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        100% T Organic
+                        100% Từ Organic
                     </h1>
                     <span
                         style={{
@@ -570,7 +570,7 @@ const HeroBanner = () => {
                         className="ls-l text-center ls-hide-desktop ls-hide-tablet"
                         data-ls="offsetyin:200; durationin:1500; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;"
                     >
-                        100% T Organic
+                        100% Từ Organic
                     </h1>
                     <span
                         style={{
