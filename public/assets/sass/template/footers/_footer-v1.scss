@@ -34,7 +34,7 @@
 
 .social-btn {
   --btn-size: 45px;
-  
+
   ul {
     margin: 0;
     padding: 0;
@@ -68,9 +68,9 @@
 
 .footer-layout2 {
   &.footer-wrapper {
-    padding-top: 195px;
+    // padding-top: 105px;
   }
-  
+
   .widget_title {
     font-size: 26px;
     font-weight: 700;
@@ -108,11 +108,11 @@
 
 .footer-layout3 {
   padding-top: 60px;
-  
+
   .widget {
     margin-bottom: 33px;
   }
-  
+
   .widget_title {
     font-weight: 700;
     font-size: 22px;
@@ -300,7 +300,7 @@
       p {
         font-size: 14px;
       }
-      
+
       &[data-bg-src] {
         padding: 60px 0 30px 0;
         background-size: cover;

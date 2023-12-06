@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import Wrapper from "./Wrapper";
+import Fancybox from './Fancybox';
 
 const Footer = () => {
     return (
@@ -152,70 +153,99 @@ const Footer = () => {
                                     </div>
                                     <div className="footer-info">
                                         <i className="fas fa-phone-alt" />
-                                        <a href="tel:+387643932728">+387643932728</a>
+                                        <a href="tel:+84985087708">+84985087708 <br /></a>
+                                        <a href="tel:+84355220035">+84355220035</a>
+
+
                                     </div>
                                     <div className="footer-info">
                                         <i className="fas fa-map-marker-alt" />
-                                        Harbour House, 60 Purewell, Christchurch, England
+                                        Long Phước, thị xã Phước Long, tỉnh Bình Phước
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-6 col-lg-4">
                             <div className="widget widget_nav_menu  footer-widget">
-                                <h3 className="widget_title">Useful Links</h3>
+                                <h3 className="widget_title">Links</h3>
                                 <div className="menu-all-pages-container footer-links">
                                     <ul className="menu">
                                         <li>
-                                            <a href="#">Farm &amp; Family</a>
+                                            <Link href="/">Home</Link>
                                         </li>
                                         <li>
-                                            <a href="#">Our Butchery</a>
+                                            <Link href="/shop">Shop</Link>
                                         </li>
                                         <li>
-                                            <a href="#">Farm Shops</a>
+                                            <Link href="/contact">Liên Hệ Với Chúng Tôi</Link>
                                         </li>
-                                        <li>
-                                            <a href="#">Dartmoor Inn</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Market Garden</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Farm &amp; Family</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Our Butchery</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Farm Shops</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Dartmoor Inn</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Market Garden</a>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-4">
                             <div className="widget footer-widget">
-                                <h3 className="widget_title">Instagram Photos</h3>
-                                <div className="sidebar-gallery">
+                                <h3 className="widget_title">Hình Ảnh</h3>
+                                <Fancybox className="sidebar-gallery">
                                     <div className="gallery-thumb">
-                                        <a
-                                            className="popup-image"
-                                            href="assets/img/gallery/gal-2-1.jpg"
-                                        >
+                                        <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-1-full.jpg">
                                             <img
+                                                alt=""
                                                 src="/assets/img/gallery/gal-2-1.jpg"
-                                                alt="Gallery Image"
-                                                className="w-100"
                                             />
                                         </a>
                                     </div>
+                                    <div className="gallery-thumb">
+                                        <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-2-full.jpg">
+                                            <img
+                                                alt=""
+                                                src="/assets/img/gallery/gal-2-2.jpg"
+                                            />
+                                        </a>
+                                    </div>
+                                    <div className="gallery-thumb">
+                                        <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-3-full.jpg">
+                                            <img
+                                                alt=""
+                                                src="/assets/img/gallery/gal-2-3.jpg"
+                                            />
+                                        </a>
+                                    </div>
+                                    <div className="gallery-thumb">
+                                        <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-4-full.jpg">
+                                            <img
+                                                alt=""
+                                                src="/assets/img/gallery/gal-2-4.jpg"
+                                            />
+                                        </a>
+                                    </div>
+                                    <div className="gallery-thumb">
+                                        <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-5-full.jpg">
+                                            <img
+                                                alt=""
+                                                src="/assets/img/gallery/gal-2-5.jpg"
+                                            />
+                                        </a>
+                                    </div>
+                                    <div className="gallery-thumb">
+                                        <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-6-full.jpg">
+                                            <img
+                                                alt=""
+                                                src="/assets/img/gallery/gal-2-6.jpg"
+                                            />
+                                        </a>
+                                    </div>
+                                    {/* <a
+                                        className="popup-image"
+                                        href="assets/img/gallery/gal-2-1.jpg"
+                                    >
+                                        <img
+                                            src="/assets/img/gallery/gal-2-1.jpg"
+                                            alt="Gallery Image"
+                                            className="w-100"
+                                        />
+                                    </a>
                                     <div className="gallery-thumb">
                                         <a
                                             className="popup-image"
@@ -275,26 +305,26 @@ const Footer = () => {
                                                 className="w-100"
                                             />
                                         </a>
-                                    </div>
-                                </div>
+                                    </div> */}
+                                </Fancybox>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
             <div className="copyright-area" data-bg-src="/assets/img/shape/footer-5-2.png">
                 <div className="container">
                     <div className="row justify-content-between align-items-center">
                         <div className="col-lg-auto text-center text-lg-start">
                             <div className="copyright">
                                 <p className="mb-0 link-inherit">
-                                    Copyright © 2022 <a href="index.html">Foodano</a> - All Rights
+                                    Copyright © 2023 <a href="index.html">NavaFarm</a> - All Rights
                                     Reserved by{" "}
-                                    <a href="https://themeforest.net/user/vecuro_themes">Vecuro</a>
+                                    {/* <a href="https://themeforest.net/user/vecuro_themes">Vecuro</a> */}
                                 </p>
                             </div>
                         </div>
-                        <div className="col-auto d-none d-lg-block">
+                        {/* <div className="col-auto d-none d-lg-block">
                             <div className="copyright-social">
                                 <a href="#">
                                     <i className="fab fa-facebook-f" />
@@ -309,11 +339,11 @@ const Footer = () => {
                                     Linked In
                                 </a>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer >
 
     );
 };

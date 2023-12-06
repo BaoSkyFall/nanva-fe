@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const CTAWrapper = () => {
   return (
@@ -8,27 +9,26 @@ const CTAWrapper = () => {
       data-bg-src="/assets/img/bg/cat-bg-4584.jpg"
     >
       <div className="container text-center">
-        <span className="sub-title4 text-white">Provide 100% Organic?</span>
-        <h2 className="sec-title3 text-color2">Organic Food Market</h2>
+        <span className="sub-title4 text-white">Đảm Bảo 100% Organic</span>
+        <h2 className="sec-title3 text-color2">Sản Phẩm Của Chúng Tôi</h2>
         <div className="row justify-content-center mb-xl-4 pb-1">
           <div className="col-md-9 col-lg-8 col-xl-6">
             <p className="sec-text text-white">
-              Supplying our organic farm shops and restaurants with the freshest
-              organic herbs and vegetables from Devon
+              Cam kết cung cấp hạt điều tự nhiên 100% không chất bảo quản. Tốt cho sức khỏe người tiêu dùng. Vận chuyển miễn phí cho khu vực Bình Phước, TP. HCM
             </p>
           </div>
         </div>
         <div className="row justify-content-center gy-3 pt-2">
           <div className="col-auto">
-            <a href="about.html" className="vs-btn style5">
-              Learn More
+            <Link href="/shop" className="vs-btn style5">
+              Mua Ngay
               <i className="fas fa-angle-right" />
-            </a>
+            </Link>
           </div>
           <div className="col-auto">
-            <a href="tel:+387643932728" className="vs-btn style4">
+            <a href="tel:+84985087708" className="vs-btn style4">
               <i className="fas fa-phone-alt" />
-              +387643932728
+              +84985087708
             </a>
           </div>
         </div>
