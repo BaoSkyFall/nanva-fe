@@ -33,7 +33,7 @@ const MenuWrapper = ({ children, className }) => {
             >
               <div className="cat-body">
                 <h3 className="cat-title text-white">
-                  Hạt Điều Rang Muối Hồng Himalaya
+                  Hạt Điều Rang Muối
                 </h3>
                 <Link href="/shop" className="cat-link">
                   Mua Ngay

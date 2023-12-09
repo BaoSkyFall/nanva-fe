@@ -2789,7 +2789,7 @@ ul.product_list_widget .amount {
 }
 
 .footer-widget .footer-links a:hover {
-  color: var(--title-color);
+  color: var(--theme-color);
 }
 
 .copyright-social a {
@@ -4218,7 +4218,7 @@ ul.product_list_widget .amount {
 }
 
 .footer-layout2.footer-wrapper {
-  padding-top: 195px;
+  /* padding-top: 105px; */
 }
 
 .footer-layout2 .widget_title {

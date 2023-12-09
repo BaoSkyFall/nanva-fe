@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "@ant-design/cssinjs": "^1.17.5",
+        "@fancyapps/ui": "^5.0.28",
         "@next/font": "13.1.6",
         "@reduxjs/toolkit": "^1.9.3",
         "@stripe/react-stripe-js": "^1.16.5",
