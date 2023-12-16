@@ -7996,7 +7996,7 @@ blockquote.wp-block-quote.has-text-align-right cite:before {
 
 .product-tag2,
 .product-tag1 {
-  background-color: var(--theme-color);
+  background-color: #DC392F;
   color: var(--white-color);
   text-transform: capitalize;
   display: inline-block;

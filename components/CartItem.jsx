@@ -26,6 +26,8 @@ const CartItem = ({ data, width, height }) => {
                     alt={p.name}
                     width={width || 120}
                     height={height || 120}
+                    className="transition transition-opacity opacity-0 duration-[5s]"
+                    onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                 />
             </div>
             {/* IMAGE END */}

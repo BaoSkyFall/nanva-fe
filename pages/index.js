@@ -21,7 +21,14 @@ export default function Home() {
         fetchProducts();
     }, []);
     const fetchProducts = async () => {
-        const products = await fetchDataFromApi("/api/products?populate=*");
+        const products = await fetchDataFromApi("/api/products?sort[0]=createdAt:DESC&populate=*");
+
+        products.data = products.data.map(product => {
+            return {
+                ...product,
+                descriptionLines: product.attributes?.description?.split('\n')
+            }
+        })
         setProducts(products)
     };
     return (

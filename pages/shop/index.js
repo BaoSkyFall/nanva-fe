@@ -1,6 +1,8 @@
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import React, { useState, useEffect } from "react";
 import { fetchDataFromApi } from "@/utils/api";
+import Image from "next/image";
+
 import Link from "next/link";
 import { LoadingOutlined } from '@ant-design/icons';
 import {
@@ -13,14 +15,25 @@ const minHeightStyle = {
 };
 const Shop = () => {
   const [products, setProducts] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState(null);
+  const [categoryFilter, setCategoryFilter] = useState("*");
 
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetchProducts();
+  }, categoryFilter);
+  useEffect(() => {
+    // fetchProducts();
+    fetchCategories();
   }, []);
   const fetchProducts = async () => {
     try {
-      const products = await fetchDataFromApi("/api/products?populate=*");
+      let filterCategory = '';
+      if (categoryFilter.toString() != "*") {
+        filterCategory = `&filters[categories][id]=${categoryFilter}`
+      }
+      const url = `/api/products?sort[0]=createdAt:DESC&populate=*&pagination[pageSize]=100`
+      const products = await fetchDataFromApi(url + filterCategory);
       setProducts(products)
     }
     catch (error) {
@@ -28,6 +41,19 @@ const Shop = () => {
       console.error('Form validation failed:', error);
     } finally {
       setLoading(false);
+    }
+
+  };
+  const fetchCategories = async () => {
+    try {
+      const categories = await fetchDataFromApi(`/api/categories?populate=*`);
+      setCategories(categories?.data || [])
+    }
+    catch (error) {
+      // Handle validation errors
+      console.error('Form validation failed:', error);
+    } finally {
+      // setLoading(false);
     }
 
   };
@@ -51,25 +77,25 @@ const Shop = () => {
                       <div className="nav" role="tablist">
                         <a
                           href="shop.html"
-                          className="icon-btn style3  me-2"
+                          className="icon-btn style3 active  me-2"
                           id="tab-shop-grid"
                           data-bs-toggle="tab"
                           data-bs-target="#tab-grid"
                           role="tab"
                           aria-controls="tab-grid"
-                          aria-selected="false"
+                          aria-selected="true"
                         >
                           <i className="fas fa-th" />
                         </a>
                         <a
                           href="shop-list.html"
-                          className="icon-btn active style3  "
+                          className="icon-btn  style3  "
                           id="tab-shop-list"
                           data-bs-toggle="tab"
                           data-bs-target="#tab-list"
                           role="tab"
                           aria-controls="tab-grid"
-                          aria-selected="true"
+                          aria-selected="false"
                         >
                           <i className="far fa-bars" />
                         </a>
@@ -82,19 +108,24 @@ const Shop = () => {
                       <div className="row justify-content-center justify-content-sm-between">
                         <div className="col-auto d-flex align-items-center mb-3 mb-sm-0">
                           <label className="text-body2" htmlFor="sortBy">
-                            Sort by
+                            Thể Loại
                           </label>
-                          <select name="sortBy" id="sortBy" className="form-select">
-                            <option value="productName">Sorted Product Name</option>
+                          <select name="sortBy" id="sortBy" className="form-select" onChange={(e) => {
+                            setCategoryFilter(e.target.value);
+
+                          }}>
+                            <option value="*">Tất Cả</option>
+                            {categories?.map(category => (<option key={category.id} value={category.id}>{category.attributes.name}</option>))}
+                            {/* <option value="productName">Sorted Product Name</option>
                             <option value="productName">Sorted Product New</option>
-                            <option value="productName">Sorted Product Popular</option>
+                            <option value="productName">Sorted Product Popular</option> */}
                           </select>
                         </div>
                         <div className="col-auto d-flex align-items-center">
-                          <label className="text-body2" htmlFor="showTotal">
+                          {/* <label className="text-body2" htmlFor="showTotal">
                             Show
-                          </label>
-                          <select
+                          </label> */}
+                          {/* <select
                             name="showTotal"
                             id="showTotal"
                             className="form-select"
@@ -104,14 +135,14 @@ const Shop = () => {
                             <option value="productName">03</option>
                             <option value="productName">04</option>
                             <option value="productName">05</option>
-                          </select>
+                          </select> */}
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="tab-content" id="nav-tabContent">
                     <div
-                      className="tab-pane fade "
+                      className="tab-pane fade show active"
                       id="tab-grid"
                       role="tabpanel"
                       aria-labelledby="tab-shop-grid"
@@ -120,20 +151,26 @@ const Shop = () => {
                         {products?.data?.map(product => (
                           <div className="col-sm-6 col-xl-4">
                             <div className="vs-product-box1 thumb_swap">
-                              <div className="product-tag1">sale</div>
+                              <div className="product-tag1">Tết</div>
                               <div className="product-img">
                                 <Link href={`product/${product.attributes.slug}`}>
-                                  <img
-                                    src={product.attributes.thumbnail.data.attributes.url}
+                                  <Image
+                                    src={product?.attributes?.thumbnail?.data?.attributes?.url}
                                     alt="Product Image"
-                                    className="w-100"
+                                    width={250}
+                                    height={250}
+                                    className=" w-100  transition transition-opacity opacity-0 duration-[2s]"
+                                    onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                                   />
                                 </Link>
                                 <Link href={`product/${product.attributes.slug}`}>
-                                  <img
-                                    src={product.attributes.thumbnail.data.attributes.url}
+                                  <Image
+                                    src={product?.attributes?.thumbnail?.data?.attributes?.url}
                                     alt="Product Image"
-                                    className="w-100 img_swap"
+                                    width={250}
+                                    height={250}
+                                    className=" w-100 img_swap transition transition-opacity opacity-0 duration-[2s]"
+                                    onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                                   />
                                 </Link>
                               </div>
@@ -174,7 +211,7 @@ const Shop = () => {
                       </div>
                     </div>
                     <div
-                      className="tab-pane fade show active"
+                      className="tab-pane fade "
                       id="tab-list"
                       role="tabpanel"
                       aria-labelledby="tab-shop-list"
@@ -185,17 +222,22 @@ const Shop = () => {
                             <div className="vs-product-box2 d-xl-flex has-border thumb_swap">
                               <div className="product-img">
                                 <Link href={`product/${product.attributes.slug}`}>
-                                  <img
-                                    src={product.attributes.thumbnail.data.attributes.url}
+                                  <Image
+                                    src={product?.attributes?.thumbnail?.data?.attributes?.url}
                                     alt="Product Image"
-                                    className="w-100"
+                                    width={250}
+                                    height={250}
+                                    className="w-100 transition transition-opacity opacity-0 duration-[2s]"
+                                    onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                                   />
                                 </Link>
                                 <Link href={`product/${product.attributes.slug}`}>
-                                  <img
-                                    src={product.attributes.thumbnail.data.attributes.url}
-                                    alt="Product Image"
-                                    className="w-100 img_swap"
+                                  <Image
+                                    src={product?.attributes?.thumbnail?.data?.attributes?.url}
+                                    width={250}
+                                    height={250}
+                                    className=" w-100 img_swap transition transition-opacity opacity-0 duration-[2s]"
+                                    onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                                   />
                                 </Link>
                               </div>

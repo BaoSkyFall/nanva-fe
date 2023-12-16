@@ -1,6 +1,7 @@
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from "next/image";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -57,10 +58,13 @@ const FeatureProducts = ({ products }) => {
               <div className="vs-product-box4" style={{ backgroundImage: `url("assets/img/shape/bg-9754.png")` }}>
                 <div className="product-img" >
                   <Link href={`product/${product.attributes.slug}`}>
-                    <img
-                      src={product.attributes.thumbnail.data.attributes.url}
+                    <Image
+                      src={product?.attributes?.thumbnail?.data?.attributes?.url}
                       alt="Product Image"
-                      className="w-100"
+                      width={500}
+                      height={500}
+                      className="transition transition-opacity opacity-0 duration-[2s]"
+                      onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                     />
                   </Link>
                   {/* <span className="product-tag1">Hot</span> */}
@@ -88,14 +92,12 @@ const FeatureProducts = ({ products }) => {
                   <h4 className="product-title cursor-pointer">
                     <Link href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
                   </h4>
-                  <div className="product-quantity cursor-pointer">
-                    Size: <span className="text cursor-pointer">{product.attributes.size.map((size, index) => (
-                      <span key={size}>
-                        {size}
-                        {index < product.attributes.size.length - 1 ? " / " : ""}
-                      </span>
-                    ))}</span>
-                  </div>
+                  {/* <div className="product-quantity cursor-pointer">
+                    {product.descriptionLines.slice(0, 5).map((line, index) => (
+                      <p key={index}>{line}</p>
+                    ))}
+                    <p>....</p>
+                  </div> */}
                   <span className="price cursor-pointer" >
                     <strong className="cursor-pointer">{product.attributes.price.toLocaleString()} đ</strong>
                     {/* <del>$36.00</del> */}

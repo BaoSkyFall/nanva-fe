@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from "react";
+import ReactMarkdown from 'react-markdown';
 import { IoMdHeartEmpty } from "react-icons/io";
 import Wrapper from "@/components/Wrapper";
 import ProductDetailsCarousel from "@/components/ProductDetailsCarousel";
 import RelatedProducts from "@/components/RelatedProducts";
 import { fetchDataFromApi } from "@/utils/api";
 import { getDiscountedPricePercentage } from "@/utils/helper";
-import ReactMarkdown from "react-markdown";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "@/store/cartSlice";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
+
 const ProductDetails = ({ product, products }) => {
   const [isClient, setIsClient] = useState(false)
   const [showError, setShowError] = useState(false);
@@ -88,10 +90,13 @@ const ProductDetails = ({ product, products }) => {
                     {productData?.image?.data.map(image => (<SwiperSlide>
 
                       <div className="thumb">
-                        <img
+                        <Image
                           src={image.attributes.url}
                           alt="Thumb Image"
-                          className="w-100"
+                          width={200}
+                          height={200}
+                          className=" w-100  transition transition-opacity opacity-0 duration-[2s]"
+                          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                         />
                       </div>
                     </SwiperSlide>
@@ -192,7 +197,7 @@ const ProductDetails = ({ product, products }) => {
                         <div className="recent-post d-flex align-items-center">
                           <div className="media-img">
                             <img
-                              src={product.attributes.thumbnail.data.attributes.url}
+                              src={product?.attributes?.thumbnail?.data?.attributes?.url}
                               width={100}
                               height={73}
                               alt="Recent Post Image"
@@ -213,7 +218,7 @@ const ProductDetails = ({ product, products }) => {
                   </div>
                 </div>
               </div>
-              <ul
+              {/* <ul
                 className="nav product-tab-style1 mb-30 justify-content-center mb-4"
                 id="productTab"
                 role="tablist"
@@ -231,8 +236,8 @@ const ProductDetails = ({ product, products }) => {
                     Mô Tả
                   </a>
                 </li>
-              </ul>
-              <div className="tab-content mb-30" id="productTabContent">
+              </ul> */}
+              {/* <div className="tab-content mb-30" id="productTabContent">
                 <div
                   className="tab-pane fade show active"
                   id="description"
@@ -240,44 +245,9 @@ const ProductDetails = ({ product, products }) => {
                   aria-labelledby="description-tab"
                 >
                   {p.descriptionLines.map((line, index) => (
-                    <p className="fs-md" key={index}>{line}</p>
+                    <ReactMarkdown className="fs-md" key={index}>{line}</ReactMarkdown>
                   ))}
-                  {/* <div className="row mt-30">
-                  <div className="col-md-6 mb-30">
-                    <img
-                      src="/assets/img/shop/shop-desc-1.jpg"
-                      className="w-100"
-                      alt="Shop Image"
-                    />
-                  </div>
-                  <div className="col-md-6 mb-30">
-                    <img
-                      src="/assets/img/shop/shop-desc-2.jpg"
-                      className="w-100"
-                      alt="Shop Image"
-                    />
-                  </div>
-                </div>
-                <div className="product-inner-list mb-4">
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Fusce vitae orci id leo pulvinar euismod et placerat diam.</li>
-                    <li>Etiam pharetra mauris at fringilla laoreet.</li>
-                    <li>
-                      Vivamus eu tellus pretium, fringilla justo nec, volutpat sapien.
-                    </li>
-                  </ul>
-                </div>
-                <div className="product-inner-list ">
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Fusce vitae orci id leo pulvinar euismod et placerat diam.</li>
-                    <li>Etiam pharetra mauris at fringilla laoreet.</li>
-                    <li>
-                      Vivamus eu tellus pretium, fringilla justo nec, volutpat sapien.
-                    </li>
-                  </ul>
-                </div> */}
+
                 </div>
                 <div
                   className="tab-pane fade "
@@ -379,7 +349,6 @@ const ProductDetails = ({ product, products }) => {
                       </li>
                     </ul>
                   </div>{" "}
-                  {/* Comment Form */}
                   <div className="vs-comment-form pt-3">
                     <div className="form-title">
                       <h3 className="h4 mb-lg-4 pb-lg-1">Add a review</h3>
@@ -442,7 +411,7 @@ const ProductDetails = ({ product, products }) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </section>
 

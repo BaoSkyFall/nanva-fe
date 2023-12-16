@@ -318,9 +318,9 @@ const Header = () => {
                                             </li>
                                         </ul>
                                     </li> */}
-                                    <li>
+                                    {/* <li>
                                         <Link href="/contact">Liên Hệ Với Chúng Tôi</Link>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </nav>
                         </div>
@@ -338,7 +338,7 @@ const Header = () => {
                                 <Link className=" d-lg-none" href="/shop">
                                     Shop
                                 </Link>
-                                <Link className=" d-lg-none" href="/contact">Contact Us</Link>
+                                {/* <Link className=" d-lg-none" href="/contact">Contact Us</Link> */}
 
                                 <Link className="active" href="/cart" >
 

@@ -14,6 +14,8 @@ const ProductCard = ({ data: { attributes: p, id } }) => {
                 height={500}
                 src={p.thumbnail.data.attributes.url}
                 alt={p.name}
+                className="transition transition-opacity opacity-0 duration-[2s]"
+                onLoadingComplete={(image) => image.classList.remove("opacity-0")}
             />
             <div className="p-4 text-white/[0.9]">
                 <h2 className="text-lg font-medium">{p.name}</h2>
