@@ -12624,19 +12624,19 @@ table.woocommerce-grouped-product-list.group_table td {
 }
 
 .fs-md {
-  font-size: 18px;
+  font-size: 18px !important;
 }
 
 .fs-12 {
-  font-size: 12px;
+  font-size: 12px !important;
 }
 
 .fs-xs {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 .fs-20 {
-  font-size: 20px;
+  font-size: 20px !important;
 }
 
 /* Large devices */

@@ -154,7 +154,7 @@ const Header = () => {
                         </div>
                         <div className="col-auto">
                             <nav className="main-menu mobile-menu-active menu-style2">
-                                <ul>
+                                <ul className="d-sm-none d-md-block">
                                     <li>
                                         <Link href="/" className={isActive(['/']) ? 'active' : ''}>
                                             Trang Chủ
@@ -189,138 +189,7 @@ const Header = () => {
                                             </li>
                                         </ul> */}
                                     </li>
-                                    {/* <li className="menu-item-has-children">
-                                        <a href="blog.html">Blog</a>
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <a href="blog.html">Blog</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-list.html">Blog List</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-grid.html">Blog Grid</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-grid-sidebar.html">Blog Grid Sidebar</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-masonry.html">Blog Masonry</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-details.html">Blog Details</a>
-                                            </li>
-                                        </ul>
-                                    </li> */}
-                                    {/* <li className="mega-menu-wrap menu-item-has-children">
-                                        <a href="#">Pages</a>
-                                        <ul className="mega-menu">
-                                            <li>
-                                                <a href="shop.html">Pagelist 1</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="index.html">Home Style 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-2.html">Home Style 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-3.html">Home Style 3</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-4.html">Home Style 4</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-5.html">Home Style 5</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-6.html">Home Style 6</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-7.html">Home Style 7</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Pagelist 2</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="index-8.html">Home Style 8</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="about.html">About</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="service.html">Services</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="team.html">Team</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="faq.html">FAQ Page</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="contact.html">Contact Us</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Pagelist 3</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="blog.html">Blog</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-list.html">Blog List</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-grid.html">Blog Grid</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-grid-sidebar.html">Blog Grid Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-masonry.html">Blog Masonry</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-details.html">Blog Details</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="error.html">Error Page</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Pagelist 4</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="shop.html">Shop</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-list.html">Shop List</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-details.html">Shop Details</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="cart.html">Shopping Cart</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="checkout.html">Check Out</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wishlist.html">Wishlist</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="login-register.html">Login / Register</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li> */}
-                                    {/* <li>
-                                        <Link href="/contact">Liên Hệ Với Chúng Tôi</Link>
-                                    </li> */}
+
                                 </ul>
                             </nav>
                         </div>
@@ -332,11 +201,11 @@ const Header = () => {
                                 <a href="wishlist.html">
                                     <i className="fal fa-heart" />
                                 </a> */}
-                                <Link className=" d-lg-none" href="/">
-                                    Home
+                                <Link className=" d-lg-none fs-md" href="/">
+                                    <span className="fs-md">Trang Chủ</span>
                                 </Link>
-                                <Link className=" d-lg-none" href="/shop">
-                                    Shop
+                                <Link className=" d-lg-none fs-md" href="/shop">
+                                    Cửa Hàng
                                 </Link>
                                 {/* <Link className=" d-lg-none" href="/contact">Contact Us</Link> */}
 
