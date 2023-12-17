@@ -18,6 +18,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
+import Fancybox from '../../components/Fancybox';
 
 const ProductDetails = ({ product, products }) => {
   const [isClient, setIsClient] = useState(false)
@@ -55,53 +56,70 @@ const ProductDetails = ({ product, products }) => {
             <div className="container">
               <div className="row mb-5">
                 <div className="col-md-6 col-xl-5 mb-30 mb-md-0">
-                  <Swiper
-                    style={{
-                      '--swiper-navigation-color': '#fff',
-                      '--swiper-pagination-color': '#fff',
-                    }}
-                    loop={true}
-                    spaceBetween={10}
-                    navigation={true}
-                    thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-                    modules={[FreeMode, Navigation, Thumbs]}
-                    className="product-big-img"
-                  >
-                    {productData?.image?.data.map(image => (<SwiperSlide>
-                      <div className="product-img">
-                        <img
-                          src={image.attributes.url}
-                          alt="Shop Image"
-                          className="w-100"
-                        />
-                      </div>
-                    </SwiperSlide>))}
-                  </Swiper>
-                  <Swiper
-                    onSwiper={setThumbsSwiper}
-                    loop={true}
-                    spaceBetween={10}
-                    slidesPerView={4}
-                    freeMode={true}
-                    watchSlidesProgress={true}
-                    modules={[FreeMode, Navigation, Thumbs]}
-                    className="product-big-img"
-                  >
-                    {productData?.image?.data.map(image => (<SwiperSlide>
+                  <Fancybox>
+                    <Swiper
+                      style={{
+                        '--swiper-navigation-color': '#fff',
+                        '--swiper-pagination-color': '#fff',
+                      }}
+                      loop={true}
+                      spaceBetween={10}
+                      navigation={true}
+                      thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+                      modules={[FreeMode, Navigation, Thumbs]}
+                      className="product-big-img"
+                    >
+                      {productData?.image?.data.map(image => (<SwiperSlide>
+                        <div className="product-img">
+                          <a
+                            data-fancybox="gallery" href={image.attributes.url}
+                            className="popup-image"
+                          >
+                            <Image
+                              src={image.attributes.url}
+                              alt="Shop Image"
+                              width={200}
+                              height={200}
+                              className=" w-100  transition transition-opacity opacity-0 duration-[2s]"
+                              onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+                            />
 
-                      <div className="thumb">
-                        <Image
-                          src={image.attributes.url}
-                          alt="Thumb Image"
-                          width={200}
-                          height={200}
-                          className=" w-100  transition transition-opacity opacity-0 duration-[2s]"
-                          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-                        />
-                      </div>
-                    </SwiperSlide>
-                    ))}
-                  </Swiper>
+                          </a>
+                        </div>
+                      </SwiperSlide>))}
+                    </Swiper>
+                    <Swiper
+                      onSwiper={setThumbsSwiper}
+                      loop={true}
+                      spaceBetween={10}
+                      slidesPerView={4}
+                      freeMode={true}
+                      watchSlidesProgress={true}
+                      modules={[FreeMode, Navigation, Thumbs]}
+                      className="product-big-img"
+                    >
+                      {productData?.image?.data.map(image => (<SwiperSlide>
+
+                        <div className="thumb">
+                          <a
+                            data-fancybox="gallery" href={image.attributes.url}
+                            className="popup-image"
+                          >
+                            <Image
+                              src={image.attributes.url}
+                              alt="Thumb Image"
+                              width={200}
+                              height={200}
+                              className=" w-100  transition transition-opacity opacity-0 duration-[2s]"
+                              onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+                            />
+
+                          </a>
+                        </div>
+                      </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  </Fancybox>
                 </div>
                 <div className="col-md-6 col-lg-4">
                   <div className="product-content">
