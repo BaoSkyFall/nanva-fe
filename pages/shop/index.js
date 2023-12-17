@@ -12,6 +12,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "@/store/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
+import Fancybox from '../../components/Fancybox';
 
 const minHeightStyle = {
   minHeight: '50vh', // Set the desired min-height value
@@ -164,79 +165,82 @@ const Shop = () => {
                       role="tabpanel"
                       aria-labelledby="tab-shop-grid"
                     >
-                      <div className="row">
-                        {products?.data?.map(product => (
-                          <div className="col-sm-6 col-xl-4">
-                            <div className="vs-product-box1 thumb_swap">
-                              <div className="product-tag1">Tết</div>
-                              <div className="product-img">
-                                <Link href={`product/${product.attributes.slug}`}>
-                                  <Image
-                                    src={product?.attributes?.thumbnail?.data?.attributes?.url}
-                                    alt="Product Image"
-                                    width={250}
-                                    height={250}
-                                    className=" w-100  transition transition-opacity opacity-0 duration-[2s]"
-                                    onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-                                  />
-                                </Link>
-                                <Link href={`product/${product.attributes.slug}`}>
-                                  <Image
-                                    src={product?.attributes?.thumbnail?.data?.attributes?.url}
-                                    alt="Product Image"
-                                    width={250}
-                                    height={250}
-                                    className=" w-100 img_swap transition transition-opacity opacity-0 duration-[2s]"
-                                    onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-                                  />
-                                </Link>
-                              </div>
-                              <div className="product-content d-flex flex-column gap-3 align-items-center">
-                                <div className="actions-btn">
-                                  <a
-                                    href="assets/img/shop/product-1-1.png"
-                                    className="popup-image"
-                                  >
-                                    <i className="far fa-search" />
-                                  </a>
-                                </div>
-                                <h4 className="product-title h5 mb-0">
-                                  <Link href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
-                                </h4>
-                                <div>
-                                  <span className="price font-theme">
-                                    <strong>{product.attributes.price.toLocaleString()} đ</strong>
-                                    {product.attributes.original_price && <del style={{ textDecoration: 'line-through', fontSize: '14px', marginLeft: '0.5rem' }} className="ml-2 align-super text-base font-bold text-gray-600">{product.attributes.original_price?.toLocaleString()} đ</del>}
-                                  </span>
-                                </div>
+                      <Fancybox>
 
-                                <a className="vs-btn shadow-none cursor-pointer w-70" onClick={() => {
-                                  dispatch(
-                                    addToCart({
-                                      ...product,
-                                      oneQuantityPrice: product.price,
-                                      quantity: 1
-                                    })
-                                  );
-                                  notify();
-                                }}>
-                                  <i className="fal fa-cart-plus me-2" />
-                                  Thêm Vào Giỏ Hàng
-                                </a>
-                                {/* <p className="m-0 rating fs-xs text-theme lh-base">
+                        <div className="row">
+                          {products?.data?.map(product => (
+                            <div className="col-sm-6 col-xl-4">
+                              <div className="vs-product-box1 thumb_swap">
+                                <div className="product-tag1">Tết</div>
+                                <div className="product-img">
+                                  <Link href={`product/${product.attributes.slug}`}>
+                                    <Image
+                                      src={product?.attributes?.thumbnail?.data?.attributes?.url}
+                                      alt="Product Image"
+                                      width={250}
+                                      height={250}
+                                      className=" w-100  transition transition-opacity opacity-0 duration-[2s]"
+                                      onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+                                    />
+                                  </Link>
+                                  <Link href={`product/${product.attributes.slug}`}>
+                                    <Image
+                                      src={product?.attributes?.thumbnail?.data?.attributes?.url}
+                                      alt="Product Image"
+                                      width={250}
+                                      height={250}
+                                      className=" w-100 img_swap transition transition-opacity opacity-0 duration-[2s]"
+                                      onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+                                    />
+                                  </Link>
+                                </div>
+                                <div className="product-content d-flex flex-column gap-3 align-items-center">
+                                  <div className="actions-btn">
+                                    <a
+                                      data-fancybox="gallery" href={product?.attributes?.thumbnail?.data?.attributes?.url}
+                                      className="popup-image"
+                                    >
+                                      <i className="far fa-search" />
+                                    </a>
+                                  </div>
+                                  <h4 className="product-title h5 mb-0">
+                                    <Link href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
+                                  </h4>
+                                  <div>
+                                    <span className="price font-theme">
+                                      <strong>{product.attributes.price.toLocaleString()} đ</strong>
+                                      {product.attributes.original_price && <del style={{ textDecoration: 'line-through', fontSize: '14px', marginLeft: '0.5rem' }} className="ml-2 align-super text-base font-bold text-gray-600">{product.attributes.original_price?.toLocaleString()} đ</del>}
+                                    </span>
+                                  </div>
+
+                                  <a className="vs-btn shadow-none cursor-pointer w-70" onClick={() => {
+                                    dispatch(
+                                      addToCart({
+                                        ...product,
+                                        oneQuantityPrice: product.price,
+                                        quantity: 1
+                                      })
+                                    );
+                                    notify();
+                                  }}>
+                                    <i className="fal fa-cart-plus me-2" />
+                                    Thêm Vào Giỏ Hàng
+                                  </a>
+                                  {/* <p className="m-0 rating fs-xs text-theme lh-base">
                                   <i className="fas fa-star" />
                                   <i className="fas fa-star" />
                                   <i className="fas fa-star" />
                                   <i className="fas fa-star" />
                                   <i className="fas fa-star" />
                                 </p> */}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
 
+                        </div>
+                      </Fancybox>
 
-                      </div>
                     </div>
                     <div
                       className="tab-pane fade "
