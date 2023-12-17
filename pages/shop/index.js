@@ -9,6 +9,9 @@ import {
   Spin,
 
 } from 'antd';
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "@/store/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
 
 const minHeightStyle = {
   minHeight: '50vh', // Set the desired min-height value
@@ -19,9 +22,23 @@ const Shop = () => {
   const [categoryFilter, setCategoryFilter] = useState("*");
 
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     fetchProducts();
   }, categoryFilter);
+  const notify = () => {
+    toast.success("Thêm vào giỏ hàng Thành Công! ", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
   useEffect(() => {
     // fetchProducts();
     fetchCategories();
@@ -174,7 +191,7 @@ const Shop = () => {
                                   />
                                 </Link>
                               </div>
-                              <div className="product-content">
+                              <div className="product-content d-flex flex-column gap-3 align-items-center">
                                 <div className="actions-btn">
                                   <a href="cart.html">
                                     <i className="fal fa-cart-plus" />
@@ -192,16 +209,32 @@ const Shop = () => {
                                 <h4 className="product-title h5 mb-0">
                                   <Link href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
                                 </h4>
-                                <span className="price font-theme">
-                                  <strong>{product.attributes.price.toLocaleString()} đ</strong>
-                                </span>
-                                <p className="m-0 rating fs-xs text-theme lh-base">
+                                <div>
+                                  <span className="price font-theme">
+                                    <strong>{product.attributes.price.toLocaleString()} đ</strong>
+                                    {product.attributes.original_price && <del style={{ textDecoration: 'line-through', fontSize: '14px', marginLeft: '0.5rem' }} className="ml-2 align-super text-base font-bold text-gray-600">{product.attributes.original_price?.toLocaleString()} đ</del>}
+                                  </span>
+                                </div>
+
+                                <a className="vs-btn shadow-none cursor-pointer w-70" onClick={() => {
+                                  dispatch(
+                                    addToCart({
+                                      ...product,
+                                      oneQuantityPrice: product.price,
+                                      quantity: 1
+                                    })
+                                  );
+                                  notify();
+                                }}>
+                                  Thêm Vào Giỏ Hàng
+                                </a>
+                                {/* <p className="m-0 rating fs-xs text-theme lh-base">
                                   <i className="fas fa-star" />
                                   <i className="fas fa-star" />
                                   <i className="fas fa-star" />
                                   <i className="fas fa-star" />
                                   <i className="fas fa-star" />
-                                </p>
+                                </p> */}
                               </div>
                             </div>
                           </div>
@@ -218,7 +251,7 @@ const Shop = () => {
                     >
                       <div className="row ">
                         {products?.data?.map(product => (
-                          <div className="col-sm-6 col-lg-6 col-xl-6">
+                          <div key={product.id} className="col-sm-6 col-lg-6 col-xl-6">
                             <div className="vs-product-box2 d-xl-flex has-border thumb_swap">
                               <div className="product-img">
                                 <Link href={`product/${product.attributes.slug}`}>
@@ -234,6 +267,7 @@ const Shop = () => {
                                 <Link href={`product/${product.attributes.slug}`}>
                                   <Image
                                     src={product?.attributes?.thumbnail?.data?.attributes?.url}
+                                    alt="Product Image"
                                     width={250}
                                     height={250}
                                     className=" w-100 img_swap transition transition-opacity opacity-0 duration-[2s]"
@@ -421,7 +455,7 @@ const Shop = () => {
           </div>
         </section>
 
-      </Spin>
+      </Spin >
     </>
 
   );
