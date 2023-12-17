@@ -193,17 +193,11 @@ const Shop = () => {
                               </div>
                               <div className="product-content d-flex flex-column gap-3 align-items-center">
                                 <div className="actions-btn">
-                                  <a href="cart.html">
-                                    <i className="fal fa-cart-plus" />
-                                  </a>
                                   <a
                                     href="assets/img/shop/product-1-1.png"
                                     className="popup-image"
                                   >
                                     <i className="far fa-search" />
-                                  </a>
-                                  <a href="wishlist.html">
-                                    <i className="fal fa-heart" />
                                   </a>
                                 </div>
                                 <h4 className="product-title h5 mb-0">
@@ -226,6 +220,7 @@ const Shop = () => {
                                   );
                                   notify();
                                 }}>
+                                  <i className="fal fa-cart-plus me-2" />
                                   Thêm Vào Giỏ Hàng
                                 </a>
                                 {/* <p className="m-0 rating fs-xs text-theme lh-base">
@@ -275,21 +270,34 @@ const Shop = () => {
                                   />
                                 </Link>
                               </div>
-                              <div className="product-content d-xl-flex align-items-center">
-                                <div>
+                              <div className="product-content d-xl-flex">
+                                <div className="d-flex flex-column gap-2">
                                   <h4 className="product-title h5 mb-1">
                                     <a href={`product/${product.attributes.slug}`}>{product.attributes.name}</a>
                                   </h4>
-                                  <span className="price font-theme">
+                                  <div className="price font-theme">
                                     <strong>{product.attributes.price.toLocaleString()} đ</strong>
-                                  </span>
-                                  <p className="m-0 rating fs-xs text-theme lh-base">
+                                    {product.attributes.original_price && <del style={{ textDecoration: 'line-through', fontSize: '14px', marginLeft: '0.5rem' }} className="ml-2 align-super text-base font-bold text-gray-600">{product.attributes.original_price?.toLocaleString()} đ</del>}
+                                  </div>
+                                  <a className="vs-btn shadow-none cursor-pointer w-70" onClick={() => {
+                                    dispatch(
+                                      addToCart({
+                                        ...product,
+                                        oneQuantityPrice: product.price,
+                                        quantity: 1
+                                      })
+                                    );
+                                    notify();
+                                  }}>
+                                    Thêm Vào Giỏ Hàng
+                                  </a>
+                                  {/* <p className="m-0 rating fs-xs text-theme lh-base">
                                     <i className="fas fa-star" />
                                     <i className="fas fa-star" />
                                     <i className="fas fa-star" />
                                     <i className="fas fa-star" />
                                     <i className="fas fa-star" />
-                                  </p>
+                                  </p> */}
                                 </div>
                               </div>
                             </div>
