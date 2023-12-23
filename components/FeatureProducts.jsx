@@ -13,8 +13,8 @@ const FeatureProducts = ({ products }) => {
   return (
     <section id="tranding" style={{ backgroundImage: `url("assets/img/shape/bg-9754.png")` }}
     >
-      <div className="section-title text-center">
-        <div className="sec-icon">
+      <div className="section-title text-center mb-2">
+        <div className="sec-icon pt-5">
           <img src="assets/img/icons/sec-icon-2.png" alt="icon" />
         </div>
         <span className="sub-title4">100% Organic Food</span>
@@ -89,18 +89,20 @@ const FeatureProducts = ({ products }) => {
                   </div>
                 </div>
                 <div className="product-content cursor-pointer">
-                  <h4 className="product-title cursor-pointer">
-                    <Link href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
-                  </h4>
+                  <h1 className="product-title cursor-pointer ">
+                    <Link className="fs-1" href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
+                  </h1>
                   {/* <div className="product-quantity cursor-pointer">
                     {product.descriptionLines.slice(0, 5).map((line, index) => (
                       <p key={index}>{line}</p>
                     ))}
                     <p>....</p>
                   </div> */}
-                  <span className="price cursor-pointer" >
+                  <span className="price cursor-pointer mt-2 fs-2" >
                     <strong className="cursor-pointer">{product.attributes.price.toLocaleString()} đ</strong>
                     {/* <del>$36.00</del> */}
+                    {product.attributes.original_price && <del style={{ textDecoration: 'line-through', fontSize: '30px', marginLeft: '0.5rem' }} className="ml-2 align-super text-base font-bold text-gray-600">{product.attributes.original_price?.toLocaleString()} đ</del>}
+
                   </span>
                   {/* <span className="product-discount">(78% off)</span> */}
                 </div>

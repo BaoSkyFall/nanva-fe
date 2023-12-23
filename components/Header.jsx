@@ -156,14 +156,14 @@ const Header = () => {
                             <nav className="main-menu mobile-menu-active menu-style2">
                                 <ul className="d-sm-none d-md-block">
                                     <li>
-                                        <Link href="/" className={isActive(['/']) ? 'active' : ''}>
+                                        <Link href="/" className={isActive(['/']) ? 'active fs-20' : 'fs-20'}>
                                             Trang Chủ
                                         </Link>
 
                                     </li>
                                     <li>
-                                        <Link href="/shop" className={isActive(['/shop', '/product/[slug]', '/cart', '/checkout']) ? 'active' : ''}>
-                                            Cửa Hàng
+                                        <Link href="/shop" className={isActive(['/shop', '/product/[slug]', '/cart', '/checkout']) ? 'active fs-20' : 'fs-20'}>
+                                            Sản Phẩm
                                         </Link>
                                         {/* <ul className="sub-menu">
                                             <li>
@@ -201,15 +201,15 @@ const Header = () => {
                                 <a href="wishlist.html">
                                     <i className="fal fa-heart" />
                                 </a> */}
-                                <Link className=" d-lg-none fs-md" href="/">
-                                    <span className="fs-md">Trang Chủ</span>
+                                <Link className={isActive(['/shop', '/product/[slug]', '/cart', '/checkout']) ? 'd-lg-none active fs-20' : ' d-lg-none fs-20'} href="/">
+                                    <span className="fs-md fs-20">Trang Chủ</span>
                                 </Link>
-                                <Link className=" d-lg-none fs-md" href="/shop">
-                                    Cửa Hàng
+                                <Link className={isActive(['/shop', '/product/[slug]', '/cart', '/checkout']) ? 'd-lg-none active fs-20' : ' d-lg-none fs-20'} href="/shop">
+                                    Sản Phẩm
                                 </Link>
                                 {/* <Link className=" d-lg-none" href="/contact">Contact Us</Link> */}
 
-                                <Link className="active" href="/cart" >
+                                <Link className={isActive(['/shop', '/product/[slug]', '/cart', '/checkout']) ? 'd-lg-none active fs-20' : ' d-lg-none fs-20'} href="/cart" >
 
                                     <i className="fal fa-shopping-cart" />
                                     <span className="badge">{totalItems}</span>

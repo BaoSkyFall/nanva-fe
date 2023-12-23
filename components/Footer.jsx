@@ -138,7 +138,7 @@ const Footer = () => {
         //     </Wrapper>
         // </footer>
         <footer
-            className="footer-wrapper footer-layout2"
+            className="footer-wrapper footer-layout2 fs-20"
             style={{ backgroundImage: `url("/assets/img/shape/footer-5-1.jpg")` }}
             data-bg-src="/assets/img/shape/footer-5-1.jpg"
         >
@@ -151,34 +151,40 @@ const Footer = () => {
                                     <div className="footer-info-logo">
                                         <img src="/assets/img/logo-white.png" alt="Foodano" />
                                     </div>
-                                    <div className="footer-info">
+                                    <div className="footer-info fs-20">
                                         <i className="fas fa-phone-alt" />
-                                        <a href="tel:+84985087708">+84985087708 <br /></a>
-                                        <a href="tel:+84355220035">+84355220035</a>
+                                        <a href="tel:0355220035">0355220035 <br /></a>
+                                        <a href="tel:0985087708">0985087708</a>
 
 
                                     </div>
-                                    <div className="footer-info">
+                                    <div className="footer-info fs-20">
                                         <i className="fas fa-map-marker-alt" />
-                                        Long Phước, thị xã Phước Long, tỉnh Bình Phước
+                                        Khu phố Long Điền 1, Phường Long Phước,Thị xã Phước Long, Tỉnh Bình Phước
+
+                                    </div>
+                                    <div className="footer-info fs-20">
+                                        <i className="fas fa-map-marker-alt" />
+
+                                        Chung cư westgate, Tân Túc, Bình Chánh
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-6 col-lg-4">
-                            <div className="widget widget_nav_menu  footer-widget">
+                            <div className="widget widget_nav_menu  footer-widget fs-20">
                                 <h3 className="widget_title">Links</h3>
                                 <div className="menu-all-pages-container footer-links">
-                                    <ul className="menu">
-                                        <li>
-                                            <Link href="/">Home</Link>
+                                    <ul className="menu fs-20">
+                                        <li className="fs-20">
+                                            <Link className="fs-20" href="/">Home</Link>
                                         </li>
-                                        <li>
-                                            <Link href="/shop">Shop</Link>
+                                        <li className="fs-20">
+                                            <Link className="fs-20" href="/shop">Sản Phẩm</Link>
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <Link href="/contact">Liên Hệ Với Chúng Tôi</Link>
-                                        </li>
+                                        </li> */}
 
                                     </ul>
                                 </div>
@@ -186,11 +192,12 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-4">
                             <div className="widget footer-widget">
-                                <h3 className="widget_title">Hình Ảnh</h3>
+                                <h3 className="widget_title ">Hình Ảnh</h3>
                                 <Fancybox className="sidebar-gallery">
                                     <div className="gallery-thumb">
                                         <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-1-full.jpg">
                                             <img
+                                                className="w-100 " style={{ borderRadius: '10%' }}
                                                 alt=""
                                                 src="/assets/img/gallery/gal-2-1.jpg"
                                             />
@@ -199,6 +206,7 @@ const Footer = () => {
                                     <div className="gallery-thumb">
                                         <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-2-full.jpg">
                                             <img
+                                                className="w-100 " style={{ borderRadius: '10%' }}
                                                 alt=""
                                                 src="/assets/img/gallery/gal-2-2.jpg"
                                             />
@@ -207,6 +215,7 @@ const Footer = () => {
                                     <div className="gallery-thumb">
                                         <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-3-full.jpg">
                                             <img
+                                                className="w-100 " style={{ borderRadius: '10%' }}
                                                 alt=""
                                                 src="/assets/img/gallery/gal-2-3.jpg"
                                             />
@@ -215,6 +224,7 @@ const Footer = () => {
                                     <div className="gallery-thumb">
                                         <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-4-full.jpg">
                                             <img
+                                                className="w-100 " style={{ borderRadius: '10%' }}
                                                 alt=""
                                                 src="/assets/img/gallery/gal-2-4.jpg"
                                             />
@@ -223,6 +233,7 @@ const Footer = () => {
                                     <div className="gallery-thumb">
                                         <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-5-full.jpg">
                                             <img
+                                                className="w-100 " style={{ borderRadius: '10%' }}
                                                 alt=""
                                                 src="/assets/img/gallery/gal-2-5.jpg"
                                             />
@@ -231,6 +242,7 @@ const Footer = () => {
                                     <div className="gallery-thumb">
                                         <a data-fancybox="gallery" href="/assets/img/gallery/gal-2-6-full.jpg">
                                             <img
+                                                className="w-100 " style={{ borderRadius: '10%' }}
                                                 alt=""
                                                 src="/assets/img/gallery/gal-2-6.jpg"
                                             />

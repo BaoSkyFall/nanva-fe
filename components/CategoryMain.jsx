@@ -32,7 +32,7 @@ const CategoryMain = () => {
             data-bg-src="/assets/img/shape/cat-bg-656.png"
         >
             <div className="container">
-                <div className="section-title text-center">
+                <div className="section-title text-center mt-5 mb-5">
                     <div className="sec-icon">
                         <img src="/assets/img/icons/sec-icon-2.png" alt="icon" />
                     </div>

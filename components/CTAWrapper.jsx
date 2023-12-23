@@ -26,10 +26,11 @@ const CTAWrapper = () => {
             </Link>
           </div>
           <div className="col-auto">
-            <a href="tel:+84985087708" className="vs-btn style4">
+            <a href="tel:0355220035" className="vs-btn style4">
               <i className="fas fa-phone-alt" />
-              +84985087708
+              0355220035
             </a>
+
           </div>
         </div>
       </div>

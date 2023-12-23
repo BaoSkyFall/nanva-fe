@@ -2,7 +2,7 @@ import React from "react";
 
 const HowItWorks = () => {
   return (
-    <section className="">
+    <section className="mt-5 mb-5">
       <div
         className="shape-mockup jump-reverse d-none d-xl-block"
         data-right="5%"
@@ -28,7 +28,7 @@ const HowItWorks = () => {
           </div>
           <div className="col-lg-6 col-xl-6 mb-30">
             <span className="sub-title4">Khám Phá Sức Khỏe</span>
-            <h2 className="sec-title4 mb-4 pb-1">
+            <h2 className="sec-title3 mb-4 pb-1">
               Hạt Điều Tự Nhiên Organic
             </h2>
             <h3 className="text-theme h4 mb-4 pb-1">

@@ -171,7 +171,7 @@ const Shop = () => {
                           {products?.data?.map(product => (
                             <div className="col-sm-6 col-xl-4">
                               <div className="vs-product-box1 thumb_swap">
-                                <div className="product-tag1">Tết</div>
+                                <div className="product-tag1 fs-20">Tết</div>
                                 <div className="product-img">
                                   <Link href={`product/${product.attributes.slug}`}>
                                     <Image
@@ -204,16 +204,17 @@ const Shop = () => {
                                     </a>
                                   </div>
                                   <h4 className="product-title h5 mb-0">
-                                    <Link href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
+                                    <Link className="product-title h5 mb-0 fs-4" href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
+
                                   </h4>
                                   <div>
-                                    <span className="price font-theme">
+                                    <span className="price font-theme fs-5">
                                       <strong>{product.attributes.price.toLocaleString()} đ</strong>
                                       {product.attributes.original_price && <del style={{ textDecoration: 'line-through', fontSize: '14px', marginLeft: '0.5rem' }} className="ml-2 align-super text-base font-bold text-gray-600">{product.attributes.original_price?.toLocaleString()} đ</del>}
                                     </span>
                                   </div>
 
-                                  <a className="vs-btn shadow-none cursor-pointer w-70" onClick={() => {
+                                  <a className="vs-btn shadow-none cursor-pointer w-70 fs-5" onClick={() => {
                                     dispatch(
                                       addToCart({
                                         ...product,
