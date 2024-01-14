@@ -53,11 +53,17 @@ const Shop = () => {
   const fetchProducts = async () => {
     try {
       let filterCategory = '';
+      let filterRangePrice = '';
       if (categoryFilter.toString() != "*") {
         filterCategory = `&filters[categories][id]=${categoryFilter}`
       }
+      console.log('rangePriceFilter:', rangePriceFilter)
+      // if (rangePriceFilter.min && rangePriceFilter.max) {
+      //   filterRangePrice = `&filters[price][$between]=${rangePriceFilter.min},${rangePriceFilter.max}`;
+
+      // }
       const url = `/api/products?sort[0]=createdAt:DESC&populate=*&pagination[pageSize]=100`
-      const products = await fetchDataFromApi(url + filterCategory);
+      const products = await fetchDataFromApi(url + filterCategory + filterRangePrice);
       console.log('products:', products)
       const rangePriceValue = {
         min: _.minBy(products.data, item => item.attributes.price)?.attributes.price || 0,
