@@ -7,13 +7,14 @@ import Link from "next/link";
 import { LoadingOutlined } from '@ant-design/icons';
 import {
   Spin,
-
+  Slider,
+  SliderSingleProps
 } from 'antd';
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "@/store/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 import Fancybox from '../../components/Fancybox';
-
+import * as _ from 'lodash';
 const minHeightStyle = {
   minHeight: '50vh', // Set the desired min-height value
 };
@@ -21,13 +22,18 @@ const Shop = () => {
   const [products, setProducts] = useState(null);
   const [categories, setCategories] = useState(null);
   const [categoryFilter, setCategoryFilter] = useState("*");
+  const [rangePriceFilter, setRangePriceFilter] = useState({ min: 0, max: 0 });
 
   const [loading, setLoading] = useState(true);
+  const [rangePrice, setRangePrice] = useState({ min: 0, max: 0 });
   const dispatch = useDispatch();
 
   useEffect(() => {
     fetchProducts();
   }, categoryFilter);
+  useEffect(() => {
+    fetchProducts();
+  }, rangePriceFilter);
   const notify = () => {
     toast.success("Thêm vào giỏ hàng Thành Công! ", {
       position: "bottom-right",
@@ -52,6 +58,13 @@ const Shop = () => {
       }
       const url = `/api/products?sort[0]=createdAt:DESC&populate=*&pagination[pageSize]=100`
       const products = await fetchDataFromApi(url + filterCategory);
+      console.log('products:', products)
+      const rangePriceValue = {
+        min: _.minBy(products.data, item => item.attributes.price)?.attributes.price || 0,
+        max: _.maxBy(products.data, item => item.attributes.price)?.attributes.price || 0
+      }
+      setRangePrice(rangePriceValue);
+      setRangePriceFilter(rangePriceValue);
       setProducts(products)
     }
     catch (error) {
@@ -62,10 +75,16 @@ const Shop = () => {
     }
 
   };
+  const transformValueFromPercentToPrice = (percent, minPrice, originalPrice, isMax = false) => {
+    const range = originalPrice; // Your price range 
+    const price = isMax ? minPrice + percent * (range / 100) : minPrice + percent * (range / 100);
+    return price;
+  }
   const fetchCategories = async () => {
     try {
       const categories = await fetchDataFromApi(`/api/categories?populate=*`);
       setCategories(categories?.data || [])
+
     }
     catch (error) {
       // Handle validation errors
@@ -76,6 +95,7 @@ const Shop = () => {
 
   };
   return (
+
     <>
       <Spin spinning={loading} indicator={
         <LoadingOutlined
@@ -87,8 +107,59 @@ const Shop = () => {
       } tip="Đang Tải...">
         <section style={minHeightStyle} className="vs-shop-wrapper position-relative space-top space-md-bottom">
           <div className="container">
-            <div className="row flex-row-reverse ">
-              <div className="col-lg-12 col-xl-12 ">
+            <div className="row flex-row ">
+              <div className="col-lg-4 col-xl-3">
+                <aside className="sidebar-area">
+                  <div className="widget  ">
+                    <h3 className="widget_title">Giá tiền</h3>
+                    <div className="range-slider-area">
+                      {/* <strong className="fs-xs">Price</strong> */}
+                      <div id="slider-range" >
+                        <Slider marks={{
+                          0: rangePriceFilter?.min?.toLocaleString(),
+                          100: rangePriceFilter?.max?.toLocaleString()
+                        }} range={{ draggableTrack: true }} defaultValue={[0, 100]}
+                          onChange={(evt) => {
+                            const originalPrice = rangePrice.max - rangePrice.min;
+                            const rangeValueFilter = {
+                              min: transformValueFromPercentToPrice(evt[0], rangePrice.min, originalPrice, false),
+                              max: transformValueFromPercentToPrice(evt[1], rangePrice.min, originalPrice, true)
+                            }
+                            setRangePriceFilter(rangeValueFilter)
+                          }}
+                          tooltip={{ formatter: null }}
+                        />
+
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div className="widget widget_categories   ">
+                    <h3 className="widget_title">Loại</h3>
+                    <ul>
+                      {categories?.map(category => (<li key={category.id} value={category.id}>
+                        <input type="checkbox" name={category.id} id={category.id} />
+                        <label htmlFor={category.id}>{category.attributes.name}</label>
+                        <span>({category.attributes.products.data.length || 0})</span>
+                      </li>))}
+                    </ul>
+                  </div>
+                  <div className="widget widget_search   ">
+                    <h3 className="widget_title">Tên Sản Phẩm</h3>
+                    <form className="search-form">
+                      <input type="text" placeholder="Nhập tên sản phẩm cần tìm" />
+                      <button type="submit">
+                        <i className="far fa-search" />
+                      </button>
+                    </form>
+                  </div>
+
+
+                </aside>
+              </div>
+
+              <div className="col-lg-8 col-xl-9 ">
                 <div className="sticky-top overflow-hidden">
                   <div className="vs-sort-bar row justify-content-center justify-content-sm-between align-items-center pb-3 pb-lg-5 mb-1 ">
                     <div className="col-auto mb-3 mb-sm-0">
@@ -204,7 +275,7 @@ const Shop = () => {
                                     </a>
                                   </div>
                                   <h4 className="product-title h5 mb-0">
-                                    <Link className="product-title h5 mb-0 fs-4" href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
+                                    <Link className="product-title h5 mb-0 fs-5" href={`product/${product.attributes.slug}`}>{product.attributes.name}</Link>
 
                                   </h4>
                                   <div>
@@ -214,7 +285,7 @@ const Shop = () => {
                                     </span>
                                   </div>
 
-                                  <a className="vs-btn shadow-none cursor-pointer w-70 fs-5" onClick={() => {
+                                  <a className="vs-btn shadow-none cursor-pointer w-70 fs-6" onClick={() => {
                                     dispatch(
                                       addToCart({
                                         ...product,
@@ -334,6 +405,7 @@ const Shop = () => {
               </div> */}
                 </div>
               </div>
+
               {/* <div className="col-lg-4 col-xl-3">
             <aside className="sidebar-area">
               <div className="widget  ">

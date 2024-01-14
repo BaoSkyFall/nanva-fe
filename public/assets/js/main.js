@@ -429,18 +429,18 @@
 
 
   /*----------- 16. Range Slider ----------*/
-  $("#slider-range").slider({
-    range: true,
-    min: 40,
-    max: 300,
-    values: [60, 570],
-    slide: function (event, ui) {
-      $("#minAmount").text("$" + ui.values[0]);
-      $("#maxAmount").text("$" + ui.values[1]);
-    }
-  });
-  $("#minAmount").text("$" + $("#slider-range").slider("values", 0));
-  $("#maxAmount").text("$" + $("#slider-range").slider("values", 1));
+  // $("#slider-range").slider({
+  //   range: true,
+  //   min: 40,
+  //   max: 300,
+  //   values: [60, 570],
+  //   slide: function (event, ui) {
+  //     $("#minAmount").text("$" + ui.values[0]);
+  //     $("#maxAmount").text("$" + ui.values[1]);
+  //   }
+  // });
+  // $("#minAmount").text("$" + $("#slider-range").slider("values", 0));
+  // $("#maxAmount").text("$" + $("#slider-range").slider("values", 1));
 
 
 
