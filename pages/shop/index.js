@@ -29,7 +29,7 @@ const Shop = () => {
   const [loading, setLoading] = useState(true);
   const [rangePrice, setRangePrice] = useState({ min: 0, max: 0 });
   const dispatch = useDispatch();
-
+  const categorySortIds = [1, 2, 3, 4];
   useEffect(() => {
     filterProductLocal()
   }, [rangePriceFilter, categoryFilter, keySearch]);
@@ -53,6 +53,11 @@ const Shop = () => {
     try {
       const url = `/api/products?sort[0]=createdAt:DESC&populate=*&pagination[pageSize]=200`
       const productsResult = await fetchDataFromApi(url);
+      productsResult.data = _.sortBy(productsResult.data, product => {
+        const matchingCategory = _.find(product.attributes.categories.data.map(item => item.id), id => _.includes(categorySortIds, id));
+        return matchingCategory !== undefined ? categorySortIds.indexOf(matchingCategory) : Number.MAX_SAFE_INTEGER;
+      });
+      console.log('productsResult.data:', productsResult.data)
       const rangePriceValue = {
         min: _.minBy(productsResult.data, item => item.attributes.price)?.attributes.price || 0,
         max: _.maxBy(productsResult.data, item => item.attributes.price)?.attributes.price || 0
@@ -72,11 +77,11 @@ const Shop = () => {
 
   };
   const filterProductLocal = () => {
-    const keyList = toLowerCaseNonAccentVietnamese(keySearch).split(" ");
+    const keyList = _.compact(toLowerCaseNonAccentVietnamese(keySearch).split(" "));
     setProductsFilter(_.filter(products, item => {
       return item.attributes?.price >= rangePriceFilter.min && item.attributes?.price <= rangePriceFilter.max
         && (_.isEmpty(categoryFilter) || !_.isEmpty(_.intersection(item?.attributes?.categories.data?.map(item => item.id) || [], categoryFilter)))
-        && (containsAnyKey(toLowerCaseNonAccentVietnamese(item.attributes.name), keyList))
+        && (_.isEmpty(keySearch) || !keyList.length || containsAnyKey(toLowerCaseNonAccentVietnamese(item.attributes.name), keyList))
     }));
   }
   const containsAnyKey = (input, keyList) => {
@@ -106,6 +111,10 @@ const Shop = () => {
   const fetchCategories = async () => {
     try {
       const categories = await fetchDataFromApi(`/api/categories?populate=*`);
+      console.log('categories:', categories);
+      categories.data = _.sortBy(categories.data, category => {
+        return _.includes(categorySortIds, category.id) ? categorySortIds.indexOf(category.id) : Number.MAX_SAFE_INTEGER;
+      });
       setCategories(categories?.data || [])
 
     }
@@ -131,7 +140,7 @@ const Shop = () => {
         <section style={minHeightStyle} className="vs-shop-wrapper position-relative space-top space-md-bottom">
           <div className="container">
             <div className="row flex-row ">
-              <div className="col-lg-4 col-xl-3">
+              <div className="col-lg-4 col-xl-3  pr-30">
                 <aside className="sidebar-area">
                   <div className="widget  ">
                     <h3 className="widget_title">Giá tiền</h3>
@@ -189,7 +198,7 @@ const Shop = () => {
                 </aside>
               </div>
 
-              <div className="col-lg-8 col-xl-9 ">
+              <div className="col-lg-8 col-xl-9">
                 <div className="sticky-top overflow-hidden">
                   <div className="vs-sort-bar row justify-content-center justify-content-sm-between align-items-center pb-3 pb-lg-5 mb-1 ">
                     <div className="col-auto mb-3 mb-sm-0">
@@ -206,7 +215,7 @@ const Shop = () => {
                         >
                           <i className="fas fa-th" />
                         </a>
-                        <a
+                        {/* <a
                           href="shop-list.html"
                           className="icon-btn  style3  "
                           id="tab-shop-list"
@@ -217,7 +226,7 @@ const Shop = () => {
                           aria-selected="false"
                         >
                           <i className="far fa-bars" />
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                     <div className="col d-none d-md-block">
