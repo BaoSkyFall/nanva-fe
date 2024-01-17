@@ -20,8 +20,10 @@ const minHeightStyle = {
 };
 const Shop = () => {
   const [products, setProducts] = useState(null);
+  const [productsFilter, setProductsFilter] = useState(null);
   const [categories, setCategories] = useState(null);
-  const [categoryFilter, setCategoryFilter] = useState("*");
+  const [keySearch, setKeySearch] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState([]);
   const [rangePriceFilter, setRangePriceFilter] = useState({ min: 0, max: 0 });
 
   const [loading, setLoading] = useState(true);
@@ -29,11 +31,8 @@ const Shop = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchProducts();
-  }, categoryFilter);
-  useEffect(() => {
-    fetchProducts();
-  }, rangePriceFilter);
+    filterProductLocal()
+  }, [rangePriceFilter, categoryFilter, keySearch]);
   const notify = () => {
     toast.success("Thêm vào giỏ hàng Thành Công! ", {
       position: "bottom-right",
@@ -47,31 +46,22 @@ const Shop = () => {
     });
   };
   useEffect(() => {
-    // fetchProducts();
+    fetchProducts();
     fetchCategories();
   }, []);
   const fetchProducts = async () => {
     try {
-      let filterCategory = '';
-      let filterRangePrice = '';
-      if (categoryFilter.toString() != "*") {
-        filterCategory = `&filters[categories][id]=${categoryFilter}`
-      }
-      console.log('rangePriceFilter:', rangePriceFilter)
-      // if (rangePriceFilter.min && rangePriceFilter.max) {
-      //   filterRangePrice = `&filters[price][$between]=${rangePriceFilter.min},${rangePriceFilter.max}`;
-
-      // }
-      const url = `/api/products?sort[0]=createdAt:DESC&populate=*&pagination[pageSize]=100`
-      const products = await fetchDataFromApi(url + filterCategory + filterRangePrice);
-      console.log('products:', products)
+      const url = `/api/products?sort[0]=createdAt:DESC&populate=*&pagination[pageSize]=200`
+      const productsResult = await fetchDataFromApi(url);
       const rangePriceValue = {
-        min: _.minBy(products.data, item => item.attributes.price)?.attributes.price || 0,
-        max: _.maxBy(products.data, item => item.attributes.price)?.attributes.price || 0
+        min: _.minBy(productsResult.data, item => item.attributes.price)?.attributes.price || 0,
+        max: _.maxBy(productsResult.data, item => item.attributes.price)?.attributes.price || 0
       }
       setRangePrice(rangePriceValue);
       setRangePriceFilter(rangePriceValue);
-      setProducts(products)
+      setProducts(productsResult.data);
+      setProductsFilter(productsResult.data);
+
     }
     catch (error) {
       // Handle validation errors
@@ -81,6 +71,33 @@ const Shop = () => {
     }
 
   };
+  const filterProductLocal = () => {
+    const keyList = toLowerCaseNonAccentVietnamese(keySearch).split(" ");
+    setProductsFilter(_.filter(products, item => {
+      return item.attributes?.price >= rangePriceFilter.min && item.attributes?.price <= rangePriceFilter.max
+        && (_.isEmpty(categoryFilter) || !_.isEmpty(_.intersection(item?.attributes?.categories.data?.map(item => item.id) || [], categoryFilter)))
+        && (containsAnyKey(toLowerCaseNonAccentVietnamese(item.attributes.name), keyList))
+    }));
+  }
+  const containsAnyKey = (input, keyList) => {
+    const lowercasedInput = input.toLowerCase();
+    return _.some(keyList, key => lowercasedInput.includes(key.toLowerCase()));
+  }
+
+  const toLowerCaseNonAccentVietnamese = (str) => {
+    str = str.toLowerCase();
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+    str = str.replace(/đ/g, "d");
+    // Some system encode vietnamese combining accent as individual utf-8 characters
+    str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, ""); // Huyền sắc hỏi ngã nặng 
+    str = str.replace(/\u02C6|\u0306|\u031B/g, ""); // Â, Ê, Ă, Ơ, Ư
+    return str;
+  }
   const transformValueFromPercentToPrice = (percent, minPrice, originalPrice, isMax = false) => {
     const range = originalPrice; // Your price range 
     const price = isMax ? minPrice + percent * (range / 100) : minPrice + percent * (range / 100);
@@ -145,7 +162,10 @@ const Shop = () => {
                     <h3 className="widget_title">Loại</h3>
                     <ul>
                       {categories?.map(category => (<li key={category.id} value={category.id}>
-                        <input type="checkbox" name={category.id} id={category.id} />
+                        <input type="checkbox" onChange={() => {
+                          setCategoryFilter(_.xor(categoryFilter, [category.id]));
+
+                        }} name={category.id} id={category.id} />
                         <label htmlFor={category.id}>{category.attributes.name}</label>
                         <span>({category.attributes.products.data.length || 0})</span>
                       </li>))}
@@ -154,8 +174,12 @@ const Shop = () => {
                   <div className="widget widget_search   ">
                     <h3 className="widget_title">Tên Sản Phẩm</h3>
                     <form className="search-form">
-                      <input type="text" placeholder="Nhập tên sản phẩm cần tìm" />
-                      <button type="submit">
+                      <input type="text" onChange={(e) => {
+                        setKeySearch(e.target.value)
+                      }} value={keySearch} placeholder="Nhập tên sản phẩm cần tìm" />
+                      <button type="submit" onClick={() => {
+                        filterProductLocal()
+                      }}>
                         <i className="far fa-search" />
                       </button>
                     </form>
@@ -201,21 +225,6 @@ const Shop = () => {
                     </div>
                     <div className="col-sm-9 col-md-7 col-lg-8 col-xl-6">
                       <div className="row justify-content-center justify-content-sm-between">
-                        <div className="col-auto d-flex align-items-center mb-3 mb-sm-0">
-                          <label className="text-body2" htmlFor="sortBy">
-                            Thể Loại
-                          </label>
-                          <select name="sortBy" id="sortBy" className="form-select" onChange={(e) => {
-                            setCategoryFilter(e.target.value);
-
-                          }}>
-                            <option value="*">Tất Cả</option>
-                            {categories?.map(category => (<option key={category.id} value={category.id}>{category.attributes.name}</option>))}
-                            {/* <option value="productName">Sorted Product Name</option>
-                            <option value="productName">Sorted Product New</option>
-                            <option value="productName">Sorted Product Popular</option> */}
-                          </select>
-                        </div>
                         <div className="col-auto d-flex align-items-center">
                           {/* <label className="text-body2" htmlFor="showTotal">
                             Show
@@ -245,7 +254,7 @@ const Shop = () => {
                       <Fancybox>
 
                         <div className="row">
-                          {products?.data?.map(product => (
+                          {productsFilter?.map(product => (
                             <div className="col-sm-6 col-xl-4">
                               <div className="vs-product-box1 thumb_swap">
                                 <div className="product-tag1 fs-20">Tết</div>
@@ -327,7 +336,7 @@ const Shop = () => {
                       aria-labelledby="tab-shop-list"
                     >
                       <div className="row ">
-                        {products?.data?.map(product => (
+                        {productsFilter?.map(product => (
                           <div key={product.id} className="col-sm-6 col-lg-6 col-xl-6">
                             <div className="vs-product-box2 d-xl-flex has-border thumb_swap">
                               <div className="product-img">
