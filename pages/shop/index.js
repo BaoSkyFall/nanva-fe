@@ -29,7 +29,7 @@ const Shop = () => {
   const [loading, setLoading] = useState(true);
   const [rangePrice, setRangePrice] = useState({ min: 0, max: 0 });
   const dispatch = useDispatch();
-  const categorySortIds = [1, 2, 3, 4];
+  const categorySortIds = [1, 5, 2, 3, 4];
   useEffect(() => {
     filterProductLocal()
   }, [rangePriceFilter, categoryFilter, keySearch]);
