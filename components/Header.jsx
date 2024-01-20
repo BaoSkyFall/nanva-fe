@@ -190,10 +190,11 @@ const Header = () => {
                                         </ul> */}
                                     </li>
 
+
                                 </ul>
                             </nav>
                         </div>
-                        <div className="col-auto d-none d-sm-block">
+                        <div className="col-auto ">
                             <div className="header-buttons">
                                 {/* <button type="button" className="searchBoxTggler">
                                     <i className="far fa-search" />
@@ -207,9 +208,9 @@ const Header = () => {
                                 <Link className={isActive(['/shop', '/product/[slug]', '/cart', '/checkout']) ? 'd-lg-none active fs-20' : ' d-lg-none fs-20'} href="/shop">
                                     Sản Phẩm
                                 </Link>
-                                {/* <Link className=" d-lg-none" href="/contact">Contact Us</Link> */}
+                                {/* <Link className=" d-lg-no   ne" href="/contact">Contact Us</Link> */}
 
-                                <Link className={isActive(['/shop', '/product/[slug]', '/cart', '/checkout']) ? 'd-lg-none active fs-20' : ' d-lg-none fs-20'} href="/cart" >
+                                <Link className={isActive(['/shop', '/product/[slug]', '/cart', '/checkout']) ? ' active fs-20' : '  fs-20'} href="/cart" >
 
                                     <i className="fal fa-shopping-cart" />
                                     <span className="badge">{totalItems}</span>

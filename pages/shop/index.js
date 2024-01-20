@@ -13,6 +13,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "@/store/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Fancybox from '../../components/Fancybox';
 import * as _ from 'lodash';
 const minHeightStyle = {
@@ -137,6 +138,8 @@ const Shop = () => {
           spin
         />
       } tip="Đang Tải...">
+        <ToastContainer />
+
         <section style={minHeightStyle} className="vs-shop-wrapper position-relative space-top space-md-bottom">
           <div className="container">
             <div className="row flex-row ">
@@ -312,8 +315,8 @@ const Shop = () => {
                                   <a className="vs-btn shadow-none cursor-pointer w-70 fs-6" onClick={() => {
                                     dispatch(
                                       addToCart({
-                                        ...product,
-                                        oneQuantityPrice: product.price,
+                                        ...product.attributes,
+                                        oneQuantityPrice: product.attributes.price,
                                         quantity: 1
                                       })
                                     );
@@ -382,8 +385,8 @@ const Shop = () => {
                                   <a className="vs-btn shadow-none cursor-pointer w-70" onClick={() => {
                                     dispatch(
                                       addToCart({
-                                        ...product,
-                                        oneQuantityPrice: product.price,
+                                        ...product.attributes,
+                                        oneQuantityPrice: product.attributes.price,
                                         quantity: 1
                                       })
                                     );

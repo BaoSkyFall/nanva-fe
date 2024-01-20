@@ -175,6 +175,7 @@ const Cart = () => {
                                 message: 'Vui lòng nhập Họ Tên!'
                               },
                             ]}
+                            value="Nguyễn Văn Anh Minh"
                           >
                             <Input size="large" placeholder="Nhập Họ Tên" />
                           </Form.Item>
@@ -201,6 +202,7 @@ const Cart = () => {
                                 message: 'Vui lòng nhập Email!',
                               },
                             ]}
+                            value="35220035"
                           >
                             <Input size="large" placeholder="Nhập Email" />
                           </Form.Item>
@@ -208,12 +210,14 @@ const Cart = () => {
                             name="address"
                             label="Địa Chỉ"
                             rules={[{ required: true, message: 'Nhập địa chỉ' }]}
+                            value="133 Cộng Hòa, Phường 3, Quận Tân Bình, TP. Hồ Chí Minh"
                           >
                             <Input.TextArea placeholder="Nhập địa chỉ của bạn cho đơn hàng" maxLength={300} />
                           </Form.Item>
                           <Form.Item
                             name="note"
                             label="Ghi Chú"
+                            value="Giao giờ hành chính từ 7:00 - 17:00"
 
                             rules={[{ required: false, message: 'Nhập ghi chú của bạn cho đơn hàng' }]}
                           >
@@ -244,7 +248,7 @@ const Cart = () => {
                             <img
                               width={91}
                               height={91}
-                              src={cartItem.thumbnail.data.attributes.url}
+                              src={cartItem?.thumbnail?.data?.attributes?.url}
                               alt="Image"
                             />
                           </a>
@@ -257,7 +261,7 @@ const Cart = () => {
                         <td data-title="Price">
                           <span className="amount">
                             <bdi>
-                              <span>{cartItem.oneQuantityPrice.toLocaleString()}</span>đ
+                              <span>{cartItem?.oneQuantityPrice?.toLocaleString()}</span>đ
                             </bdi>
                           </span>
                         </td>
@@ -345,7 +349,7 @@ const Cart = () => {
                       <button type="submit" className="vs-btn" onClick={() => {
                         handlePayment()
                       }}>
-                        Thanh Toán
+                        Xác Nhận Mua Hàng
                       </button>
                     </div>
                   </div>

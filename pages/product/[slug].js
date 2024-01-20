@@ -125,7 +125,7 @@ const ProductDetails = ({ product, products }) => {
                   <div className="product-content">
                     <h3 className="product-title mb-1">{p.name}</h3>
                     <span className="price font-theme">
-                      <strong>{p.price.toLocaleString()} đ</strong>
+                      <strong>{p.price?.toLocaleString()} đ</strong>
                     </span>
                     <div className="mt-2">
                       <div
@@ -140,7 +140,7 @@ const ProductDetails = ({ product, products }) => {
                       </div>
                     </div>
                     <div className="fs-xs my-4">
-                      {p.descriptionLines.map((line, index) => (
+                      {p.descriptionLines?.map((line, index) => (
                         <p key={index}>{line}</p>
                       ))}
                     </div>
@@ -198,7 +198,7 @@ const ProductDetails = ({ product, products }) => {
                     </span> */}
                       <span className="posted_in">
                         Category:{" "}
-                        {p.categories.data.map((category, index) => (
+                        {p.categories?.data?.map((category, index) => (
                           <Link key={index} href="/" rel="tag">
                             {category.attributes.name}
                           </Link>
@@ -211,7 +211,7 @@ const ProductDetails = ({ product, products }) => {
                   <div className="widget   ">
                     <h3 className="widget_title">Bạn có thể thích</h3>
                     <div className="vs-widget-recent-post">
-                      {products.data.map(product => (
+                      {products?.data?.map(product => (
                         <div className="recent-post d-flex align-items-center">
                           <div className="media-img">
                             <img
@@ -459,12 +459,12 @@ export async function getServerSidePaths() {
 export async function getServerSideProps({ params: { slug } }) {
   const product = await fetchDataFromApi(
     `/api/products?populate=*&filters[slug][$eq]=${slug}`
-  );
+  ) || null;
   console.log('product:', product)
   const products = await fetchDataFromApi(
     `/api/products?populate=*&[filters][slug][$ne]=${slug}&pagination[pageSize]=3`
-  );
-
+  ) || [];
+  console.log('products:', products)
   return {
     props: {
       product,
