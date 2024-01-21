@@ -12,8 +12,8 @@ const MenuWrapper = ({ children, className }) => {
           <div className="col-lg-4">
             <div className="cat-style2 no-1">
               <div className="cat-body">
-                <h3 className="cat-title">Hạt Điều Đen Tự Nhiên</h3>
-                <Link href="/shop" className="cat-link">
+                <h3 className="cat-title">Hạt Điều Rang Phô Mai Nava</h3>
+                <Link href="/product/hat-dieu-rang-pho-mai-nava-premium-500g" className="cat-link">
                   Mua Ngay
                 </Link>
                 <div className="cat-shape">
@@ -33,9 +33,9 @@ const MenuWrapper = ({ children, className }) => {
             >
               <div className="cat-body">
                 <h3 className="cat-title text-white">
-                  Hạt Điều Rang Muối
+                  Hạt Điều Rang Muối NaVa
                 </h3>
-                <Link href="/shop" className="cat-link">
+                <Link href="/product/nava-premium-classic-hat-dieu-kho-rang-muoi-500-gram-rat-giau-protein-gion-ngon-and-ngon-mieng" className="cat-link">
                   Mua Ngay
                 </Link>
                 <div className="cat-shape">
@@ -51,9 +51,9 @@ const MenuWrapper = ({ children, className }) => {
             <div className="cat-style2 no-3">
               <div className="cat-body">
                 <h3 className="cat-title">
-                  Hạt Điều Hữu Cơ Sấy Khô
+                  Hạt Điều Rang Tỏi Ớt Nava
                 </h3>
-                <Link href="/shop" className="cat-link">
+                <Link href="/product/hat-dieu-rang-toi-ot-nava-premium-500g" className="cat-link">
                   Mua Ngay
                 </Link>
                 <div className="cat-shape">
