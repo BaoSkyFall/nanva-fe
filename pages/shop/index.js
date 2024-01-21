@@ -315,6 +315,7 @@ const Shop = () => {
                                   <a className="vs-btn shadow-none cursor-pointer w-70 fs-6" onClick={() => {
                                     dispatch(
                                       addToCart({
+                                        id: product.id,
                                         ...product.attributes,
                                         oneQuantityPrice: product.attributes.price,
                                         quantity: 1
@@ -385,6 +386,7 @@ const Shop = () => {
                                   <a className="vs-btn shadow-none cursor-pointer w-70" onClick={() => {
                                     dispatch(
                                       addToCart({
+                                        id: product.id,
                                         ...product.attributes,
                                         oneQuantityPrice: product.attributes.price,
                                         quantity: 1
